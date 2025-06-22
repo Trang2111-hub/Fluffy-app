@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Typography sizes -->
+    <dimen name="text_display_large">57sp</dimen>
+    <dimen name="text_h1">36sp</dimen>
+    <dimen name="text_h2">26sp</dimen>
+    <dimen name="text_h3">24sp</dimen>
+    <dimen name="text_subtitle">18sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_caption">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+</resources>
