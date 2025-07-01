@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Về chúng tôi -->
+            <ImageView
+                android:src="@drawable/vefluffy1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:contentDescription="Image" />
+
+            <TextView
+                android:text="Về chúng tôi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+
+            <TextView
+                android:text="THƯƠNG HIỆU FLUFFY"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#EB5265"/>
+
+            <TextView
+                android:text="Bắt đầu bằng sự đam mê và tiếp bước hành trình bằng trách nhiệm, chúng tôi luôn nỗ lực để mang đến cho khách hàng những sản phẩm  chất lượng và trải nghiệm mua sắm tốt nhất. Chúng tôi tin rằng, sự mềm mại không chỉ dừng lại ở những vật liệu, mà còn là câu chuyện đằng sau từng chiếc nơ, từng đường may, từng cái ôm ta trao nhau."
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:justificationMode="inter_word"/>
+            <TextView
+                android:text="Nhà FLUFFY mong muốn thúc đẩy văn hóa yêu thương và chia sẻ  thông qua những món quà thú bông. Với châm ngôn Warm Hearts, Warm Hugs, FLUFFY không chỉ là một thương hiệu gấu bông, mà còn  là ngôi nhà của những trái tim đầy tình yêu và những cái ôm đầy ý nghĩa. Mỗi chiếc gấu FLUFFY không chỉ là một món đồ chơi, mà còn là một biểu tượng của tình thương và sự chăm sóc."
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:justificationMode="inter_word"
+                android:paddingBottom="30dp"/>
+
+            <!-- Câu chuyện khởi nghiệp - Đam mê -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_rounder">
+                <TextView
+                    android:text="Câu chuyện khởi nghiệp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="ĐAM MÊ"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#EB5265"/>
+
+                <ImageView
+                    android:src="@drawable/vefluffy2"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="Image"
+                    android:paddingTop="12dp"/>
+
+                <TextView
+                    android:text="FLUFFY không bắt đầu với một kế hoạch kinh doanh chi tiết hoặc một ngân sách tiền mặt lớn. Thay vào đó, nó bắt đầu từ một cái ý tưởng, từ tình yêu với những chú gấu bông dễ thương. Chúng tôi tự hào là đội ngũ đầy năng động, sáng tạo và tràn đầy tình yêu thú bông. Chúng tôi không chỉ là đồng đội, chúng tôi là những người bạn, những người biết mơ ước và hành động. Chúng tôi cùng nhau trải qua những thăng trầm, hỗ trợ lẫn nhau khi gặp khó khăn và tận hưởng những khoảnh khắc ngọt ngào của thành công. Chúng tôi tin rằng, với niềm đam mê và sự nỗ lực không ngừng, FLUFFY sẽ tiếp tục vượt qua mọi khó khăn và gặt hái được những thành công trong khởi nghiệp."
+                    android:textSize="14sp"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="10dp"
+                    android:justificationMode="inter_word"/>
+
+            </LinearLayout>
+
+
+            <!-- Câu chuyện khởi nghiệp - Trách nhiệm -->
+
+            <TextView
+                android:text="Câu chuyện khởi nghiệp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="30dp"/>
+
+            <TextView
+                android:text="TRÁCH NHIỆM"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#EB5265"/>
+
+            <ImageView
+                android:src="@drawable/vefluffy3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="Image" />
+
+            <TextView
+                android:text="Khởi nguồn từ đam mê, Fluffy Store đã lớn mạnh và gắn bó với khách hàng đến ngày hôm nay bằng tất cả trách nhiệm và sự kiên trì. Chúng tôi không chỉ tạo ra những chú thú bông đáng yêu, mà còn xây dựng một thương hiệu mà khách hàng có thể tin tưởng và yêu mến. Mỗi đường kim, mũi chỉ, mỗi ý tưởng sáng tạo đều chứa đựng trọn vẹn trái tim và tâm huyết của chúng tôi. Điều quan trọng nhất là giữ vững ngọn lửa đam mê ban đầu, không bao giờ để nó lụi tàn. Fluffy Store cam kết không chỉ mang đến những sản phẩm chất lượng cao, mà còn tạo ra những trải nghiệm mua sắm ý nghĩa và đáng nhớ cho mỗi khách hàng. Chúng tôi tin rằng, mỗi chú thú bông không chỉ là một món đồ chơi, mà còn là một người bạn đồng hành, mang đến niềm vui và sự ấm áp. Đó chính là giá trị cốt lõi mà Fluffy Store luôn hướng tới."
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="30dp"
+                android:justificationMode="inter_word"/>
+
+            <!-- Phần thông tin khác -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_rounder">
+<!--                Khuyến mãi liên tục-->
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/vefluffy4"/>
+                <TextView
+                    android:text="KHUYẾN MÃI LIÊN TỤC"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#EB5265"/>
+                <TextView
+                    android:text="Có rất nhiều deal hot, voucher, mã giảm giá"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+
+<!--                Giao hàng nhanh-->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/vefluffy5"/>
+                <TextView
+                    android:text="GIAO HÀNG NHANH"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#EB5265"/>
+                <TextView
+                    android:text="Giao han nhanh chóng, đóng gói cẩn thận"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+
+<!--                Tư vấn trực tiếp-->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/vefluffy6"/>
+                <TextView
+                    android:text="TƯ VẤN TRỰC TUYẾN"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#EB5265"/>
+                <TextView
+                    android:text="Được tư vấn kỹ càng và nhanh chóng"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"/>
+<!--                Sản phẩm thiết kế độc quyền-->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/vefluffy7"/>
+                <TextView
+                    android:text="SẢN PHẨM THIẾT KẾ ĐỘC QUYỀN"
+                    android:textSize="18sp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#EB5265"/>
+                <TextView
+                    android:text="Các loại thú bông độc quyền chỉ có tại nhà FLUFFY"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp"
+                    android:gravity="center"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
