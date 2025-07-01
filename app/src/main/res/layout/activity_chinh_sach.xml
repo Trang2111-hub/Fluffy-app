@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Menu Dropdown (Spinner) với kích thước touch target lớn hơn -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <Spinner
+            android:id="@+id/dropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- ScrollView để chứa nội dung -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Các TextView cho các phần nội dung -->
+            <TextView
+                android:id="@+id/chinhSachDoiTra"
+                android:text="@string/chinh_sach_doi_tra"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textColor="#EB5265"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/noi_dung_doi_tra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/chinhSachBaoMat"
+                android:text="@string/chinh_sach_bao_mat"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textColor="#EB5265"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/noi_dung_bao_mat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/chinhSachVanChuyen"
+                android:text="@string/chinh_sach_van_chuyen"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:textColor="#EB5265"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/noi_dung_van_chuyen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/huongDanMuaHang"
+                android:text="@string/huong_dan_mua_hang"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textColor="#EB5265"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/noi_dung_mua_hang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

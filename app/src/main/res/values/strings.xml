@@ -1,3 +1,56 @@
 <resources>
     <string name="app_name">Fluffy_app</string>
+    <string-array name="dropdown_menu_items">
+        <item>Chính sách đổi/trả và hoàn tiền</item>
+        <item>Chính sách bảo mật</item>
+        <item>Chính sách vận chuyển</item>
+        <item>Hướng dẫn mua hàng</item>
+    </string-array>
+    <string name="chinh_sach_doi_tra">1. Chính sách đổi/trả và hoàn tiền tại Fluffy</string>
+    <string name="chinh_sach_bao_mat">2. Chính sách bảo mật</string>
+    <string name="chinh_sach_van_chuyen">3. Chính sách vận chuyển</string>
+    <string name="huong_dan_mua_hang">4. Hướng dẫn mua hàng</string>
+    <string name="noi_dung_doi_tra">
+        Điều kiện đổi trả sản phẩm:\n
+        Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:\n
+          + Sản phẩm không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt hàng: Hoàn tiền 100%, miễn phí vận chuyển hàng trả lại.\n
+          + Sản phẩm bị lỗi kỹ thuật: Hoàn tiền 100%, miễn phí vận chuyển hàng trả lại.\n
+          + Sản phẩm không ưng ý theo nhu cầu sử dụng của mình: Giá trị hàng muốn lấy mới phải lớn hơn hoặc bằng giá trị hàng đổi trả (quý khách vui lòng thanh toán phí vận chuyển nếu có phát sinh thêm)\n
+          + Các sản phẩm khuyến mãi trong các chương trình sale, thanh lý không được hỗ trợ đổi hàng.\n
+          + Sản phẩm phải còn nguyên vẹn, nguyên tem mác, chưa qua sử dụng, không bị dơ bẩn và sửa chữa.\n
+        Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để hoàn thành việc hoàn trả/đổi trả hàng hóa. \n \n
+        Quy định về thời gian thông báo và gửi sản phẩm đổi trả\n
+          + Thời gian thông báo đổi trả: trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm thiếu phụ kiện, quà tặng hoặc bị hư hỏng.\n
+          + Thời gian gửi chuyển trả sản phẩm: Quý khách có thể thực hiện đổi trả hàng miễn phí trong vòng 03 ngày và đổi mới trong vòng 15 ngày kể từ khi nhận sản phẩm.\n\n
+        Địa điểm đổi trả sản phẩm: Khách hàng có thể mang hàng trực tiếp đến văn phòng/ cửa hàng của chúng tôi hoặc chuyển qua đường bưu điện\n\n
+        Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm, Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi.
+    </string>
+    <string name="noi_dung_bao_mat">
+        - Khách hàng vui lòng cung cấp thông tin cá nhân khi mua hàng.\n
+        - Thông tin cá nhân được bảo mật tuyệt đối và không được chia sẻ với bên thứ ba.\n
+        - Fluffy cam kết bảo vệ dữ liệu khách hàng theo chính sách bảo mật hiện hành.\n
+        - Khách hàng có quyền yêu cầu xóa thông tin cá nhân bất cứ lúc nào.\n
+        - Liên hệ hỗ trợ bảo mật qua email hoặc hotline của Fluffy.
+    </string>
+    <string name="noi_dung_van_chuyen">
+        Thông thường sau khi nhận được thông tin đặt hàng chúng tôi sẽ xử lý đơn hàng trong vòng 24h và phản hồi lại thông tin cho khách hàng về việc thanh toán và giao nhận. Thời gian giao hàng thường trong khoảng từ 3-5 ngày kể từ ngày chốt đơn hàng hoặc theo thỏa thuận với khách khi đặt hàng. Tuy nhiên, cũng có trường hợp việc giao hàng kéo dài hơn nhưng chỉ xảy ra trong những tình huống bất khả kháng như sau: \n
+        + Nhân viên công ty sẽ liên lạc với khách hàng qua điện thoại không được nên không thể giao hàng. \n
+        + Địa chỉ giao hàng bạn cung cấp không chính xác hoặc khó tìm. \n
+        + Số lượng đơn hàng của công ty tăng đột biến khiến việc xử lý đơn hàng bị chậm. \n
+        + Đối tác cung cấp nguyên liệu cho công ty chậm hơn dự kiến khiến việc giao hàng bị chậm lại hoặc đối tác vận chuyển giao hàng bị chậm chỉ vận chuyển phân phối cho đại lý hoặc khách hàng có nhu cầu lớn, lâu dài. Vì thế công ty đa phần sẽ hỗ trợ chi phí vận chuyển như một cách chăm sóc đại lý cua mình. Đối với khách lẻ nếu có nhu cầu sử dụng lớn vui lòng liên hệ trực tiếp để thỏa thuận hợp đồng cũng như phí vận chuyển.
+    </string>
+    <string name="noi_dung_mua_hang">
+        - Khách hàng chọn sản phẩm trên website hoặc ứng dụng Fluffy.\n
+        - Đặt hàng qua giỏ hàng và hoàn tất thanh toán online.\n
+        - Xác nhận đơn hàng qua SMS/Zalo/Inbox/Facebook/email.\n
+        - Liên hệ hỗ trợ nếu có thắc mắc qua hotline hoặc chat trực tiếp.\n
+        - Nhận hàng và kiểm tra trước khi thanh toán (nếu chọn COD).
+        - Thanh toán trực tiếp tiền mặt. \n
+        - Thanh toán khi nhận được hàng. \n
+        - Thanh toán bằng hình thức chuyển khoản. \n \n
+        Thông tin chi tiết về số tài khoản chúng tôi sẽ gửi qua SMS/zalo/inbox facebook/email cho quý khách.\n
+        *Lưu ý: Nội dung chuyển khoản ghi rõ họ tên hoăc số điện thoại và chuyển cho đơn hàng nào. Sau khi chuyển khoản, chúng tôi sẽ liên hệ xác nhận và tiến hành giao hàng. Nếu sau thời gian thỏa thuận mà chúng tôi không giao hàng hoặc không phản hồi lại, quý khách có thể gửi khiếu nại trực tiếp về công ty và yêu cầu bồi thường nếu chứng minh được sự chậm trễ làm ảnh hưởng đến công việc của quý khách. \n
+        Đối với khách hàng có nhu cầu mua số lượng lớn để kinh doanh hoặc buôn sỉ vui lòng liên hệ trực tiếp với chúng tôi để có chính sách giá cả hợp lý. Và việc thanh toán sẽ được thực hiện theo hợp đồng. \n
+        Chúng tôi cam kết kinh doanh minh bạch, hợp pháp, bán hàng chất lượng, có nguồn gốc rõ ràng. \n
+    </string>
 </resources>
