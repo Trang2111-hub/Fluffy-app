@@ -1,9 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.Fluffy_app" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Bỏ màu mặc định của các thành phần -->
+        <item name="colorPrimary">@android:color/white</item> <!-- Đặt màu trắng cho colorPrimary -->
+        <item name="colorPrimaryDark">@android:color/white</item> <!-- Màu primaryDark (nền đen cho thanh trạng thái) -->
+        <item name="colorAccent">@android:color/white</item> <!-- Màu phụ -->
+        <item name="colorButtonNormal">@android:color/white</item> <!-- Màu nút mặc định -->
+
+        <!-- Bạn có thể thêm các màu riêng nếu cần -->
+        <item name="android:buttonStyle">@style/CustomButtonStyle</item> <!-- Áp dụng style cho nút -->
     </style>
 
+    <!-- Default theme used for the application -->
     <style name="Theme.Fluffy_app" parent="Base.Theme.Fluffy_app" />
 </resources>

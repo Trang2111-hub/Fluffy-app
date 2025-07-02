@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Style tùy chỉnh cho Button -->
+    <style name="CustomButtonStyle">
+        <item name="android:background">@drawable/button_border</item> <!-- Sử dụng drawable cho background -->
+        <item name="android:textColor">@android:color/white</item> <!-- Chữ màu trắng -->
+        <item name="android:textSize">14sp</item> <!-- Kích thước chữ -->
+    </style>
 
 
+    <style name="ButtonPrimaryStyle">
+        <item name="android:background">@drawable/button_primary</item>
+<!--        <item name="android:textColor">@android:color/white</item>-->
+    </style>
+
+
+    <style name="ButtonSecondaryStyle">
+        <item name="android:background">@drawable/button_secondary</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
 </resources>
+
