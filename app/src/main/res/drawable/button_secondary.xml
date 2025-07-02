@@ -4,5 +4,5 @@
     <stroke
         android:color="@color/hover"
         android:width="2dp"/>
-    <corners android:radius="20dp"/>
+    <corners android:radius="45dp"/>
 </shape>
