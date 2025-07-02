@@ -16,10 +16,13 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
-            android:name=".ui.ChinhSach.ChinhSachActivity"
+            android:name=".ui.profilesetting.ProfilesettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.veFluffy.VeFluffyActivity"
+            android:name=".ui.policy.ChinhSachActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.aboutfluffy.VeFluffyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
