@@ -3,7 +3,7 @@
         <style name="Base.Theme.Fluffy_app" parent="Theme.Material3.DayNight.NoActionBar">
             <item name="colorPrimary">@android:color/white</item>
             <item name="colorPrimaryDark">@color/black</item>
-            <item name="colorAccent">@color/secondary</item>
+            <item name="colorAccent">@color/white</item>
             <item name="colorButtonNormal">@color/primary</item>
         </style>
 
