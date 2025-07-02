@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Product;
 
@@ -62,37 +63,17 @@ public class ProductAdapter extends BaseAdapter {
         TextView tvOriginalPrice = view.findViewById(R.id.tv_original_price);
         tvOriginalPrice.setText(product.getOriginalPrice());
 
-        // Load product image
+        // Load product image using Glide
         ImageView ivProductImage = view.findViewById(R.id.iv_product_image);
-        new DownloadImageTask(ivProductImage).execute(product.getImageUrl());
+        String imageUrl = product.getImageUrl();
+        if (!imageUrl.startsWith("http")) {
+            imageUrl = "https:" + imageUrl;
+        }
+        Glide.with(context)
+            .load(imageUrl)
+            .placeholder(R.drawable.ic_launcher_background)
+            .into(ivProductImage);
 
         return view;
-    }
-
-    // AsyncTask to download image from URL
-    private static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        private ImageView imageView;
-
-        public DownloadImageTask(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... urls) {
-            String url = urls[0];
-            Bitmap bitmap = null;
-            try {
-                InputStream in = new java.net.URL(url).openStream();
-                bitmap = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            imageView.setImageBitmap(result);
-        }
     }
 }
