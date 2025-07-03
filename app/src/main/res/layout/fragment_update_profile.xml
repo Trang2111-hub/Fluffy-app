@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp">
 
         <!-- Header -->
         <LinearLayout
@@ -96,7 +96,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:layout_gravity="left"/>
 
         <LinearLayout
@@ -106,8 +106,8 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/bg_edittext"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
             android:gravity="center_vertical">
 
             <EditText
@@ -132,7 +132,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_gravity="left"/>
 
         <LinearLayout
@@ -142,8 +142,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_edittext"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
             android:gravity="center_vertical">
 
             <EditText
@@ -164,7 +164,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/baseline_calendar_month_24"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:tint="@color/primary"/>
         </LinearLayout>
 
@@ -177,7 +177,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_gravity="left"/>
 
         <LinearLayout
@@ -187,8 +187,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_edittext"
-            android:paddingStart="8dp"
-            android:paddingEnd="20dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
             android:gravity="center_vertical">
 
             <EditText
@@ -213,7 +213,7 @@
             android:textColor="@color/primary"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
             android:layout_gravity="left"/>
 
         <LinearLayout
@@ -223,8 +223,8 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_edittext"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
             android:gravity="center_vertical">
 
             <EditText
@@ -246,7 +246,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp">
 
             <Button
                 android:id="@+id/btnCancel"

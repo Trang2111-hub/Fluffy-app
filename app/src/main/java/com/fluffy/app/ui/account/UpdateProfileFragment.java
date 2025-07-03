@@ -3,67 +3,51 @@ package com.fluffy.app.ui.account;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Patterns;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.fluffy.app.R;
+import com.fluffy.app.databinding.FragmentUpdateProfileBinding;
 
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the  factory method to
- * create an instance of this fragment.
- */
 public class UpdateProfileFragment extends Fragment {
 
-    private EditText edtName, edtDob, edtPhone, edtEmail;
-    private Button btnCancel, btnSave;
+    private FragmentUpdateProfileBinding binding;
     private String oldName, oldDob, oldPhone, oldEmail;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_update_profile, container, false);
-
-        edtName = view.findViewById(R.id.edtName);
-        edtDob = view.findViewById(R.id.edtDob);
-        edtPhone = view.findViewById(R.id.edtPhone);
-        edtEmail = view.findViewById(R.id.edtEmail);
-        btnCancel = view.findViewById(R.id.btnCancel);
-        btnSave = view.findViewById(R.id.btnSave);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout using ViewBinding
+        binding = FragmentUpdateProfileBinding.inflate(inflater, container, false);
 
         // Lưu thông tin cũ để reset khi nhấn Hủy
-        oldName = edtName.getText().toString();
-        oldDob = edtDob.getText().toString();
-        oldPhone = edtPhone.getText().toString();
-        oldEmail = edtEmail.getText().toString();
+        oldName = binding.edtName.getText().toString();
+        oldDob = binding.edtDob.getText().toString();
+        oldPhone = binding.edtPhone.getText().toString();
+        oldEmail = binding.edtEmail.getText().toString();
 
         // Xử lý sự kiện khi người dùng click vào EditText
-        edtName.setOnFocusChangeListener((v, hasFocus) -> {
+        binding.edtName.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
-                edtName.setText("");
+                binding.edtName.setText("");
             }
         });
 
-
         // Hiển thị DatePicker khi click vào ngày sinh
-        edtDob.setOnClickListener(v -> {
+        binding.edtDob.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
             DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
                     (view1, year, month, dayOfMonth) -> {
-                        edtDob.setText(String.format("%02d/%02d/%04d", dayOfMonth, month + 1, year));
+                        binding.edtDob.setText(String.format("%02d/%02d/%04d", dayOfMonth, month + 1, year));
                     },
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
@@ -72,35 +56,35 @@ public class UpdateProfileFragment extends Fragment {
         });
 
         // Validate số điện thoại khi thay đổi
-        edtPhone.setOnFocusChangeListener((v, hasFocus) -> {
+        binding.edtPhone.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus) {
-                String phone = edtPhone.getText().toString();
+                String phone = binding.edtPhone.getText().toString();
                 if (!phone.matches("^0\\d{9}$")) {
-                    edtPhone.setError("Số điện thoại không hợp lệ");
+                    binding.edtPhone.setError("Số điện thoại không hợp lệ");
                 }
             }
         });
 
         // Validate email khi thay đổi
-        edtEmail.setOnFocusChangeListener((v, hasFocus) -> {
+        binding.edtEmail.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus) {
-                String email = edtEmail.getText().toString();
+                String email = binding.edtEmail.getText().toString();
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    edtEmail.setError("Email không hợp lệ");
+                    binding.edtEmail.setError("Email không hợp lệ");
                 }
             }
         });
 
         // Nút Hủy: reset lại thông tin cũ
-        btnCancel.setOnClickListener(v -> {
-            edtName.setText(oldName);
-            edtDob.setText(oldDob);
-            edtPhone.setText(oldPhone);
-            edtEmail.setText(oldEmail);
+        binding.btnCancel.setOnClickListener(v -> {
+            binding.edtName.setText(oldName);
+            binding.edtDob.setText(oldDob);
+            binding.edtPhone.setText(oldPhone);
+            binding.edtEmail.setText(oldEmail);
         });
 
         // Nút Lưu: xác nhận trước khi lưu
-        btnSave.setOnClickListener(v -> {
+        binding.btnSave.setOnClickListener(v -> {
             View dialogView = inflater.inflate(R.layout.dialog_confirmation, null);
 
             TextView tvTitle = dialogView.findViewById(R.id.tvTitle);
@@ -126,6 +110,12 @@ public class UpdateProfileFragment extends Fragment {
             dialog.show();
         });
 
-        return view;
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null; // Set the binding to null to avoid memory leaks
     }
 }
