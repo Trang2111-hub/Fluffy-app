@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XÁC NHẬN"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn có chắc chắn muốn cập nhật thông tin vào hồ sơ không?"
+        android:textSize="18sp"
+        android:textColor="#222"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:text="LƯU"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/primary"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
