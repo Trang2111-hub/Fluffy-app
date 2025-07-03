@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/updatePasswordFragment">
 
+    <!-- Fragment UpdatePasswordFragment -->
+    <fragment
+        android:id="@+id/updatePasswordFragment"
+        android:name="com.fluffy.app.ui.account.UpdatePasswordFragment"
+        android:label="Update Password"
+        tools:layout="@layout/fragment_update_password">
+        <!-- Action điều hướng đến OTP Fragment -->
+        <action
+            android:id="@+id/action_updatePasswordFragment_to_otpUpdatePasswordFragment"
+            app:destination="@id/otpUpdatePasswordFragment" />
+    </fragment>
+
+    <!-- Fragment OtpUpdatePasswordFragment -->
+    <fragment
+        android:id="@+id/otpUpdatePasswordFragment"
+        android:name="com.fluffy.app.ui.account.OtpUpdatePasswordFragment"
+        android:label="Otp Update Password"
+        tools:layout="@layout/fragment_otp_update_password">
+        <!-- Action điều hướng đến UpdatePassword2Fragment -->
+        <action
+            android:id="@+id/action_otpUpdatePasswordFragment_to_updatePassword2Fragment"
+            app:destination="@id/updatePassword2Fragment" />
+    </fragment>
+
+    <!-- Fragment UpdatePassword2Fragment -->
+    <fragment
+        android:id="@+id/updatePassword2Fragment"
+        android:name="com.fluffy.app.ui.account.UpdatePassword2Fragment"
+        android:label="Update Password 2"
+        tools:layout="@layout/fragment_update_password2">
+        <!-- Action điều hướng trở lại UpdatePasswordFragment -->
+        <action
+            android:id="@+id/action_updatePassword2Fragment_to_updatePasswordFragment"
+            app:destination="@id/updatePasswordFragment" />
+    </fragment>
 </navigation>

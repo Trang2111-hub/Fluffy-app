@@ -32,11 +32,10 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        // Sự kiện click nút "Chỉnh sửa thông tin"
         binding.btnEditProfile.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragment_container, new UpdateProfileFragment());
-            transaction.addToBackStack(null); // Cho phép quay lại
+            transaction.replace(R.id.nav_host_fragment, new UpdatePasswordFragment());
+            transaction.addToBackStack(null);
             transaction.commit();
         });
 
