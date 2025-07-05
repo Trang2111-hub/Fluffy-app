@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:background="#FDD6E0"
+    android:gravity="center_vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_logo_fluffy"
+        android:contentDescription="logo" />
+
+    <!-- Search box -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="@drawable/ic_search_bg"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Tìm kiếm"
+            android:padding="10dp"
+            android:textColor="#E5737C"
+            android:textColorHint="#E5737C"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="search" />
+    </LinearLayout>
+
+    <!-- Cart icon -->
+    <ImageView
+        android:id="@+id/imgCart"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_shopping_cart"
+        android:contentDescription="cart" />
+
+    <!-- Menu icon -->
+    <ImageView
+        android:id="@+id/imgMenu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_menu"
+        android:contentDescription="menu"
+        android:layout_marginStart="8dp" />
+
+</LinearLayout>
