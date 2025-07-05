@@ -47,7 +47,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         if (orderId != -1) {
             loadOrderDetails(orderId);
         } else {
-            finish(); // Thoát nếu không có orderId hợp lệ
+            finish();
         }
     }
 

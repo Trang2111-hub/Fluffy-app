@@ -153,20 +153,46 @@ public class OrderDatabase extends SQLiteOpenHelper {
             try {
                 byte[] productImage1 = Utils.convertDrawableToByteArray(context, R.drawable.vefluffy1);
                 byte[] productImage2 = Utils.convertDrawableToByteArray(context, R.drawable.vefluffy3);
+                byte[] productImage3 = Utils.convertDrawableToByteArray(context, R.drawable.vefluffy1); // Tái sử dụng ảnh
 
+                // Thêm nhiều đơn hàng với các trạng thái khác nhau
                 long orderId1 = insertOrder("Chờ xác nhận");
-                long orderId2 = insertOrder("Thành công");
-                long orderId3 = insertOrder("Đã hủy");
-
+                long orderId2 = insertOrder("Chờ xác nhận");
+                long orderId3 = insertOrder("Đang chuẩn bị hàng");
+                long orderId4 = insertOrder("Đang chuẩn bị hàng");
+                long orderId5 = insertOrder("Đang vận chuyển");
+                long orderId6 = insertOrder("Đang vận chuyển");
+                long orderId7 = insertOrder("Thành công");
+                long orderId8 = insertOrder("Thành công");
+                long orderId9 = insertOrder("Đã trả");
+                long orderId10 = insertOrder("Đã hủy");
+                long orderId11 = insertOrder("Đã hủy");
+                // Thêm nhiều sản phẩm
                 long productId1 = insertProduct("Gấu bông Sanrio", 250000, productImage1);
                 long productId2 = insertProduct("Búp bê Barbie", 300000, productImage2);
-
-                // Thêm nhiều sản phẩm cho cùng một order
-                insertOrderItem((int) orderId1, (int) productId1, 1); // Order 1 có 2 sản phẩm
+                long productId3 = insertProduct("Xe đồ chơi", 150000, productImage3);
+                long productId4 = insertProduct("Lego set", 400000, productImage1);
+                // Gán sản phẩm cho các đơn hàng
+                insertOrderItem((int) orderId1, (int) productId1, 1);  // Chờ xác nhận 1
                 insertOrderItem((int) orderId1, (int) productId2, 2);
-                insertOrderItem((int) orderId2, (int) productId2, 2); // Order 2 có 1 sản phẩm
-                insertOrderItem((int) orderId3, (int) productId1, 1); // Order 3 có 1 sản phẩm
+                insertOrderItem((int) orderId2, (int) productId3, 1);  // Chờ xác nhận 2
+                insertOrderItem((int) orderId2, (int) productId4, 1);
 
+                insertOrderItem((int) orderId3, (int) productId2, 2);  // Đang chuẩn bị hàng 1
+                insertOrderItem((int) orderId3, (int) productId3, 1);
+                insertOrderItem((int) orderId4, (int) productId1, 1);  // Đang chuẩn bị hàng 2
+                insertOrderItem((int) orderId5, (int) productId4, 1);  // Đang vận chuyển 1
+                insertOrderItem((int) orderId5, (int) productId2, 2);
+                insertOrderItem((int) orderId6, (int) productId3, 2);  // Đang vận chuyển 2
+
+                insertOrderItem((int) orderId7, (int) productId1, 2);  // Thành công 1
+                insertOrderItem((int) orderId7, (int) productId4, 1);
+                insertOrderItem((int) orderId8, (int) productId2, 1);  // Thành công 2
+
+                insertOrderItem((int) orderId9, (int) productId3, 1);  // Đã trả
+
+                insertOrderItem((int) orderId10, (int) productId1, 1); // Đã hủy 1
+                insertOrderItem((int) orderId11, (int) productId4, 2); // Đã hủy 2
                 Log.d("OrderDatabase", "Sample data created successfully. Orders: " + getNumOfOrders() + ", Products: " + getNumOfProducts());
             } catch (Exception e) {
                 Log.e("OrderDatabase", "Error creating sample data: " + e.getMessage());

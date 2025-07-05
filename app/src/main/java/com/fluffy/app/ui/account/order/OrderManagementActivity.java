@@ -34,7 +34,7 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
         recyclerView = findViewById(R.id.recyclerOrders);
         tabLayout = findViewById(R.id.statusTabLayout);
         db = new OrderDatabase(this);
-        db.createSampleData(this); // Tạo dữ liệu mẫu
+        db.createSampleData(this);
         orders = new Order[0];
         orderAdapter = new OrderAdapter(this, orders, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,8 +61,11 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                 loadOrdersByStatus(status);
             }
         });
+
         tabLayout.addTab(tabLayout.newTab().setText("Tất cả"));
         tabLayout.addTab(tabLayout.newTab().setText("Chờ xác nhận"));
+        tabLayout.addTab(tabLayout.newTab().setText("Đang chuẩn bị hàng"));
+        tabLayout.addTab(tabLayout.newTab().setText("Đang vận chuyển"));
         tabLayout.addTab(tabLayout.newTab().setText("Thành công"));
         tabLayout.addTab(tabLayout.newTab().setText("Đã trả"));
         tabLayout.addTab(tabLayout.newTab().setText("Đã hủy"));
@@ -116,8 +119,7 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
 
     @Override
     public void onCancelOrder(Order order) {
-        db.deleteOrder(order.getId());
-        loadOrders();
+
     }
 
     @Override

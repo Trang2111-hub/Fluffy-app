@@ -24,15 +24,15 @@
             android:id="@+id/tvProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#FF4081"
+            android:textSize="@dimen/text_subtitle"
+            android:textColor="@color/primary"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:id="@+id/tvProductPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#FF4081" />
+            android:textSize="@dimen/text_body"
+            android:textColor="@color/black" />
     </LinearLayout>
 </LinearLayout>

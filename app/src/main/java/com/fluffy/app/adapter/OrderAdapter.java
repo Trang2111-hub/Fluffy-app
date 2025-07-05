@@ -14,7 +14,9 @@ import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.account.order.OrderDetailActivity;
 import java.text.NumberFormat;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
     private Context context;
@@ -47,7 +49,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.orderIdTextView.setText("#" + order.getId() + " (" + order.getStatus() + ")");
 
         if (!order.getProducts().isEmpty()) {
-            Product product = order.getProducts().get(0);
+            Product product = order.getProducts().get(0); // Hiển thị sản phẩm đầu tiên
             holder.productNameTextView.setText(product.getName());
             holder.productQuantityTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
             if (product.getImage() != null) {
@@ -60,9 +62,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.totalItemsTextView.setText("Tổng tiền (" + totalProducts + " sản phẩm)");
         holder.totalPriceTextView.setText(vietnameseFormat.format(totalPrice) + " đ");
 
-        if (totalProducts > 1) {
-            int additionalItems = totalProducts - 1;
-            holder.viewMoreTextView.setText("Xem thêm(" + additionalItems + ")");
+        // Đếm số sản phẩm khác nhau (distinct productName)
+        Set<String> uniqueProducts = new HashSet<>();
+        for (Product product : order.getProducts()) {
+            uniqueProducts.add(product.getName());
+        }
+        int distinctProductCount = uniqueProducts.size();
+
+        // Hiển thị "Xem thêm (n)" chỉ khi có sản phẩm khác nhau chưa hiển thị (trừ 1 sản phẩm đã hiển thị)
+        if (distinctProductCount > 1) {
+            int unseenProducts = distinctProductCount - 1; // Số sản phẩm khác chưa hiển thị
+            holder.viewMoreTextView.setText("Xem thêm (" + unseenProducts + ")");
             holder.viewMoreTextView.setVisibility(View.VISIBLE);
         } else {
             holder.viewMoreTextView.setVisibility(View.GONE);
