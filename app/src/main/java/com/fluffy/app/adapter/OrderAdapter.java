@@ -7,12 +7,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.account.order.OrderDetailActivity;
+
 import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.Locale;
@@ -51,7 +54,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         if (!order.getProducts().isEmpty()) {
             Product product = order.getProducts().get(0);
             holder.productNameTextView.setText(product.getName());
-            String priceToShow = product.getDiscountPrice() != null ? product.getDiscountPrice() : vietnameseFormat.format((int) product.getPrice()) + " đ";
+            String priceToShow = product.getDiscountPrice() != null && !product.getDiscountPrice().isEmpty() ?
+                    product.getDiscountPrice() : vietnameseFormat.format((int) product.getPrice()) + " đ";
             holder.productQuantityTextView.setText(product.getQuantity() + " x " + priceToShow);
             if (product.getImageUrl() != null && !product.getImageUrl().isEmpty()) {
                 Glide.with(context).load(product.getImageUrl()).into(holder.productImageView);
@@ -59,7 +63,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         }
 
         int totalProducts = order.getProducts().stream().mapToInt(Product::getQuantity).sum();
-        double totalPrice = order.getProducts().stream().mapToDouble(p -> (p.getDiscountPrice() != null ? Double.parseDouble(p.getDiscountPrice().replaceAll("[^\\d.]", "")) : p.getPrice()) * p.getQuantity()).sum();
+        double totalPrice = order.getProducts().stream()
+                .mapToDouble(p -> {
+                    String discountPriceStr = p.getDiscountPrice() != null ? p.getDiscountPrice().replaceAll("[^\\d.]", "").trim() : "";
+                    double price = discountPriceStr.isEmpty() ? p.getPrice() : Double.parseDouble(discountPriceStr);
+                    return price * p.getQuantity();
+                })
+                .sum();
         holder.totalItemsTextView.setText("Tổng tiền (" + totalProducts + " sản phẩm)");
         holder.totalPriceTextView.setText(vietnameseFormat.format((int) totalPrice) + " đ");
 

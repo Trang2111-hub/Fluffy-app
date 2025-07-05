@@ -42,10 +42,6 @@ public class Product {
         this.collection = collection;
     }
 
-    // Constructor từ JSON (dùng trong JsonUtils)
-    public Product(String name, String discountPrice, String originalPrice, String imageUrl) {
-        this(0, 0, name, discountPrice, originalPrice, imageUrl, 0.0, null, 0, "", 0.0, null, null, "", "");
-    }
 
     // Getters và Setters
     public int getProductId() { return productId; }

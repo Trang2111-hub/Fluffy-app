@@ -1,7 +1,5 @@
 package com.fluffy.app.ui.account.order;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +40,12 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
 
         setupTabs();
         loadOrders();
+
+        // Xử lý trạng thái từ Intent
+        String status = getIntent().getStringExtra("order_status");
+        if (status != null) {
+            selectTabByStatus(status);
+        }
     }
 
     private void setupTabs() {
@@ -91,26 +95,23 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                     String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl từ SQLite
-                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image")); // Nếu vẫn dùng byte[]
-                    Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
+                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl
 
                     Log.d("OrderManagement", "OrderId: " + orderId + ", Status: " + orderStatus + ", Product: " + productName);
 
                     if (!orderMap.containsKey(orderId)) {
                         orderMap.put(orderId, new Order(orderId, orderStatus, new ArrayList<>()));
                     }
-                    if (productName != null && image != null) {
-                        // Sử dụng constructor đầy đủ với giá trị mặc định cho các trường không có
+                    if (productName != null && imageUrl != null) {
                         orderMap.get(orderId).getProducts().add(new Product(
                                 0, // productId
                                 orderId, // orderId
                                 productName,
                                 "", // discountPrice
                                 "", // originalPrice
-                                imageUrl != null ? imageUrl : "", // imageUrl
+                                imageUrl, // Sử dụng imageUrl
                                 price,
-                                image,
+                                null, // image (Bitmap) không cần thiết nữa
                                 quantity,
                                 "", // categoryInfo
                                 0.0, // rating
@@ -120,7 +121,7 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                                 "" // collection
                         ));
                     } else {
-                        Log.w("OrderManagement", "Skipping product due to null name or image for orderId: " + orderId);
+                        Log.w("OrderManagement", "Skipping product due to null name or imageUrl for orderId: " + orderId);
                     }
                 } while (cursor.moveToNext());
             } else {
@@ -131,8 +132,19 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
             Log.e("OrderManagement", "Cursor is null for status: " + status);
         }
         orders = orderMap.values().toArray(new Order[0]);
-        orderAdapter.updateOrders(orders); // Cập nhật adapter với phương thức mới
+        orderAdapter.updateOrders(orders);
         Log.d("OrderManagement", "Total orders loaded: " + orders.length);
+    }
+
+    private void selectTabByStatus(String status) {
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null && tab.getText().toString().equals(status)) {
+                tab.select();
+                loadOrdersByStatus(status);
+                break;
+            }
+        }
     }
 
     @Override

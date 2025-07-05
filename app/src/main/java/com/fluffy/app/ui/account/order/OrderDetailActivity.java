@@ -2,19 +2,19 @@ package com.fluffy.app.ui.account.order;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import com.fluffy.app.R;
 import com.fluffy.app.data.database.OrderDatabase;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
+import com.bumptech.glide.Glide; // Thêm dependency Glide
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +24,7 @@ import java.util.Map;
 public class OrderDetailActivity extends AppCompatActivity {
 
     private static final String EXTRA_ORDER_ID = "extra_order_id";
+    private static final String TAG = "OrderDetailActivity";
     private NumberFormat vietnameseFormat;
     private OrderDatabase db;
 
@@ -61,25 +62,22 @@ public class OrderDetailActivity extends AppCompatActivity {
                     String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl từ SQLite
-                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image")); // Nếu vẫn dùng byte[]
-                    Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
+                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image"));
 
                     if (!orderMap.containsKey(currentOrderId)) {
                         orderMap.put(currentOrderId, new Order(currentOrderId, status, new ArrayList<>()));
                     }
-                    if (productName != null && image != null) {
+                    if (productName != null && imageUrl != null) {
                         String categoryInfo = generateCategoryInfo(productName);
-                        // Sử dụng constructor đầy đủ với giá trị mặc định cho các trường không có
                         orderMap.get(currentOrderId).getProducts().add(new Product(
                                 0, // productId
                                 currentOrderId, // orderId
                                 productName,
                                 "", // discountPrice
                                 "", // originalPrice
-                                imageUrl != null ? imageUrl : "", // imageUrl
+                                imageUrl,
                                 price,
-                                image,
+                                null, // image (Bitmap)
                                 quantity,
                                 categoryInfo,
                                 0.0, // rating
@@ -109,29 +107,36 @@ public class OrderDetailActivity extends AppCompatActivity {
             TextView paymentShippingTextView = findViewById(R.id.payment_shipping);
             TextView paymentDiscountTextView = findViewById(R.id.payment_discount);
             TextView paymentTotalTextView = findViewById(R.id.payment_total);
-            Button cancelOrderButton = findViewById(R.id.btnCancelOrder);
-            Button rateButton = findViewById(R.id.btnRate);
-            Button buyAgainButton = findViewById(R.id.btnReorder);
-            Button returnOrderButton = findViewById(R.id.btnReturnOrder);
+            AppCompatButton cancelOrderButton = findViewById(R.id.btnCancelOrder);
+            AppCompatButton rateButton = findViewById(R.id.btnRate);
+            AppCompatButton buyAgainButton = findViewById(R.id.btnReorder);
+            AppCompatButton returnOrderButton = findViewById(R.id.btnReturnOrder);
 
-            orderIdTextView.setText("Đơn hàng #" + order.getId() + " (" + order.getStatus() + ")");
+            Log.d(TAG, "orderIdTextView: " + (orderIdTextView != null));
+            Log.d(TAG, "cancelOrderButton: " + (cancelOrderButton != null));
 
-            productsContainer.removeAllViews();
-            for (Product product : order.getProducts()) {
-                View productView = getLayoutInflater().inflate(R.layout.item_product_detail, productsContainer, false);
-                TextView productNameTextView = productView.findViewById(R.id.tvProductName);
-                TextView productCategoryTextView = productView.findViewById(R.id.tvProductCategory);
-                TextView productPriceTextView = productView.findViewById(R.id.tvProductPrice);
-                ImageView productImageView = productView.findViewById(R.id.imgProduct);
+            if (orderIdTextView != null) {
+                orderIdTextView.setText("Đơn hàng #" + order.getId() + " (" + order.getStatus() + ")");
+            }
 
-                productNameTextView.setText(product.getName());
-                productCategoryTextView.setText(product.getCategoryInfo());
-                productPriceTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
-                if (product.getImage() != null) {
-                    productImageView.setImageBitmap(product.getImage());
+            if (productsContainer != null) {
+                productsContainer.removeAllViews();
+                for (Product product : order.getProducts()) {
+                    View productView = getLayoutInflater().inflate(R.layout.item_product_detail, productsContainer, false);
+                    TextView productNameTextView = productView.findViewById(R.id.tvProductName);
+                    TextView productCategoryTextView = productView.findViewById(R.id.tvProductCategory);
+                    TextView productPriceTextView = productView.findViewById(R.id.tvProductPrice);
+                    ImageView productImageView = productView.findViewById(R.id.imgProduct);
+
+                    productNameTextView.setText(product.getName());
+                    productCategoryTextView.setText(product.getCategoryInfo());
+                    productPriceTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
+                    if (product.getImageUrl() != null) {
+                        Glide.with(this).load(product.getImageUrl()).into(productImageView); // Sử dụng Glide
+                    }
+
+                    productsContainer.addView(productView);
                 }
-
-                productsContainer.addView(productView);
             }
 
             int totalProducts = order.getProducts().stream().mapToInt(Product::getQuantity).sum();
@@ -140,36 +145,38 @@ public class OrderDetailActivity extends AppCompatActivity {
             double discount = 0.0;
             double totalPrice = totalItemPrice + shippingFee - discount;
 
-            shippingInfoTextView.setText("Thông tin giao hàng");
-            shippingAddressTextView.setText("Địa chỉ nhận hàng: 585 Trường Chinh phường Tân Thới Nhất Quận 12");
-            shippingPhoneTextView.setText("Số điện thoại: 0813849476");
-            shippingEmailTextView.setText("Email: khoatrinhtiendat@gmail.com");
-            shippingServiceTextView.setText("Dịch vụ: không");
-            paymentInfoTextView.setText("Thông tin thanh toán");
-            paymentMethodTextView.setText("Hình thức thanh toán: Ví điện tử");
-            paymentAmountTextView.setText("Tiền hàng: " + vietnameseFormat.format(totalItemPrice) + " đ");
-            paymentShippingTextView.setText("Phí vận chuyển: " + vietnameseFormat.format(shippingFee) + " đ");
-            paymentDiscountTextView.setText("Giảm giá: " + vietnameseFormat.format(discount) + " đ");
-            paymentTotalTextView.setText("Tổng cộng: " + vietnameseFormat.format(totalPrice) + " đ");
+            if (shippingInfoTextView != null) shippingInfoTextView.setText("Thông tin giao hàng");
+            if (shippingAddressTextView != null) shippingAddressTextView.setText("Địa chỉ nhận hàng: 585 Trường Chinh phường Tân Thới Nhất Quận 12");
+            if (shippingPhoneTextView != null) shippingPhoneTextView.setText("Số điện thoại: 0813849476");
+            if (shippingEmailTextView != null) shippingEmailTextView.setText("Email: khoatrinhtiendat@gmail.com");
+            if (shippingServiceTextView != null) shippingServiceTextView.setText("Dịch vụ: không");
+            if (paymentInfoTextView != null) paymentInfoTextView.setText("Thông tin thanh toán");
+            if (paymentMethodTextView != null) paymentMethodTextView.setText("Hình thức thanh toán: Ví điện tử");
+            if (paymentAmountTextView != null) paymentAmountTextView.setText("Tiền hàng: " + vietnameseFormat.format(totalItemPrice) + " đ");
+            if (paymentShippingTextView != null) paymentShippingTextView.setText("Phí vận chuyển: " + vietnameseFormat.format(shippingFee) + " đ");
+            if (paymentDiscountTextView != null) paymentDiscountTextView.setText("Giảm giá: " + vietnameseFormat.format(discount) + " đ");
+            if (paymentTotalTextView != null) paymentTotalTextView.setText("Tổng cộng: " + vietnameseFormat.format(totalPrice) + " đ");
 
-            cancelOrderButton.setVisibility(View.GONE);
-            rateButton.setVisibility(View.GONE);
-            buyAgainButton.setVisibility(View.GONE);
-            returnOrderButton.setVisibility(View.GONE);
+            if (cancelOrderButton != null) cancelOrderButton.setVisibility(View.GONE);
+            if (rateButton != null) rateButton.setVisibility(View.GONE);
+            if (buyAgainButton != null) buyAgainButton.setVisibility(View.GONE);
+            if (returnOrderButton != null) returnOrderButton.setVisibility(View.GONE);
 
-            switch (order.getStatus()) {
-                case "Chờ xác nhận":
-                    cancelOrderButton.setVisibility(View.VISIBLE);
-                    break;
-                case "Thành công":
-                    rateButton.setVisibility(View.VISIBLE);
-                    buyAgainButton.setVisibility(View.VISIBLE);
-                    returnOrderButton.setVisibility(View.VISIBLE);
-                    break;
-                case "Đã trả":
-                case "Đã hủy":
-                    buyAgainButton.setVisibility(View.VISIBLE);
-                    break;
+            if (order != null && cancelOrderButton != null && rateButton != null && buyAgainButton != null && returnOrderButton != null) {
+                switch (order.getStatus()) {
+                    case "Chờ xác nhận":
+                        cancelOrderButton.setVisibility(View.VISIBLE);
+                        break;
+                    case "Thành công":
+                        rateButton.setVisibility(View.VISIBLE);
+                        buyAgainButton.setVisibility(View.VISIBLE);
+                        returnOrderButton.setVisibility(View.VISIBLE);
+                        break;
+                    case "Đã trả":
+                    case "Đã hủy":
+                        buyAgainButton.setVisibility(View.VISIBLE);
+                        break;
+                }
             }
         } else {
             finish(); // Thoát nếu không tìm thấy order
