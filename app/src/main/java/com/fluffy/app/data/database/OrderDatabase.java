@@ -36,7 +36,9 @@ public class OrderDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createOrdersTable = "CREATE TABLE " + TABLE_ORDERS + " (" +
                 COL_ORDER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_ORDER_STATUS + " TEXT)";
+                COL_ORDER_STATUS + " TEXT, " +
+                "shippingFee REAL DEFAULT 0, " +
+                "discount REAL DEFAULT 0)";
         db.execSQL(createOrdersTable);
 
         String createProductsTable = "CREATE TABLE " + TABLE_PRODUCTS + " (" +
@@ -64,10 +66,12 @@ public class OrderDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertOrder(String status) {
+    public long insertOrder(String status, double shippingFee, double discount) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_ORDER_STATUS, status);
+        values.put("shippingFee", shippingFee);
+        values.put("discount", discount);
         long id = db.insert(TABLE_ORDERS, null, values);
         Log.d("OrderDatabase", "Inserted order with ID: " + id + ", Status: " + status);
         return id;
@@ -125,7 +129,7 @@ public class OrderDatabase extends SQLiteOpenHelper {
     // Thêm phương thức mới để lấy order theo orderId
     public Cursor getOrderByIdWithDetails(int orderId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT o." + COL_ORDER_ID + ", o." + COL_ORDER_STATUS + ", p." + COL_PRODUCT_NAME + ", p." + COL_PRODUCT_PRICE + ", oi." + COL_ORDERITEM_QUANTITY + ", p." + COL_PRODUCT_IMAGE + " FROM " + TABLE_ORDERS + " o " +
+        Cursor cursor = db.rawQuery("SELECT o." + COL_ORDER_ID + ", o." + COL_ORDER_STATUS + ", o.shippingFee, o.discount, p." + COL_PRODUCT_NAME + ", p." + COL_PRODUCT_PRICE + ", oi." + COL_ORDERITEM_QUANTITY + ", p." + COL_PRODUCT_IMAGE + " FROM " + TABLE_ORDERS + " o " +
                 "LEFT JOIN " + TABLE_ORDER_ITEMS + " oi ON o." + COL_ORDER_ID + " = oi." + COL_ORDERITEM_ORDER_ID +
                 " LEFT JOIN " + TABLE_PRODUCTS + " p ON oi." + COL_ORDERITEM_PRODUCT_ID + " = p." + COL_PRODUCT_ID +
                 " WHERE o." + COL_ORDER_ID + " = ?", new String[]{String.valueOf(orderId)});
@@ -156,22 +160,22 @@ public class OrderDatabase extends SQLiteOpenHelper {
                 byte[] productImage3 = Utils.convertDrawableToByteArray(context, R.drawable.vefluffy1); // Tái sử dụng ảnh
 
                 // Thêm nhiều đơn hàng với các trạng thái khác nhau
-                long orderId1 = insertOrder("Chờ xác nhận");
-                long orderId2 = insertOrder("Chờ xác nhận");
-                long orderId3 = insertOrder("Đang chuẩn bị hàng");
-                long orderId4 = insertOrder("Đang chuẩn bị hàng");
-                long orderId5 = insertOrder("Đang vận chuyển");
-                long orderId6 = insertOrder("Đang vận chuyển");
-                long orderId7 = insertOrder("Thành công");
-                long orderId8 = insertOrder("Thành công");
-                long orderId9 = insertOrder("Đã trả");
-                long orderId10 = insertOrder("Đã hủy");
-                long orderId11 = insertOrder("Đã hủy");
+                long orderId1 = insertOrder("Chờ xác nhận", 0.0, 0.0);
+                long orderId2 = insertOrder("Chờ xác nhận", 0.0, 0.0);
+                long orderId3 = insertOrder("Đang chuẩn bị hàng", 0.0, 0.0);
+                long orderId4 = insertOrder("Đang chuẩn bị hàng", 0.0, 0.0);
+                long orderId5 = insertOrder("Đang vận chuyển", 0.0, 0.0);
+                long orderId6 = insertOrder("Đang vận chuyển", 0.0, 0.0);
+                long orderId7 = insertOrder("Thành công", 0.0, 0.0);
+                long orderId8 = insertOrder("Thành công", 0.0, 0.0);
+                long orderId9 = insertOrder("Đã trả", 0.0, 0.0);
+                long orderId10 = insertOrder("Đã hủy", 0.0, 0.0);
+                long orderId11 = insertOrder("Đã hủy", 0.0, 0.0);
                 // Thêm nhiều sản phẩm
                 long productId1 = insertProduct("Gấu bông Sanrio", 250000, productImage1);
-                long productId2 = insertProduct("Búp bê Barbie", 300000, productImage2);
-                long productId3 = insertProduct("Xe đồ chơi", 150000, productImage3);
-                long productId4 = insertProduct("Lego set", 400000, productImage1);
+                long productId2 = insertProduct("Cappy barra nước mũi", 300000, productImage2);
+                long productId3 = insertProduct("Gấu bông heo con", 150000, productImage3);
+                long productId4 = insertProduct("Cappy barra matcha", 400000, productImage1);
                 // Gán sản phẩm cho các đơn hàng
                 insertOrderItem((int) orderId1, (int) productId1, 1);  // Chờ xác nhận 1
                 insertOrderItem((int) orderId1, (int) productId2, 2);

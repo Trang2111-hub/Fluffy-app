@@ -143,8 +143,7 @@
         android:layout_height="wrap_content"
         android:text="Đánh giá"
         android:visibility="gone"
-        style="@style/ButtonPrimaryStyle"
-        android:layout_marginStart="10dp"/>
+        style="@style/ButtonPrimaryStyle" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnReorder"
