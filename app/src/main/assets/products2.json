@@ -1,0 +1,2165 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "Đệm gấu bông capybara",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/56_84a4ecd0ce774f67838cda58359a1fbe_dfb190362cab4f489be56d4b4a91b1cf_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Hồng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Đệm gấu bông capybara là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 2,
+        "product_name": "Đệm lót ngồi hình bông hoa",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/ban_sao_cua_giveaway_867e0d095c1241069d0f770ce468e34a_e5593505d22f43929edd12d30c4a0b7e_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Đỏ",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.5,
+        "description": "Đệm lót ngồi hình bông hoa là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 3,
+        "product_name": "Gấu bông gối ôm chó dài",
+        "pricing": {
+            "original_price": "150,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "120,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/34_6690d687b9384921b6152e5e01f9710a_a88a49fe4e4e491aa095698384e715c1_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông gối ôm chó dài là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 4,
+        "product_name": "Gấu bông gối ôm quả bơ",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/33_feb77c4b072c404cab8fe8043dc270b2_b5dea670b6a04ad6951dadd109df83d9_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông gối ôm quả bơ là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 5,
+        "product_name": "Gấu bông ôm Lotso",
+        "pricing": {
+            "original_price": "225,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "180,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/115_f022bf98a7b848f88eb432faa961c2a8_b367368d20524ebb8489ad0dc4b0f3bd_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông ôm Lotso là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 6,
+        "product_name": "Gối cổ chữ U chó Shiba",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/27_7f9226ac2df24b1387a6d2c7273279ad_6dc053cfa9cc427988c47fb529731045_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gối cổ chữ U chó Shiba là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 7,
+        "product_name": "Gối cổ chữ u gấu bắc cực",
+        "pricing": {
+            "original_price": "65,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "52,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/4_32f29f6023d94728b8ccf209fa81bcfc_7b1b7ed5117e467f849b0a6fda65fdfd_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gối cổ chữ u gấu bắc cực là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 8,
+        "product_name": "Gối cổ chữ u heo hồng",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/9_14649aab2988403dab767c787548201a_f5257f011a22440a877bf3f9eb4dd591_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gối cổ chữ u heo hồng là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 9,
+        "product_name": "Gối cổ chữ u hổ vằn hồng",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/31_7ab0dd82fc3c4d5181ec8cb1f4496a27_2d57c75ff9d94a918fbb0661cb634f49_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gối cổ chữ u hổ vằn hồng là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 10,
+        "product_name": "Gối cổ chữ u hổ vằn vàng",
+        "pricing": {
+            "original_price": "90,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "72,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/6_c7d8f4660f8445468b01db9d36fd61d7_1133fcabb6a545388e5314a85ba0d64f_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gối cổ chữ u hổ vằn vàng là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 11,
+        "product_name": "Gối cổ chữ u hồng trái táo",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/10_af56998b698c48479f69457b4573e697_31b3a29a38c0438ebf04313f4b9ef23f_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gối cổ chữ u hồng trái táo là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 12,
+        "product_name": "Gối cổ chữ u Tororo ú",
+        "pricing": {
+            "original_price": "90,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "72,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/5_6ec6b193f2bc44aaa22aafd9f37e135c_0b05624a93ee423fbb527f04927008c2_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Hồng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gối cổ chữ u Tororo ú là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 13,
+        "product_name": "Gối ôm khúc xương",
+        "specifications": {
+            "colors": [
+                "Trắng",
+                "Đỏ"
+            ]
+        },
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_9e06058aa9034eb4947568f652089edf_4156dfc32a0a4f46934590fda7197b85_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gối ôm khúc xương là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 14,
+        "product_name": "Gối ôm thỏ hồng",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/1_0744b7d03e5c4bb9a3b08e1d31bfa836_83bd78de8ceb4b8f98acea7bd6a32e1a_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gối ôm thỏ hồng là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\n\nKích thước: 40 - 65 - 85 cm\nThiết kế đặc biệt: Với hình dáng ngộ nghĩnh và đáng yêu, thú bông ôm sẽ trở thành người bạn đồng hành yêu thích của bé hoặc của bất kỳ ai yêu thích sự dễ thương. Bé có thể ôm ấp và vui chơi cùng sản phẩm mọi lúc mọi nơi.\nChất liệu an toàn: Sản phẩm được làm từ chất liệu nhung mềm mịn cao cấp, co giãn tốt, không gây kích ứng da và an toàn cho sức khỏe.",
+        "collection": "Gối bông"
+    },
+    {
+        "product_id": 15,
+        "product_name": "Gấu bông bạch tuộc",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/77_6d9cd924a37c405ab9bc788b9a366b2a_ff5d8c612b524250b4fc891db3b0bbc8_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông bạch tuộc là món quà dễ thương và ý nghĩa dành cho trẻ em và những người yêu thích sự dễ thương. Sản phẩm không chỉ mang đến sự ấm áp, mềm mại mà còn giúp bé hoặc người nhận phát triển khả năng sáng tạo và trí tưởng tượng.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nThiết kế đáng yêu, dễ thương với hình dạng bạch tuộc độc đáo.\nChất liệu an toàn, mềm mại, không gây kích ứng da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 16,
+        "product_name": "Gấu bông bò sữa đáng yêu",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/80_ac23e8c25a73483aa4fb84da4d803e2e_302236ba742742c19f904b5c3216d97a_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông bò sữa đáng yêu là món quà dễ thương dành cho các bé và những ai yêu thích sự đáng yêu của bò sữa. Được làm từ chất liệu mềm mại và an toàn, gấu bông mang đến cảm giác dễ chịu khi ôm.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nThiết kế bò sữa đáng yêu với màu sắc hài hòa.\nChất liệu mềm mịn, không gây kích ứng da, thích hợp làm quà tặng.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 17,
+        "product_name": "Gấu bông bò sữa đeo nơ",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/82_4d4ab52ce6cf4e1a81253ce08bc2383f_09301391ed1f436486c573d7cf518a8d_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông bò sữa đeo nơ là món quà dễ thương dành cho trẻ em và những người yêu thích thú bông. Thiết kế đáng yêu với nơ xinh xắn giúp sản phẩm nổi bật.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nHình ảnh bò sữa đáng yêu kết hợp với nơ tạo điểm nhấn.\nChất liệu cao cấp, mềm mại, an toàn cho trẻ em.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 18,
+        "product_name": "Gấu bông bò sữa đeo túi",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/79_b823ac89af5c4f639d9846130e4e357d_e0a81f21f5e54cb4a67820e41ea8cc1e_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông bò sữa đeo túi là sự kết hợp hoàn hảo giữa thiết kế dễ thương và công năng tiện lợi. Túi nhỏ phía trước có thể dùng để đựng những món đồ nhỏ xinh.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nCó túi nhỏ tiện dụng để đựng đồ vật nhỏ.\nChất liệu nhung mềm mịn, an toàn khi tiếp xúc.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 19,
+        "product_name": "Gấu bông bò sữa mặc yếm",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/78_79add14dce03439e8e2645c848301a42_9230a33325ce41cf9244684e4a4b1450_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông bò sữa mặc yếm với thiết kế đáng yêu giúp mang đến sự khác biệt so với các mẫu bò sữa khác. Đặc biệt phù hợp để làm quà tặng.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nThiết kế bò sữa mặc yếm, tạo điểm nhấn đáng yêu.\nChất liệu an toàn, mềm mịn, thích hợp ôm khi ngủ.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 20,
+        "product_name": "Gấu bông Cappybara",
+        "pricing": {
+            "original_price": "150,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "120,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/1_a41846ccd71048e9821786ecd014c5c5_5345003f832342a79dda25df1bebff56_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Cappybara mang đến vẻ đáng yêu với thiết kế mô phỏng loài gặm nhấm lớn nhất thế giới. Được làm từ chất liệu nhung cao cấp, sản phẩm rất mềm mại và êm ái.\n\nĐặc điểm:\nKích thước: 40 - 65 - 85 cm\nThiết kế Capybara đáng yêu, phù hợp làm quà tặng.\nChất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 21,
+        "product_name": "Gấu bông capybara chảy nước mũi",
+        "pricing": {
+            "original_price": "210,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "168,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/55_2cc6557970f746f290cdbfa4e81b7b97_09bb8b7ee14b47219356b1cc331e4e6a_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông capybara chảy nước mũi với thiết kế độc đáo, đáng yêu sẽ là món quà thú vị dành cho những người yêu thích thú bông. Được làm từ chất liệu cao cấp, mềm mịn và an toàn cho người sử dụng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế capybara với biểu cảm dễ thương và hài hước.\n- Chất liệu nhung mềm mịn, không gây kích ứng da.\n- Phù hợp làm quà tặng hoặc trang trí phòng ngủ.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 22,
+        "product_name": "Gấu bông chó bông",
+        "pricing": {
+            "original_price": "100,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "80,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/21_ef65ce37ee244ebd876bddeb5d594afc_735fbad3512043eb928302c9ec2f672a_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông chó bông là món quà dễ thương dành cho trẻ em và những người yêu thích thú bông. Với thiết kế đáng yêu và chất liệu mềm mại, sản phẩm mang lại cảm giác dễ chịu khi ôm.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình dáng chó bông đáng yêu, phù hợp với mọi lứa tuổi.\n- Chất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 23,
+        "product_name": "Gấu bông chó nô tài cosplay gà",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/57_6fc5b6c7c474402ab2dda4e80d2c6e1d_f97a0a433d1d449b88e16bfe642d67db_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông chó nô tài cosplay gà với thiết kế độc đáo kết hợp giữa hình ảnh chú chó đáng yêu và bộ cosplay hình chú gà. Sản phẩm phù hợp để làm quà tặng cho trẻ em hoặc những ai yêu thích thú nhồi bông độc đáo.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế cosplay sáng tạo, mang lại cảm giác mới lạ.\n- Chất liệu mềm mịn, an toàn khi sử dụng.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 24,
+        "product_name": "Gấu bông chuột Hamster",
+        "pricing": {
+            "original_price": "90,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "72,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/83_a6b77e5b0c9f4301bf34b1d68b44554e_aef33fd13a7a476aa900031f61827e0f_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông chuột Hamster là món quà dễ thương và đáng yêu dành cho trẻ nhỏ hoặc những người yêu thích hamster. Sản phẩm được làm từ chất liệu mềm mại và an toàn khi sử dụng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình dáng chuột hamster dễ thương, phù hợp để ôm khi ngủ.\n- Chất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 25,
+        "product_name": "Gấu bông gấu trúc",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/54_f462022032a34affadac7473ba97b809_a9b53dcd6c954d8eac4c134c0117c392_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông gấu trúc là sự lựa chọn tuyệt vời dành cho những ai yêu thích gấu trúc đáng yêu. Sản phẩm có thiết kế ngộ nghĩnh, màu sắc hài hòa, phù hợp làm quà tặng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình ảnh gấu trúc ngộ nghĩnh, đáng yêu.\n- Chất liệu mềm mịn, không gây kích ứng da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 26,
+        "product_name": "Gấu bông gối lót heo có mũ",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/36_67a9060271e94d1b88c82c90d900e3c6_796235f42555429abcf8d5b379da660e_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông gối lót heo có mũ là sự kết hợp giữa gấu bông và gối lót, giúp người dùng có trải nghiệm êm ái, thoải mái khi sử dụng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gối lót hình chú heo đáng yêu.\n- Chất liệu mềm mịn, thích hợp sử dụng khi làm việc hoặc nghỉ ngơi.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 27,
+        "product_name": "Gấu bông gối lót khủng long",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/38_ffa6228247fd481893318ae4ecd6bb8c_2bd8b5b13bdc4016b6a8c91d40c001a0_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông gối lót khủng long là sản phẩm kết hợp giữa gấu bông mềm mại và gối lót tiện dụng. Thiết kế hình khủng long đáng yêu giúp sản phẩm trở nên độc đáo và thu hút.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình ảnh khủng long đáng yêu, phù hợp với trẻ em và người lớn.\n- Chất liệu mềm mại, tạo cảm giác dễ chịu khi sử dụng.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 28,
+        "product_name": "Gấu bông gối ôm hình mèo",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/35_1a1fc502fa80464d9ecd3fed938447ee_150989c310a64401ac320291bf7b7305_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông gối ôm hình mèo là sản phẩm dành cho những ai yêu thích mèo và thú nhồi bông. Với thiết kế đáng yêu, sản phẩm mang lại cảm giác thoải mái khi sử dụng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình dáng mèo đáng yêu, phù hợp để ôm khi ngủ.\n- Chất liệu nhung mềm mịn, an toàn với làn da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 29,
+        "product_name": "Gấu bông heo hồng",
+        "pricing": {
+            "original_price": "150,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "120,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/22_e63a21f5589a4a779dec9712ef1f0952_598eef316e70438fb6ed86a46168ac42_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông heo hồng với thiết kế đáng yêu và chất liệu mềm mại là sự lựa chọn tuyệt vời để làm quà tặng hoặc trang trí.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế heo hồng dễ thương, phù hợp với mọi lứa tuổi.\n- Chất liệu an toàn, không gây kích ứng da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 30,
+        "product_name": "Gấu bông heo ôm bình sữa",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/24_a61cfc278a7f46879edcb6cca7dcbd6b_272a416fbbe2489aa0177f5e7aef65d4_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông heo ôm bình sữa là món quà đáng yêu dành cho trẻ em và những ai yêu thích thú nhồi bông. Với thiết kế đặc biệt, sản phẩm giúp tạo điểm nhấn trong không gian sống.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình ảnh chú heo ôm bình sữa đáng yêu.\n- Chất liệu nhung cao cấp, mềm mịn.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 31,
+        "product_name": "Gấu bông hổ ôm bình sữa",
+        "pricing": {
+            "original_price": "150,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "120,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/25_7283fd9627d74411a64123e74554195b_6e7dc65843394f94b34be882ca8768a1_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông hổ ôm bình sữa với thiết kế dễ thương và biểu cảm đáng yêu giúp sản phẩm trở thành món quà lý tưởng cho trẻ nhỏ.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế hổ đáng yêu, phù hợp với mọi lứa tuổi.\n- Chất liệu mềm mại, không gây kích ứng da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 32,
+        "product_name": "Gấu bông Lena cầu vồng",
+        "pricing": {
+            "original_price": "100,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "80,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/giveaway_6a7784bb018e4b309a892cf768eb1ebc_f89a22cbf7d4450bbb66c4c8676ec67c_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Xanh dương"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Lena cầu vồng là một phiên bản đặc biệt với màu sắc rực rỡ, tạo điểm nhấn thú vị cho bộ sưu tập thú bông.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế cầu vồng rực rỡ, bắt mắt.\n- Chất liệu mềm mại, an toàn với làn da.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 33,
+        "product_name": "Gấu bông Lena cosplay Lotso",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/44_6b5e7c49971942e2868d1da9973c344b_6cc3936fb08d458e81258632dd3a8f50_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Lena cosplay Lotso là một phiên bản đáng yêu với thiết kế mô phỏng nhân vật gấu Lotso nổi tiếng. Chất liệu mềm mại giúp sản phẩm trở nên thân thiện với người dùng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế cosplay Lotso độc đáo, phù hợp cho fan của Toy Story.\n- Chất liệu mềm mịn, an toàn cho trẻ nhỏ và người lớn.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 34,
+        "product_name": "Gấu bông Lena cosplay gấu hồng",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/47_6213239cef504f079907bac0debb41da_3630167efd07424bb42193d3fb7af09e_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Lena cosplay gấu hồng mang đến vẻ ngoài dễ thương với màu sắc nổi bật. Đây là sản phẩm phù hợp để làm quà tặng hoặc trang trí phòng ngủ.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế cosplay gấu hồng đặc biệt.\n- Chất liệu nhung cao cấp, bền đẹp theo thời gian.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 35,
+        "product_name": "[Mèo bông] Mèo xám giận dỗi",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/images_d48545bdffee40e7ad68b9e1aa6d7ef3_large.jpg",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Mèo bông xám giận dỗi với biểu cảm độc đáo, đáng yêu sẽ là món quà thú vị cho những người yêu thích mèo. Thiết kế mềm mại giúp tạo cảm giác thoải mái khi ôm.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Biểu cảm giận dỗi độc đáo, phù hợp với người yêu thích mèo.\n- Chất liệu an toàn, mềm mịn.",
+        "collection": "Thú bông"
+    },
+    {
+        "product_id": 36,
+        "product_name": "Gấu bông Doraemi",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/72_34d5bf20979545d6a0f1e2c4c9231a24_b1c4374c48794a8d9ee0b807bb896fa8_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông Doraemi với thiết kế mô phỏng nhân vật Doraemi đáng yêu từ bộ truyện Doraemon. Đây là món quà tuyệt vời cho những người yêu thích nhân vật này.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Hình dáng Doraemi dễ thương, phù hợp để trang trí hoặc làm quà tặng.\n- Chất liệu mềm mại, bền đẹp.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 37,
+        "product_name": "Gấu bông Doraemon",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/65_dfb6534c4416409387c4682abd7e3e71_923ce09d5cfa4bcda051f2014bd61eda_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Doraemon là sản phẩm không thể thiếu dành cho fan hâm mộ nhân vật hoạt hình Doraemon. Được làm từ chất liệu cao cấp, mềm mại và an toàn khi sử dụng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Doraemon chính xác và đáng yêu.\n- Chất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 38,
+        "product_name": "Gấu bông Doraemon chu mỏ",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/68_621f96c014dc46cfac84c0bac530006c_60d8ff469d984b469022b967f1330241_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Doraemon chu mỏ mang đến hình ảnh đáng yêu, ngộ nghĩnh của Doraemon với biểu cảm độc đáo. Sản phẩm phù hợp để làm quà tặng hoặc trang trí phòng ngủ.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Biểu cảm chu mỏ đặc trưng, dễ thương.\n- Chất liệu mềm mại, an toàn với trẻ em.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 39,
+        "product_name": "Gấu bông Doraemon đội mũ",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/69_efbef5aca6304e938f90af5706e8a0f5_43cad483932d4e6e980e84d0df644cba_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Doraemon đội mũ là một phiên bản đặc biệt với thiết kế tinh nghịch, đáng yêu. Sản phẩm phù hợp để trang trí và làm quà tặng cho người thân.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Doraemon đội mũ ngộ nghĩnh.\n- Chất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 40,
+        "product_name": "Gấu bông Doraemon ngộ nghĩnh",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/70_66a033cb509b4aed8afbd09ac9c0dcb9_3db3d742761442ffb5c1da499df0a0d9_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông Doraemon ngộ nghĩnh mang đến hình ảnh đáng yêu, tạo niềm vui cho những ai yêu thích Doraemon. Đây là món quà tuyệt vời dành cho fan của bộ truyện.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế ngộ nghĩnh, đáng yêu.\n- Chất liệu nhung mềm mịn, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 41,
+        "product_name": "Gấu bông Doraemon phi hành gia",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/71_25fbbb08d5cf498b9612ca379c0f3d47_bd7c994835aa4ba285da22774fcd035e_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông Doraemon phi hành gia với thiết kế độc đáo, phù hợp với những ai yêu thích chủ đề vũ trụ và Doraemon.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Doraemon mặc đồ phi hành gia đặc biệt.\n- Chất liệu mềm mại, an toàn với làn da.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 42,
+        "product_name": "Gấu bông Doraemon xanh lá",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/67_d16f2fe6c92c410db9e07ba2297805c1_9f874bf20e4e4050bf40a2d07ac237c2_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh lá",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Doraemon xanh lá mang đến hình ảnh mới lạ của Doraemon với màu sắc tươi mát, phù hợp làm quà tặng hoặc trang trí.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Phiên bản Doraemon màu xanh lá độc đáo.\n- Chất liệu cao cấp, bền đẹp.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 43,
+        "product_name": "Gấu bông Kuromi",
+        "pricing": {
+            "original_price": "100,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "80,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/17_54b4b1ad2d534df59207ed8d6b9822e2_6a0aaf56de024ccfb95b326c92475614_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Tím"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Kuromi với thiết kế dễ thương, phù hợp với những ai yêu thích nhân vật đáng yêu này từ Sanrio.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi cá tính, dễ thương.\n- Chất liệu nhung mềm mịn, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 44,
+        "product_name": "Gấu bông Kuromi đuôi cá",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/109_5c4b96e6473f4c5a93b946000917176f_26bb806f3de844e4b108b2a839a1e9d5_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Tím"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Kuromi đuôi cá với thiết kế độc đáo, kết hợp giữa phong cách dễ thương và cá tính mạnh mẽ. Đây là món quà lý tưởng dành cho fan của Kuromi.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi kết hợp đuôi cá độc đáo.\n- Chất liệu mềm mại, bền đẹp theo thời gian.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 45,
+        "product_name": "Gấu bông Kuromi hắc ám",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/104_7bf676e398d949a29a701dc85eb24d80_55c7c6f4659640fd90aa7c6f6ebf2412_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Kuromi hắc ám mang đến vẻ ngoài cá tính với gam màu tối mạnh mẽ, phù hợp cho những ai yêu thích phong cách bí ẩn.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi phiên bản hắc ám cool ngầu.\n- Chất liệu cao cấp, mềm mại, an toàn.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 46,
+        "product_name": "Gấu bông Kuromi hắc hóa",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/105_cd9329d926c4465eaf3366a96c25013a_3b9355b494234ea39771a7942dfc4eba_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Hồng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông Kuromi hắc hóa là phiên bản đặc biệt với phong cách huyền bí, thích hợp với những ai yêu thích Kuromi và phong cách gothic.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi hắc hóa cực chất.\n- Chất liệu cao cấp, mềm mại, bền đẹp.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 47,
+        "product_name": "Gấu bông Kuromi Haul",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/108_12647920ceb2409aa08af3a112da2348_46114594f2fe4574a06b5548665c246c_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông Kuromi Haul mang phong cách đáng yêu nhưng vẫn giữ được cá tính mạnh mẽ, phù hợp cho cả trẻ nhỏ và người lớn.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi dễ thương và cá tính.\n- Chất liệu mềm mịn, không gây kích ứng da.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 48,
+        "product_name": "Gấu bông Kuromi ôm dâu",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/95_b7cbbba52d144106ba84ad5ab4d2a5ea_81e0513534c949f2ad467c89aac41d8c_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Kuromi ôm dâu là phiên bản đáng yêu với thiết kế Kuromi kết hợp cùng trái dâu ngộ nghĩnh, phù hợp làm quà tặng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi ôm dâu dễ thương.\n- Chất liệu nhung cao cấp, an toàn.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 49,
+        "product_name": "Gấu bông Kuromi ôm tim",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/107_ffce6d34753c4993add39cade2a3ba48_de7bca20000245d295efa6e6f5f8b067_large.png",
+        "color": {
+            "selected_colors": [
+                "Tím",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Kuromi ôm tim với biểu cảm đáng yêu và màu sắc nổi bật là món quà lý tưởng cho những người yêu thích Kuromi.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi ôm tim dễ thương.\n- Chất liệu mềm mại, bền đẹp theo thời gian.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 50,
+        "product_name": "Gấu bông Kuromi Xám",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/111_b2b45934d2a54156b26ca4129ad051d6_52f90ebcd5ae437988a008a87f1801c4_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông Kuromi Xám với màu sắc trung tính, mang lại sự độc đáo và dễ phối hợp trong bộ sưu tập thú bông.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Kuromi màu xám ấn tượng.\n- Chất liệu cao cấp, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 51,
+        "product_name": "Gấu bông Lotso Baby Girl",
+        "pricing": {
+            "original_price": "200,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "160,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/116_b069f6d605ed45de9a53c8ac19664292_82d575b497564242a3127ab250578a08_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Lotso Baby Girl với thiết kế đáng yêu, mềm mại mang đến cảm giác dễ chịu khi ôm. Đây là món quà lý tưởng dành cho những ai yêu thích nhân vật Lotso.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Lotso đáng yêu, phù hợp để ôm khi ngủ.\n- Chất liệu nhung cao cấp, bền đẹp theo thời gian.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 52,
+        "product_name": "Gấu bông mèo hoàng thượng",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/18_7a80d0a791414543aa098fa74a55863c_835ad60b2fb74c3eb33ad12a4892478b_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông mèo hoàng thượng mang đến hình ảnh ngộ nghĩnh của chú mèo với thần thái uy nghi. Phù hợp làm quà tặng hoặc trang trí phòng ngủ.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế mèo hoàng thượng đáng yêu.\n- Chất liệu mềm mại, bền đẹp, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 53,
+        "product_name": "Gấu bông Minion",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/4_3df598414796484c866392312e5801c8_ea359c03e24c434798c0e90092bf051f_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Xanh dương"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông Minion mô phỏng nhân vật hoạt hình nổi tiếng, mang đến sự vui vẻ cho mọi lứa tuổi. Sản phẩm phù hợp để trang trí hoặc làm quà tặng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế Minion dễ thương, ngộ nghĩnh.\n- Chất liệu nhung cao cấp, an toàn khi sử dụng.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 54,
+        "product_name": "Gấu bông Sanrio cosplay Kuromi",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/106_b33cfc60fa0b44ff922c4ab0fe5d36aa_c9a2b1a892ba4835b0bdc1bb461013a6_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Tím"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông Sanrio cosplay Kuromi là một phiên bản đặc biệt với thiết kế ngộ nghĩnh và dễ thương, thích hợp làm quà tặng cho fan của Kuromi.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế cosplay Kuromi độc đáo.\n- Chất liệu nhung mềm mại, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu bông hoạt hình"
+    },
+    {
+        "product_id": 55,
+        "product_name": "Gấu bông teddy bear áo len",
+        "pricing": {
+            "original_price": "150,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "120,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/10_c97eb6b6b43c460d9e3c5a4e8fae8a15_5ea40be5c9f24336862f01540d7956b0_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông teddy bear áo len với thiết kế áo len ấm áp, dễ thương, phù hợp làm quà tặng hoặc trang trí phòng ngủ.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu teddy mặc áo len thời trang.\n- Chất liệu nhung cao cấp, mềm mại, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 56,
+        "product_name": "Gấu bông Teddy boy",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/11_f5d90e2b28234f3d940661a7feabbbc5_77b08c7dd420449f9a703f51d767ae13_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Xanh dương"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông Teddy boy với thiết kế dễ thương, mang lại cảm giác dễ chịu khi ôm. Đây là món quà lý tưởng cho những người yêu thích thú bông.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu teddy boy dễ thương, năng động.\n- Chất liệu nhung mềm mại, an toàn với làn da.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 57,
+        "product_name": "Gấu bông teddy khổng lồ",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/13_ad5abbb7f9464275a129da3c8567528f_eb3107723a7048b6ac3a6425402c6e1d_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Kem"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "65cm",
+                "85cm",
+                "100cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông teddy khổng lồ là sản phẩm lý tưởng cho những ai yêu thích thú bông to lớn, đáng yêu. Sản phẩm này sẽ làm cho không gian của bạn thêm sinh động.\n\nĐặc điểm:\n- Kích thước: 65cm, 85cm, 100cm\n- Thiết kế gấu teddy khổng lồ, dễ dàng ôm ấp.\n- Chất liệu cao cấp, an toàn cho trẻ em.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 58,
+        "product_name": "Gấu bông teddy logo baby",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/9_ff79b8427e444eeea1700d727f0d214f_c71131814822450faf1b97b38188d324_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông teddy logo baby là món quà dễ thương cho trẻ em, với thiết kế đơn giản nhưng đầy ấm áp. Sản phẩm thích hợp làm quà tặng cho các bé.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu teddy với logo baby.\n- Chất liệu mềm mịn, bền đẹp theo thời gian.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 59,
+        "product_name": "Gấu bông Teddy nhỏ",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/15_941bd4dffcd84b09b80f39aec673dcd6_a5bbff04da884a2db1fd2cbc0fb9ca4f_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm"
+            ]
+        },
+        "rating": 4.6,
+        "description": "Gấu bông Teddy nhỏ là sự lựa chọn tuyệt vời cho những ai yêu thích những chú gấu bông đáng yêu, nhỏ gọn và dễ thương. Đây là món quà phù hợp cho các bé hoặc làm đồ trang trí.\n\nĐặc điểm:\n- Kích thước: 40cm, 65cm\n- Thiết kế gấu teddy nhỏ gọn, dễ thương.\n- Chất liệu nhung cao cấp, mềm mại, không gây kích ứng da.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 60,
+        "product_name": "Gấu bông teddy socola",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/8_69d7c20e2f3b4e1896792ff046842e49_1eb90bb063cb42ea9d26a00b1330337e_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Socola"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông teddy socola là món quà ngọt ngào và dễ thương dành cho các bé hoặc những người yêu thích thú bông. Với màu sắc socola ấm áp, sản phẩm phù hợp làm quà tặng hoặc trang trí.\n\nĐặc điểm:\n- Kích thước: 65cm, 85cm\n- Thiết kế gấu teddy socola dễ thương.\n- Chất liệu mềm mại, an toàn cho trẻ em.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 61,
+        "product_name": "Gấu bông tốt nghiệp",
+        "pricing": {
+            "original_price": "80,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "64,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/12_45ef9d3b43a046228b4d13b54e14e211_95cc24cd6af34f8db64e3e81b4ea6bfd_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu bông tốt nghiệp là món quà tuyệt vời dành cho những người vừa tốt nghiệp. Với thiết kế dễ thương và ý nghĩa, sản phẩm phù hợp làm quà tặng chúc mừng.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu bông mặc áo tốt nghiệp.\n- Chất liệu mềm mại, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 62,
+        "product_name": "Gấu teddy nâu socola lông chỉ",
+        "pricing": {
+            "original_price": "145,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "116,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/giveaway_2b0a2f1a858b4d198db2df1ef151644c_d26b7c73425d4a3eb6895324aa96a93e_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Socola"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu teddy nâu socola lông chỉ mang lại vẻ ngoài dễ thương, với thiết kế lông chỉ đặc biệt tạo nên sự nổi bật. Sản phẩm này phù hợp làm quà tặng hoặc trang trí.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu teddy nâu socola, dễ thương.\n- Chất liệu cao cấp, mềm mại, bền đẹp.",
+        "collection": "Gấu teddy"
+    },
+    {
+        "product_id": 63,
+        "product_name": "Bó hoa gấu bông xanh",
+        "pricing": {
+            "original_price": "320,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "256,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/1_497752b42779403d9bdbd270cfd3880b_3bf47b23da8846d4b95cc7e20e95dfa6_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Bó hoa gấu bông xanh là sự kết hợp hoàn hảo giữa hoa và gấu bông. Đây là món quà lý tưởng cho những dịp đặc biệt như sinh nhật, kỷ niệm, hay lễ tình nhân.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Bó hoa gấu bông dễ thương, phù hợp làm quà tặng.\n- Chất liệu mềm mại, đẹp mắt.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 64,
+        "product_name": "Bó hoa gấu dâu Lotso",
+        "pricing": {
+            "original_price": "320,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "256,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_e53839704ddf45ada87a8a60fbee2916_4c0fa003da9941aabdae524527eddb78_large.png",
+        "color": {
+            "selected_colors": [
+                "Đỏ",
+                "Hồng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Bó hoa gấu dâu Lotso là sự lựa chọn hoàn hảo cho những dịp đặc biệt. Thiết kế gấu Lotso đáng yêu và hoa dâu ngọt ngào mang đến món quà lãng mạn.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu Lotso ôm hoa dâu dễ thương.\n- Chất liệu cao cấp, an toàn cho trẻ em.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 65,
+        "product_name": "Gấu bông cặp lover",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_ece92fcd10d14dc4ac74db0dd31a65cb_1028e53ea73c47098d01cd914883263e_large.png",
+        "color": {
+            "selected_colors": [
+                "Đỏ",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Gấu bông cặp lover là món quà lý tưởng cho các cặp đôi, với thiết kế gấu bông dễ thương ôm nhau. Sản phẩm này thể hiện tình yêu và sự quan tâm.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu cặp đôi dễ thương.\n- Chất liệu mềm mại, bền đẹp, phù hợp làm quà tặng.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 66,
+        "product_name": "Gấu bông I love you",
+        "pricing": {
+            "original_price": "180,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "144,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/41_28b127dd01fa4e2992f26b087d73baca_4b7d10f41d3a432d8887ba9c049443e6_large.png",
+        "color": {
+            "selected_colors": [
+                "Đỏ",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông I love you là món quà lãng mạn dành cho những người yêu nhau. Với thiết kế đơn giản nhưng đầy ý nghĩa, sản phẩm này phù hợp để thể hiện tình cảm trong các dịp đặc biệt.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu bông ôm trái tim I love you.\n- Chất liệu mềm mại, an toàn cho trẻ em.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 67,
+        "product_name": "Gấu bông tốt nghiệp Congratulations",
+        "pricing": {
+            "original_price": "160,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "128,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/1_b5ddd30a443c4332b5cbf4c4f2102aee_09a930df12ff4479b05eeb9cd08fa6f6_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Gấu bông tốt nghiệp Congratulations là món quà tuyệt vời cho những người vừa tốt nghiệp. Thiết kế đáng yêu và ý nghĩa giúp thể hiện tình cảm chúc mừng trong dịp đặc biệt.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu bông với mũ tốt nghiệp dễ thương.\n- Chất liệu mềm mại, an toàn cho trẻ em.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 68,
+        "product_name": "Gấu teddy tốt nghiệp",
+        "pricing": {
+            "original_price": "175,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "140,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_df35735d0d5f41988e5f0d22d8fdfbd5_f391d4471dfa44e9950dbc1c88bc41bd_large.png",
+        "color": {
+            "selected_colors": [
+                "Nâu",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Gấu teddy tốt nghiệp là sự kết hợp tuyệt vời giữa gấu bông dễ thương và món quà chúc mừng tốt nghiệp. Sản phẩm này phù hợp làm quà tặng cho những dịp đặc biệt.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế gấu teddy trong trang phục tốt nghiệp.\n- Chất liệu cao cấp, bền đẹp, an toàn cho người sử dụng.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 69,
+        "product_name": "Hoa gấu bông kèm hoa len",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/43_f41c13d0839e4406a4593321df9ca8a2_1dbe2004381b4706b02dfc856fd22045_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.9,
+        "description": "Hoa gấu bông kèm hoa len là món quà lý tưởng để thể hiện sự yêu thương và trân trọng. Thiết kế hoa và gấu bông kết hợp tạo nên sự mới mẻ và độc đáo.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Gấu bông kèm hoa len dễ thương.\n- Chất liệu mềm mại, an toàn cho trẻ nhỏ.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 70,
+        "product_name": "Hoa gấu bông xinh xắn",
+        "pricing": {
+            "original_price": "120,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "96,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/42_90714b5430124b8b98e7936d41a3e966_3b053f2b4db449968d838bdf1cb236ae_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Hoa gấu bông xinh xắn là món quà thích hợp cho các dịp sinh nhật, lễ kỷ niệm hoặc các ngày lễ đặc biệt. Được kết hợp giữa hoa và gấu bông dễ thương, mang lại cảm giác ấm áp.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Gấu bông ôm hoa dễ thương.\n- Chất liệu cao cấp, bền đẹp theo thời gian.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 71,
+        "product_name": "Quà gấu bông mèo Meki",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/40_c1b027203c4643a4a02d93ca4f7a9332_54158f7077334ee1b8d6cc1064a0f158_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.8,
+        "description": "Quà gấu bông mèo Meki là món quà dễ thương và độc đáo dành cho những ai yêu thích mèo. Với thiết kế đẹp mắt và chất liệu cao cấp, sản phẩm này phù hợp làm quà tặng cho nhiều dịp.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế mèo Meki dễ thương.\n- Chất liệu mềm mại, an toàn cho trẻ em.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 72,
+        "product_name": "Quà gấu bông mèo Pika",
+        "pricing": {
+            "original_price": "250,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "200,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/39_c7238e50d2504fc0827bfb909fb4936c_d3046eafe7d84965a0f27ae12fd23f26_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Đỏ"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "40cm",
+                "65cm",
+                "85cm"
+            ]
+        },
+        "rating": 4.7,
+        "description": "Quà gấu bông mèo Pika là món quà lý tưởng cho những người yêu thích nhân vật mèo Pika. Sản phẩm mang lại cảm giác dễ chịu khi ôm và thích hợp để làm quà tặng cho bạn bè và người thân.\n\nĐặc điểm:\n- Kích thước: 40 - 65 - 85 cm\n- Thiết kế mèo Pika dễ thương.\n- Chất liệu mềm mại, an toàn cho trẻ em.",
+        "collection": "Gấu quà tặng"
+    },
+    {
+        "product_id": 73,
+        "product_name": "[BST Fashion Is In The Air] Artical",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/3_3273d3f2df414d83a9be1d471b927f93_791bcca28a9a4737b5e38b6e2bdc34b4_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.7,
+        "description": "[BST Fashion Is In The Air] Artical là bộ sưu tập thời trang mang đến phong cách hiện đại và thanh lịch. Thiết kế tinh tế với các chi tiết nổi bật, phù hợp cho các buổi tiệc hoặc dạo phố.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế thời trang hiện đại.\n- Chất liệu vải mềm mại, thoáng mát.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 74,
+        "product_name": "[BST Fashion Is In The Air] LadyHaHa",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/7_2efd36ab3e2b49c9b5f1a9542ac10ef0_27458eed051f4221ba0a7ed494221188_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.8,
+        "description": "[BST Fashion Is In The Air] LadyHaHa là bộ sưu tập đầy màu sắc, phù hợp cho các cô nàng yêu thích sự phá cách và nổi bật. Sản phẩm mang lại cảm giác thoải mái và tự tin.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế nữ tính, nhẹ nhàng.\n- Chất liệu mềm mại, thoáng khí.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 75,
+        "product_name": "[BST Fashion Is In The Air] Pengentle",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/5_edcb8a4fdd44479caee7584e919fa2fa_78860acf928d430897b90c64b3346ab6_large.png",
+        "color": {
+            "selected_colors": [
+                "Xám",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.6,
+        "description": "[BST Fashion Is In The Air] Pengentle mang lại phong cách thời trang nam tính và cá tính. Với thiết kế trẻ trung, sản phẩm phù hợp cho những ai yêu thích sự năng động và mạnh mẽ.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế nam tính, hiện đại.\n- Chất liệu vải cao cấp, thoải mái.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 76,
+        "product_name": "[BST Fashion Is In The Air] Pink Without Black",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/6_fd488368e2964d5eb839f1f68c601718_98926969d34c45cd84a936827112f2d9_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.9,
+        "description": "[BST Fashion Is In The Air] Pink Without Black là bộ sưu tập thời trang thanh lịch với sự kết hợp hoàn hảo giữa hồng và đen, mang đến sự nổi bật cho các cô nàng yêu thích phong cách thời trang đặc biệt.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế thanh lịch, nổi bật.\n- Chất liệu vải mềm mại, dễ chịu.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 77,
+        "product_name": "[BST Fashion Is In The Air] PrettyGirl",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/4_22aaa869bacc43dba6188c88fda2e67c_3881d9e08340426dac6f0e489e86ddbc_large.png",
+        "color": {
+            "selected_colors": [
+                "Hồng",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.8,
+        "description": "[BST Fashion Is In The Air] PrettyGirl là bộ sưu tập thời trang dành cho những cô gái yêu thích vẻ đẹp dịu dàng và thanh thoát. Thiết kế tôn vinh sự nữ tính và nhẹ nhàng.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế nữ tính, dễ thương.\n- Chất liệu mềm mại, dễ chịu.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 78,
+        "product_name": "[BST Fashion Is In The Air] Tennis Bunny",
+        "pricing": {
+            "original_price": "350,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "280,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_850435d20c0d476fb5adf7a3ec2fb315_fa14e36ecd3b4d4e9ef457519ad2b776_large.png",
+        "color": {
+            "selected_colors": [
+                "Trắng",
+                "Xanh dương"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.7,
+        "description": "[BST Fashion Is In The Air] Tennis Bunny mang đến phong cách thể thao năng động với hình ảnh chú thỏ dễ thương. Đây là lựa chọn hoàn hảo cho những ai yêu thích sự trẻ trung, năng động.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế thể thao, năng động.\n- Chất liệu vải thoáng mát, dễ chịu.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 79,
+        "product_name": "[BST Thần Số Học] Adapmant",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/3_ed878a2f92d24bf7b401bdd8fba84a3a_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Vàng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.7,
+        "description": "[BST Thần Số Học] Adapmant mang đến phong cách mạnh mẽ, hiện đại với thiết kế tối giản nhưng vẫn nổi bật. Phù hợp với những ai yêu thích sự kết hợp giữa thời trang và thần số học.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế hiện đại, sang trọng.\n- Chất liệu vải mềm mại, thoải mái.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 80,
+        "product_name": "[BST Thần Số Học] Darkar",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/5_de73725068e749cea5aaf40f3ae73971_large.png",
+        "color": {
+            "selected_colors": [
+                "Đen",
+                "Xám"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.8,
+        "description": "[BST Thần Số Học] Darkar là bộ sưu tập dành cho những ai yêu thích sự huyền bí và cá tính. Thiết kế sắc nét kết hợp màu sắc đen xám tạo ra vẻ ngoài mạnh mẽ và ấn tượng.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế huyền bí, cá tính.\n- Chất liệu cao cấp, bền đẹp.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 81,
+        "product_name": "[BST Thần Số Học] Harmony",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/2_f9611d8ee01b471ca8bb77101b11c67d_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.6,
+        "description": "[BST Thần Số Học] Harmony mang đến sự hòa quyện hoàn hảo giữa các yếu tố trong cuộc sống. Thiết kế tinh tế, tạo ra một sản phẩm phù hợp cho những ai yêu thích sự bình yên và hài hòa.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế tinh tế, hài hòa.\n- Chất liệu mềm mại, thoải mái.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 82,
+        "product_name": "[BST Thần Số Học] Luminary",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/4_2d0e007eefd64ec19ab5c15b7a1a63ed_large.png",
+        "color": {
+            "selected_colors": [
+                "Vàng",
+                "Đen"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.7,
+        "description": "[BST Thần Số Học] Luminary là bộ sưu tập ánh sáng, được thiết kế để thể hiện sự tỏa sáng trong cuộc sống. Màu sắc mạnh mẽ và tinh tế của thiết kế tạo ra một phong cách nổi bật.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế tỏa sáng, mạnh mẽ.\n- Chất liệu vải cao cấp, bền đẹp.",
+        "collection": "Bộ sưu tập"
+    },
+    {
+        "product_id": 83,
+        "product_name": "[BST Thần Số Học] Ocean",
+        "pricing": {
+            "original_price": "300,000₫",
+            "discount_percentage": "20%",
+            "discount_price": "240,000₫"
+        },
+        "image": "//product.hstatic.net/200000856317/product/6_829dd26e5dd94ab79c0f640e91c0e11f_large.png",
+        "color": {
+            "selected_colors": [
+                "Xanh dương",
+                "Trắng"
+            ]
+        },
+        "size": {
+            "available_sizes": [
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        "rating": 4.9,
+        "description": "[BST Thần Số Học] Ocean mang đến cảm giác mát mẻ, tựa như một làn sóng vỗ về trong mùa hè. Thiết kế độc đáo kết hợp giữa xanh dương và trắng tạo nên một phong cách nhẹ nhàng nhưng đầy cuốn hút.\n\nĐặc điểm:\n- Kích thước: M, L, XL\n- Thiết kế mát mẻ, dễ chịu.\n- Chất liệu vải mềm mại, thoải mái.",
+        "collection": "Bộ sưu tập"
+    }
+]

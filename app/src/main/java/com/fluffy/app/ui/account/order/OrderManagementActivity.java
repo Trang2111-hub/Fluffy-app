@@ -91,7 +91,8 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                     String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image"));
+                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl từ SQLite
+                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image")); // Nếu vẫn dùng byte[]
                     Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
 
                     Log.d("OrderManagement", "OrderId: " + orderId + ", Status: " + orderStatus + ", Product: " + productName);
@@ -100,7 +101,24 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                         orderMap.put(orderId, new Order(orderId, orderStatus, new ArrayList<>()));
                     }
                     if (productName != null && image != null) {
-                        orderMap.get(orderId).getProducts().add(new Product(orderId, productName, price, image, quantity));
+                        // Sử dụng constructor đầy đủ với giá trị mặc định cho các trường không có
+                        orderMap.get(orderId).getProducts().add(new Product(
+                                0, // productId
+                                orderId, // orderId
+                                productName,
+                                "", // discountPrice
+                                "", // originalPrice
+                                imageUrl != null ? imageUrl : "", // imageUrl
+                                price,
+                                image,
+                                quantity,
+                                "", // categoryInfo
+                                0.0, // rating
+                                null, // colors
+                                null, // sizes
+                                "", // description
+                                "" // collection
+                        ));
                     } else {
                         Log.w("OrderManagement", "Skipping product due to null name or image for orderId: " + orderId);
                     }
@@ -119,21 +137,21 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
 
     @Override
     public void onCancelOrder(Order order) {
-
+        // Xử lý hủy đơn hàng
     }
 
     @Override
     public void onRateOrder(Order order) {
-        // Handle rating logic
+        // Xử lý đánh giá đơn hàng
     }
 
     @Override
     public void onBuyAgain(Order order) {
-        // Handle buy again logic
+        // Xử lý mua lại
     }
 
     @Override
     public void onReturnOrder(Order order) {
-        // Handle return logic
+        // Xử lý trả hàng
     }
 }

@@ -61,15 +61,33 @@ public class OrderDetailActivity extends AppCompatActivity {
                     String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image"));
+                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl từ SQLite
+                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image")); // Nếu vẫn dùng byte[]
                     Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
 
                     if (!orderMap.containsKey(currentOrderId)) {
                         orderMap.put(currentOrderId, new Order(currentOrderId, status, new ArrayList<>()));
                     }
                     if (productName != null && image != null) {
-                        String categoryInfo = generateCategoryInfo(productName); // Thêm thông tin phân loại
-                        orderMap.get(currentOrderId).getProducts().add(new Product(currentOrderId, productName, price, image, quantity, categoryInfo));
+                        String categoryInfo = generateCategoryInfo(productName);
+                        // Sử dụng constructor đầy đủ với giá trị mặc định cho các trường không có
+                        orderMap.get(currentOrderId).getProducts().add(new Product(
+                                0, // productId
+                                currentOrderId, // orderId
+                                productName,
+                                "", // discountPrice
+                                "", // originalPrice
+                                imageUrl != null ? imageUrl : "", // imageUrl
+                                price,
+                                image,
+                                quantity,
+                                categoryInfo,
+                                0.0, // rating
+                                null, // colors
+                                null, // sizes
+                                "", // description
+                                "" // collection
+                        ));
                     }
                 }
             } while (cursor.moveToNext());
@@ -121,7 +139,6 @@ public class OrderDetailActivity extends AppCompatActivity {
             double shippingFee = 0.0;
             double discount = 0.0;
             double totalPrice = totalItemPrice + shippingFee - discount;
-
 
             shippingInfoTextView.setText("Thông tin giao hàng");
             shippingAddressTextView.setText("Địa chỉ nhận hàng: 585 Trường Chinh phường Tân Thới Nhất Quận 12");

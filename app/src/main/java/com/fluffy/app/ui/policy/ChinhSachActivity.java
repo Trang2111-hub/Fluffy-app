@@ -1,4 +1,4 @@
-package com.fluffy.app.ui.ChinhSach;
+package com.fluffy.app.ui.policy;
 
 import android.os.Bundle;
 import android.view.View;

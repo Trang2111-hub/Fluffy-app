@@ -1,39 +1,33 @@
 package com.fluffy.app.model;
 
-import android.graphics.Bitmap;
-
 public class Product {
-    private int orderId;
     private String name;
-    private double price;
-    private Bitmap image;
-    private int quantity;
-    private String categoryInfo;
+    private String discountPrice;
+    private String originalPrice;
+    private String imageUrl;
 
-    public Product(int orderId, String name, double price, Bitmap image, int quantity) {
-        this.orderId = orderId;
+    // Constructor
+    public Product(String name, String discountPrice, String originalPrice, String imageUrl) {
         this.name = name;
-        this.price = price;
-        this.image = image;
-        this.quantity = quantity;
-        this.categoryInfo = "";
+        this.discountPrice = discountPrice;
+        this.originalPrice = originalPrice;
+        this.imageUrl = imageUrl;
     }
 
-    public Product(int orderId, String name, double price, Bitmap image, int quantity, String categoryInfo) {
-        this.orderId = orderId;
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.quantity = quantity;
-        this.categoryInfo = categoryInfo != null ? categoryInfo : "";
+    // Getters
+    public String getName() {
+        return name;
     }
 
-    // Getters và Setters
-    public int getOrderId() { return orderId; }
-    public String getName() { return name; }
-    public double getPrice() { return price; }
-    public Bitmap getImage() { return image; }
-    public int getQuantity() { return quantity; }
-    public String getCategoryInfo() { return categoryInfo; }
-    public void setCategoryInfo(String categoryInfo) { this.categoryInfo = categoryInfo != null ? categoryInfo : ""; }
+    public String getDiscountPrice() {
+        return discountPrice;
+    }
+
+    public String getOriginalPrice() {
+        return originalPrice;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }

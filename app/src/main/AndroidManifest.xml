@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Quyền INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,19 +16,16 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
-            android:name=".ui.account.order.OrderDetailActivity"
+            android:name=".ui.profilesetting.ProfilesettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ChinhSach.ChinhSachActivity"
+            android:name=".ui.policy.ChinhSachActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.veFluffy.VeFluffyActivity"
+            android:name=".ui.aboutfluffy.VeFluffyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.account.order.OrderManagementActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

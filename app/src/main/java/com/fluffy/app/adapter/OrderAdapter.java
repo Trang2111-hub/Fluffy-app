@@ -1,7 +1,6 @@
 package com.fluffy.app.adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
@@ -49,29 +49,27 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.orderIdTextView.setText("#" + order.getId() + " (" + order.getStatus() + ")");
 
         if (!order.getProducts().isEmpty()) {
-            Product product = order.getProducts().get(0); // Hiển thị sản phẩm đầu tiên
+            Product product = order.getProducts().get(0);
             holder.productNameTextView.setText(product.getName());
-            holder.productQuantityTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
-            if (product.getImage() != null) {
-                holder.productImageView.setImageBitmap(product.getImage());
+            String priceToShow = product.getDiscountPrice() != null ? product.getDiscountPrice() : vietnameseFormat.format((int) product.getPrice()) + " đ";
+            holder.productQuantityTextView.setText(product.getQuantity() + " x " + priceToShow);
+            if (product.getImageUrl() != null && !product.getImageUrl().isEmpty()) {
+                Glide.with(context).load(product.getImageUrl()).into(holder.productImageView);
             }
         }
 
         int totalProducts = order.getProducts().stream().mapToInt(Product::getQuantity).sum();
-        double totalPrice = order.getProducts().stream().mapToDouble(p -> p.getPrice() * p.getQuantity()).sum();
+        double totalPrice = order.getProducts().stream().mapToDouble(p -> (p.getDiscountPrice() != null ? Double.parseDouble(p.getDiscountPrice().replaceAll("[^\\d.]", "")) : p.getPrice()) * p.getQuantity()).sum();
         holder.totalItemsTextView.setText("Tổng tiền (" + totalProducts + " sản phẩm)");
-        holder.totalPriceTextView.setText(vietnameseFormat.format(totalPrice) + " đ");
+        holder.totalPriceTextView.setText(vietnameseFormat.format((int) totalPrice) + " đ");
 
-        // Đếm số sản phẩm khác nhau (distinct productName)
         Set<String> uniqueProducts = new HashSet<>();
         for (Product product : order.getProducts()) {
             uniqueProducts.add(product.getName());
         }
         int distinctProductCount = uniqueProducts.size();
-
-        // Hiển thị "Xem thêm (n)" chỉ khi có sản phẩm khác nhau chưa hiển thị (trừ 1 sản phẩm đã hiển thị)
         if (distinctProductCount > 1) {
-            int unseenProducts = distinctProductCount - 1; // Số sản phẩm khác chưa hiển thị
+            int unseenProducts = distinctProductCount - 1;
             holder.viewMoreTextView.setText("Xem thêm (" + unseenProducts + ")");
             holder.viewMoreTextView.setVisibility(View.VISIBLE);
         } else {
