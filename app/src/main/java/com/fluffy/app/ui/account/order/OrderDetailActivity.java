@@ -57,18 +57,21 @@ public class OrderDetailActivity extends AppCompatActivity {
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 int currentOrderId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
-                String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
-                String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
-                double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
-                int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image"));
-                Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
+                if (currentOrderId == orderId) {
+                    String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
+                    String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
+                    double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
+                    int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
+                    byte[] imageBytes = cursor.getBlob(cursor.getColumnIndexOrThrow("image"));
+                    Bitmap image = (imageBytes != null && imageBytes.length > 0) ? BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length) : null;
 
-                if (!orderMap.containsKey(currentOrderId)) {
-                    orderMap.put(currentOrderId, new Order(currentOrderId, status, new ArrayList<>()));
-                }
-                if (productName != null && image != null) {
-                    orderMap.get(currentOrderId).getProducts().add(new Product(currentOrderId, productName, price, image, quantity));
+                    if (!orderMap.containsKey(currentOrderId)) {
+                        orderMap.put(currentOrderId, new Order(currentOrderId, status, new ArrayList<>()));
+                    }
+                    // Thêm tất cả sản phẩm vào danh sách products của order
+                    if (productName != null && image != null) {
+                        orderMap.get(currentOrderId).getProducts().add(new Product(currentOrderId, productName, price, image, quantity));
+                    }
                 }
             } while (cursor.moveToNext());
             cursor.close();
@@ -89,6 +92,8 @@ public class OrderDetailActivity extends AppCompatActivity {
 
             orderIdTextView.setText("#" + order.getId() + " (" + order.getStatus() + ")");
 
+            // Hiển thị tất cả sản phẩm
+            productsContainer.removeAllViews(); // Xóa các view cũ để tránh trùng lặp
             for (Product product : order.getProducts()) {
                 View productView = getLayoutInflater().inflate(R.layout.item_product_detail, productsContainer, false);
                 TextView productNameTextView = productView.findViewById(R.id.tvProductName);

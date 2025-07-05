@@ -161,9 +161,11 @@ public class OrderDatabase extends SQLiteOpenHelper {
                 long productId1 = insertProduct("Gấu bông Sanrio", 250000, productImage1);
                 long productId2 = insertProduct("Búp bê Barbie", 300000, productImage2);
 
-                insertOrderItem((int) orderId1, (int) productId1, 1);
-                insertOrderItem((int) orderId2, (int) productId2, 2);
-                insertOrderItem((int) orderId3, (int) productId1, 1);
+                // Thêm nhiều sản phẩm cho cùng một order
+                insertOrderItem((int) orderId1, (int) productId1, 1); // Order 1 có 2 sản phẩm
+                insertOrderItem((int) orderId1, (int) productId2, 2);
+                insertOrderItem((int) orderId2, (int) productId2, 2); // Order 2 có 1 sản phẩm
+                insertOrderItem((int) orderId3, (int) productId1, 1); // Order 3 có 1 sản phẩm
 
                 Log.d("OrderDatabase", "Sample data created successfully. Orders: " + getNumOfOrders() + ", Products: " + getNumOfProducts());
             } catch (Exception e) {
