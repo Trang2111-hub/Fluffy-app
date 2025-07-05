@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#EDEDED"/> <!-- Màu nền xám nhạt -->
+    <stroke android:color="#EDEDED" android:width="2dp"/> <!-- Viền màu xám -->
+    <corners android:radius="10dp"/> <!-- Góc cong -->
+</shape>
