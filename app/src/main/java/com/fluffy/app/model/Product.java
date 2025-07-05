@@ -1,28 +1,28 @@
 package com.fluffy.app.model;
 
-public class Product {
-    private int productId;
-    private String productName;
-    private double price;
-    private String description;
-    private byte[] image;
+import android.graphics.Bitmap;
+import java.io.Serializable;
 
-    public Product(String productName, double price, String description, byte[] image) {
-        this.productName = productName;
+public class Product implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int id;
+    private String name;
+    private double price;
+    private Bitmap image;
+    private int quantity;
+
+    public Product(int id, String name, double price, Bitmap image, int quantity) {
+        this.id = id;
+        this.name = name;
         this.price = price;
-        this.description = description;
         this.image = image;
+        this.quantity = quantity;
     }
 
-    // Getters and Setters
-    public int getProductId() { return productId; }
-    public void setProductId(int productId) { this.productId = productId; }
-    public String getProductName() { return productName; }
-    public void setProductName(String productName) { this.productName = productName; }
+    public int getId() { return id; }
+    public String getName() { return name; }
     public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-    public byte[] getImage() { return image; }
-    public void setImage(byte[] image) { this.image = image; }
+    public Bitmap getImage() { return image; }
+    public int getQuantity() { return quantity; }
 }

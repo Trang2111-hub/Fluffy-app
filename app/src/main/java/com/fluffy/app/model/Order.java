@@ -1,29 +1,22 @@
 package com.fluffy.app.model;
 
-import android.graphics.Bitmap;
+import java.io.Serializable;
+import java.util.List;
 
-public class Order {
-    private int orderId;
+public class Order implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int id;
     private String status;
-    private int quantity;
-    private double price;
-    private String productName;
-    private Bitmap productImage;
+    private List<Product> products;
 
-    public Order(int orderId, String status, String productName, double price, int quantity, Bitmap productImage) {
-        this.orderId = orderId;
+    public Order(int id, String status, List<Product> products) {
+        this.id = id;
         this.status = status;
-        this.productName = productName;
-        this.price = price;
-        this.quantity = quantity;
-        this.productImage = productImage;
+        this.products = products;
     }
 
-    // Getters and Setters
-    public int getOrderId() { return orderId; }
+    public int getId() { return id; }
     public String getStatus() { return status; }
-    public String getProductName() { return productName; }
-    public double getPrice() { return price; }
-    public int getQuantity() { return quantity; }
-    public Bitmap getProductImage() { return productImage; }
+    public List<Product> getProducts() { return products; }
 }

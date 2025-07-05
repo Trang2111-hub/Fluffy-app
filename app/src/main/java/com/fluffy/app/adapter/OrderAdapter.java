@@ -1,6 +1,7 @@
 package com.fluffy.app.adapter;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,22 +11,28 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Order;
+import com.fluffy.app.model.Product;
+import com.fluffy.app.ui.account.order.OrderDetailActivity;
 import java.text.NumberFormat;
-import java.util.List;
 import java.util.Locale;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
     private Context context;
-    private List<Order> orders;
+    private Order[] orders;
     private OnOrderActionListener onOrderActionListener;
     private NumberFormat vietnameseFormat;
 
-    public OrderAdapter(Context context, List<Order> orders, OnOrderActionListener onOrderActionListener) {
+    public OrderAdapter(Context context, Order[] orders, OnOrderActionListener onOrderActionListener) {
         this.context = context;
-        this.orders = orders;
+        this.orders = orders != null ? orders : new Order[0];
         this.onOrderActionListener = onOrderActionListener;
         this.vietnameseFormat = NumberFormat.getNumberInstance(new Locale("vi", "VN"));
         vietnameseFormat.setMaximumFractionDigits(0);
+    }
+
+    public void updateOrders(Order[] newOrders) {
+        this.orders = newOrders != null ? newOrders : new Order[0];
+        notifyDataSetChanged();
     }
 
     @Override
@@ -36,29 +43,39 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     @Override
     public void onBindViewHolder(OrderViewHolder holder, int position) {
-        Order order = orders.get(position);
-        holder.orderIdTextView.setText("#" + order.getOrderId() + " (" + order.getStatus() + ")");
-        holder.productNameTextView.setText(order.getProductName());
-        holder.productQuantityTextView.setText(order.getQuantity() + " x " + vietnameseFormat.format(order.getPrice()) + " đ");
-        holder.totalItemsTextView.setText("Tổng tiền (" + order.getQuantity() + " sản phẩm)");
-        holder.totalPriceTextView.setText(vietnameseFormat.format(order.getQuantity() * order.getPrice()) + " đ");
+        Order order = orders[position];
+        holder.orderIdTextView.setText("#" + order.getId() + " (" + order.getStatus() + ")");
 
-        // Show "Xem thêm(n)" if quantity > 1, where n = quantity - 1
-        if (order.getQuantity() > 1) {
-            int additionalItems = order.getQuantity() - 1;
+        if (!order.getProducts().isEmpty()) {
+            Product product = order.getProducts().get(0);
+            holder.productNameTextView.setText(product.getName());
+            holder.productQuantityTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
+            if (product.getImage() != null) {
+                holder.productImageView.setImageBitmap(product.getImage());
+            }
+        }
+
+        int totalProducts = order.getProducts().stream().mapToInt(Product::getQuantity).sum();
+        double totalPrice = order.getProducts().stream().mapToDouble(p -> p.getPrice() * p.getQuantity()).sum();
+        holder.totalItemsTextView.setText("Tổng tiền (" + totalProducts + " sản phẩm)");
+        holder.totalPriceTextView.setText(vietnameseFormat.format(totalPrice) + " đ");
+
+        if (totalProducts > 1) {
+            int additionalItems = totalProducts - 1;
             holder.viewMoreTextView.setText("Xem thêm(" + additionalItems + ")");
             holder.viewMoreTextView.setVisibility(View.VISIBLE);
         } else {
             holder.viewMoreTextView.setVisibility(View.GONE);
         }
 
-        holder.productImageView.setImageBitmap(order.getProductImage());
         updateButtons(holder, order);
+
+        holder.itemView.setOnClickListener(v -> OrderDetailActivity.start(context, order.getId()));
     }
 
     @Override
     public int getItemCount() {
-        return orders.size();
+        return orders.length;
     }
 
     private void updateButtons(OrderViewHolder holder, Order order) {
