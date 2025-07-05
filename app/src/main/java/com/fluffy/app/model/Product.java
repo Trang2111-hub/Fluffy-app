@@ -8,7 +8,7 @@ public class Product {
     private double price;
     private Bitmap image;
     private int quantity;
-    private String categoryInfo; // Thêm trường mới
+    private String categoryInfo;
 
     public Product(int orderId, String name, double price, Bitmap image, int quantity) {
         this.orderId = orderId;
@@ -16,7 +16,7 @@ public class Product {
         this.price = price;
         this.image = image;
         this.quantity = quantity;
-        this.categoryInfo = ""; // Giá trị mặc định
+        this.categoryInfo = "";
     }
 
     public Product(int orderId, String name, double price, Bitmap image, int quantity, String categoryInfo) {
