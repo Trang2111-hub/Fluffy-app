@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- State when button is pressed (All buttons have the same pressed style) -->
+    <item android:drawable="@drawable/button_pressed" android:state_pressed="true"/>
+
+    <!-- Default state for primary button (Đánh giá) -->
+    <item android:drawable="@drawable/button_primary"/>
+
+    <!-- Default state for secondary buttons (Mua lại, Trả hàng) -->
+    <item android:drawable="@drawable/button_secondary"/>
+</selector>

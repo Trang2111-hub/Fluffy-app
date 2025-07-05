@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background= "@drawable/order_item_border">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+<!-- Order ID and Status -->
+<TextView
+    android:id="@+id/tvProductId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="#1053 (Thành công)"
+    android:textColor="@color/black"
+    android:textSize="@dimen/text_body"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp" />
+
+<!-- Product Image and Details -->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gấu bông Sanrio"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_subtitle"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvProductDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhiều màu, 50cm"
+            android:textColor="#757575"
+            android:textSize="@dimen/text_caption"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 x 250.000 đ"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:id="@+id/tvViewMore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Xem thêm(1)"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:gravity="end"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+
+<!-- Divider -->
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/primary"
+    android:layout_marginBottom="8dp" />
+
+<!-- Total Price -->
+    <!-- Total Amount Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTotalItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền (1 sản phẩm):"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_body" />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="250.000 đ"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- View More Section (hidden by default, shown when quantity > 1) -->
+
+
+<!-- Buttons Container -->
+<LinearLayout
+    android:id="@+id/btnContainer"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:gravity="center"
+    android:layout_marginTop="10dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá"
+        android:visibility="gone"
+        style="@style/ButtonPrimaryStyle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReorder"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Mua lại"
+        android:visibility="gone"
+        style="@style/ButtonSecondaryStyle"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelOrder"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Hủy đơn"
+        android:visibility="gone"
+        style="@style/ButtonSecondaryStyle"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReturnOrder"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Trả hàng"
+        android:visibility="gone"
+        style="@style/ButtonSecondaryStyle"
+        android:layout_marginStart="10dp"/>
+</LinearLayout>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
