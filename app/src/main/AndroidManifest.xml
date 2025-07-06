@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
+            android:name=".ui.address.AddressActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.voucher.VoucherActivity"
             android:exported="false" />
         <activity
