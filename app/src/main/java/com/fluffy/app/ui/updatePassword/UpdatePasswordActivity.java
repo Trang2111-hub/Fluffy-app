@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.SingleLineTransformationMethod;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fluffy.app.R;
@@ -21,6 +22,9 @@ public class UpdatePasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUpdatePasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        TextView txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("Đổi mật khẩu");
 
         setupPasswordVisibilityToggles();
         setupButtonListeners();

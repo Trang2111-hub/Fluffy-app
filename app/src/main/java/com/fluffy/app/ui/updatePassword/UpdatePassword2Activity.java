@@ -3,6 +3,7 @@ package com.fluffy.app.ui.updatePassword;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.SingleLineTransformationMethod;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.fluffy.app.R;
@@ -18,6 +19,9 @@ public class UpdatePassword2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUpdatePassword2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        TextView txtTitle = findViewById(R.id.txtTitle);
+        txtTitle.setText("Đổi mật khẩu");
 
         setupPasswordVisibilityToggles();
         setupButtonListeners();
