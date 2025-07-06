@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 // Hiện tại chưa có Activity cho Thông báo, có thể bổ sung sau
                 return true;
             } else if (id == R.id.account) {
-                Intent intent = new Intent(this, com.fluffy.app.ui.ChinhSach.ChinhSachActivity.class);
+                Intent intent = new Intent(this, com.fluffy.app.ui.policy.ChinhSachActivity.class);
                 startActivity(intent);
                 return true;
             }
