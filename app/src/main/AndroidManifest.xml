@@ -15,19 +15,19 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
-            android:name=".ui.updatePassword.OtpUpdatePasswordActivity"
+            android:name=".ui.changepw.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.updatePassword.UpdatePassword2Activity"
+            android:name=".ui.otpconfirmation.OtpConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.updatePassword.UpdatePasswordActivity"
+            android:name=".ui.forgotpw.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.updateProfile.UpdateProfileActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.profilesetting.ProfilesettingActivity"
@@ -39,7 +39,7 @@
             android:name=".ui.aboutfluffy.VeFluffyActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.updateProfile.ProfileActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
