@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/voucher_background"
+    android:padding="12dp"
+    android:layout_margin="12dp">
+
+    <!-- Row đầu: icon + tên + sửa xoá -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- icon -->
+        <ImageView
+            android:id="@+id/imgSelected"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/address1"/>
+
+        <!-- Tên người nhận -->
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Nguyễn Quốc Khải"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <!-- Sửa -->
+        <TextView
+            android:id="@+id/txtEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa"
+            android:textColor="#EB5265"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Xoá -->
+        <TextView
+            android:id="@+id/txtDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xoá"
+            android:textColor="#EB5265"
+            android:paddingStart="10dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- Số điện thoại -->
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0362614457"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"/>
+
+    <!-- Địa chỉ -->
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số 123 Hai Bà Trưng, TP Bình Dương"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"/>
+
+    <!-- Mặc định -->
+    <TextView
+        android:id="@+id/txtDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mặc định"
+        android:textColor="#EB5265"
+        android:textSize="14sp"
+        android:background="@drawable/label_background2"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:layout_marginTop="6dp"/>
+</LinearLayout>

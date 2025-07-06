@@ -15,14 +15,10 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
+            android:name=".ui.address.AddressActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.voucher.VoucherActivity"
-            android:name=".ui.updatePassword.UpdatePassword2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.updatePassword.OtpUpdatePasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.updatePassword.UpdatePasswordActivity"
             android:exported="false" />
         <activity
             android:name=".ui.changepw.ChangePasswordActivity"
@@ -64,5 +60,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
