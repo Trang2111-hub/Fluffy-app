@@ -16,9 +16,12 @@ import java.util.List;
 public class AccountOrFluffyAdapter extends RecyclerView.Adapter<AccountOrFluffyAdapter.AccountOrFluffyViewHolder> {
 
     private List<ProfileItem> accountOrFluffyList;
+    private OnItemClickListener listener;  // Thêm biến listener
 
-    public AccountOrFluffyAdapter(List<ProfileItem> accountOrFluffyList) {
+    // Cập nhật constructor để nhận listener
+    public AccountOrFluffyAdapter(List<ProfileItem> accountOrFluffyList, OnItemClickListener listener) {
         this.accountOrFluffyList = accountOrFluffyList;
+        this.listener = listener; // Gán listener truyền vào
     }
 
     @Override
@@ -32,6 +35,13 @@ public class AccountOrFluffyAdapter extends RecyclerView.Adapter<AccountOrFluffy
         ProfileItem item = accountOrFluffyList.get(position);
         holder.icon.setImageResource(item.getIconResId());
         holder.text.setText(item.getText());
+
+        // Xử lý sự kiện click vào item
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(item.getText()); // Gọi phương thức onItemClick khi item được nhấn
+            }
+        });
     }
 
     @Override
@@ -39,6 +49,12 @@ public class AccountOrFluffyAdapter extends RecyclerView.Adapter<AccountOrFluffy
         return accountOrFluffyList.size();
     }
 
+    // Định nghĩa interface OnItemClickListener
+    public interface OnItemClickListener {
+        void onItemClick(String title); // Phương thức onItemClick để xử lý sự kiện click
+    }
+
+    // ViewHolder giữ các view trong mỗi item
     public static class AccountOrFluffyViewHolder extends RecyclerView.ViewHolder {
         ImageView icon;
         TextView text;
