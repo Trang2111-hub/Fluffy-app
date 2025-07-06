@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/voucher_background"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FLUFFY tặng mã giảm 20% cho khách hàng mới"
+        android:paddingBottom="8dp"
+        android:textColor="#878181"/>
+
+    <!-- Row with Logo + text + badge -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/profile1" />
+
+        <!-- Texts -->
+        <LinearLayout
+            android:id="@+id/linearTexts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/txtDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giảm 20%"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtMinOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đơn tối thiểu đ200k"
+                android:textColor="#878181"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Badge -->
+        <TextView
+            android:id="@+id/badgeNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/label_background"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="Mới"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:alpha="0.5"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Valid Until -->
+    <TextView
+        android:id="@+id/txtValidUntil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Có giá trị cho đến 30/06/2025    23:59"
+        android:textColor="#EB5265"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"/>
+</LinearLayout>
