@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Quyền INTERNET -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +15,27 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
+            android:name=".ui.address.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.voucher.VoucherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.changepw.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.otpconfirmation.OtpConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.forgotpw.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profilesetting.ProfilesettingActivity"
             android:exported="false" />
         <activity
@@ -23,6 +43,12 @@
             android:exported="false" />
         <activity
             android:name=".ui.aboutfluffy.VeFluffyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.order.OrderManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.order.OrderDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -34,5 +60,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
