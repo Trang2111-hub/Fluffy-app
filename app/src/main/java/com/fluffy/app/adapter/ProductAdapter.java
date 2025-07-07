@@ -74,6 +74,10 @@ public class ProductAdapter extends BaseAdapter {
             .placeholder(R.drawable.ic_launcher_background)
             .into(ivProductImage);
 
+        // Set product rating
+        TextView tvProductRating = view.findViewById(R.id.tv_product_rating);
+        tvProductRating.setText(String.format("%.1f ★", product.getRating()));
+
         return view;
     }
 }

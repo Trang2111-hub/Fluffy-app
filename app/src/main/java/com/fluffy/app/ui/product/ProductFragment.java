@@ -54,11 +54,11 @@ public class ProductFragment extends BaseHeaderFragment {
         productAdapter = new ProductAdapter(getActivity(), productList);
         binding.gvProduct.setAdapter(productAdapter);
 
-        // Thiết lập tiêu đề trang (nếu muốn động)
-        TextView tvPageTitle = content.findViewById(R.id.tvPageTitle);
-        if (tvPageTitle != null) {
-            tvPageTitle.setText(R.string.app_name); // hoặc "Sản phẩm"
-        }
+//        // Thiết lập tiêu đề trang
+//        TextView tvPageTitle = content.findViewById(R.id.tvPageTitle);
+//        if (tvPageTitle != null) {
+//            tvPageTitle.setText(R.string.app_name);
+//        }
 
         // Thiết lập Spinner sort
         Spinner spinnerSort = content.findViewById(R.id.spinnerSort);

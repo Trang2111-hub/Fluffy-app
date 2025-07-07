@@ -41,6 +41,11 @@ public abstract class BaseHeaderFragment extends Fragment {
                 if (txtTitle != null) txtTitle.setText(customTitle);
             }
         }
+        // Xử lý nút back
+        View imgBack = headerContainer.findViewById(R.id.imgBack);
+        if (imgBack != null) {
+            imgBack.setOnClickListener(v -> requireActivity().getOnBackPressedDispatcher().onBackPressed());
+        }
         // Inflate fragment content
         ViewGroup contentContainer = root.findViewById(R.id.contentContainer);
         inflater.inflate(getFragmentLayout(), contentContainer, true);
