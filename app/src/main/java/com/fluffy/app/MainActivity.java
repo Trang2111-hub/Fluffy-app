@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        // Gán listener cho imgMenu khi fragment đầu tiên được load
+        // Gán listener cho imgMenu
         getSupportFragmentManager().registerFragmentLifecycleCallbacks(new androidx.fragment.app.FragmentManager.FragmentLifecycleCallbacks() {
             @Override
             public void onFragmentViewCreated(androidx.fragment.app.FragmentManager fm, Fragment f, View v, Bundle savedInstanceState) {
