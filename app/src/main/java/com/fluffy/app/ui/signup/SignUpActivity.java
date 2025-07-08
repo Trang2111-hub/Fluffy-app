@@ -3,16 +3,19 @@ package com.fluffy.app.ui.signup;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
+import android.text.Editable;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fluffy.app.R;
 import com.fluffy.app.ui.login.LoginActivity;
+import com.fluffy.app.ui.profilesetting.ProfilesettingActivity; // nếu có activity account
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
@@ -24,6 +27,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private ActivitySignUpBinding binding;
     private FirebaseAuth mAuth;
+    private boolean isPasswordVisible = false;
+    private boolean isConfirmPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +37,26 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
+        // Lấy header custom
+        ImageView imgBack = findViewById(R.id.imgBack);
+        TextView txtTitle = findViewById(R.id.txtTitle);
+
+        txtTitle.setText("Đăng ký");
+
+        imgBack.setOnClickListener(v -> {
+            String from = getIntent().getStringExtra("from");
+            if ("account".equals(from)) {
+                Intent intent = new Intent(SignUpActivity.this, ProfilesettingActivity.class);
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+            finish();
+        });
 
         addEvents();
+        setupEyeToggle();
     }
 
     private void addEvents() {
@@ -89,6 +112,33 @@ public class SignUpActivity extends AppCompatActivity {
         binding.signIn.setOnClickListener(v -> finish());
     }
 
+    private void setupEyeToggle() {
+        binding.imgEyePassword.setOnClickListener(v -> {
+            if (isPasswordVisible) {
+                binding.edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                binding.imgEyePassword.setImageResource(R.drawable.ic_eye_close);
+            } else {
+                binding.edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                binding.imgEyePassword.setImageResource(R.drawable.ic_eye_open);
+            }
+            isPasswordVisible = !isPasswordVisible;
+            binding.edtPassword.setSelection(binding.edtPassword.length());
+        });
+
+        binding.imgEyeConfirmPassword.setOnClickListener(v -> {
+            if (isConfirmPasswordVisible) {
+                binding.edtConfirmPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                binding.imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_close);
+            } else {
+                binding.edtConfirmPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                binding.imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_open);
+            }
+            isConfirmPasswordVisible = !isConfirmPasswordVisible;
+            binding.edtConfirmPassword.setSelection(binding.edtConfirmPassword.length());
+        });
+    }
+
+
     private boolean isValidEmail(String email) {
         String regex = "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(regex);
@@ -139,7 +189,7 @@ public class SignUpActivity extends AppCompatActivity {
         builder.setCancelable(false);
 
         dialogView.findViewById(R.id.btnLogin).setOnClickListener(v -> {
-            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class); // MainActivity là màn hình đăng nhập
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         });

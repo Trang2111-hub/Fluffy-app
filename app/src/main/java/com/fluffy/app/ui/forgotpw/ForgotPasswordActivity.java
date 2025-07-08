@@ -3,11 +3,16 @@ package com.fluffy.app.ui.forgotpw;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fluffy.app.R;
+import com.fluffy.app.ui.login.LoginActivity;
 import com.fluffy.app.ui.otpconfirmation.OtpConfirmationActivity;
+import com.fluffy.app.ui.profilesetting.ProfilesettingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.fluffy.app.databinding.ActivityForgotPasswordBinding;
 
@@ -27,9 +32,19 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         addEvents();
-    }
-    private void addEvents() {
 
+        ImageView imgBack = findViewById(R.id.imgBack);
+        TextView txtTitle = findViewById(R.id.txtTitle);
+
+        txtTitle.setText("Quên mật khẩu");
+
+        imgBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
+            finish();
+        });
+    }
+
+    private void addEvents() {
         binding.btnSendLink.setOnClickListener(view -> {
             String email = binding.edtEmail.getText().toString().trim();
 
@@ -65,10 +80,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     private void sendEmailWithOtp(String email) {
         String subject = "Mã OTP xác nhận thay đổi mật khẩu";
         String body = "Mã OTP của bạn là: " + generatedOtp;
-
     }
 }
