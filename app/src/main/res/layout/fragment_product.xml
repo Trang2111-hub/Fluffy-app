@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Sản phẩm"
+            android:textColor="@color/primary"
             android:textStyle="bold"
             android:textSize="18sp" />
 
