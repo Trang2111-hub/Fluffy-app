@@ -10,6 +10,8 @@ import com.fluffy.app.adapter.ProfileAdapter;
 import com.fluffy.app.databinding.ActivityProfilesettingBinding;
 import com.fluffy.app.model.ProfileItem;
 import com.fluffy.app.ui.updatePassword.UpdatePasswordActivity;
+import com.fluffy.app.ui.updateProfile.ProfileActivity;
+import com.fluffy.app.ui.updateProfile.UpdateProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,12 +61,15 @@ public class ProfilesettingActivity extends AppCompatActivity {
         /// Khởi tạo accountAdapter với listener để xử lý sự kiện click
         AccountOrFluffyAdapter accountAdapter = new AccountOrFluffyAdapter(accountItems,
                 new AccountOrFluffyAdapter.OnItemClickListener() {
+
                     @Override
                     public void onItemClick(String title) {
                         if (title.equals("Cập nhật mật khẩu")) {
-                            // Chuyển sang trang cập nhật mật khẩu khi nhấn vào "Cập nhật mật khẩu"
-                            Intent intent = new Intent(ProfilesettingActivity.this,
-                                    UpdatePasswordActivity.class);
+                            // Chuyển sang trang cập nhật mật khẩu
+                            Intent intent = new Intent(ProfilesettingActivity.this, UpdatePasswordActivity.class);
+                            startActivity(intent);
+                        } else if (title.equals("Quản lí thông tin cá nhân")) {
+                            Intent intent = new Intent(ProfilesettingActivity.this, ProfileActivity.class);
                             startActivity(intent);
                         }
                     }
