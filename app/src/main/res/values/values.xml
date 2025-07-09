@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="gcm_defaultSenderId" translatable="false">450244896484</string>
+    <string name="google_api_key" translatable="false">AIzaSyAalcsLpoO6IQ5O-PUaThCFWQAmWVT63QY</string>
+    <string name="google_app_id" translatable="false">1:450244896484:android:81190fb22a0ff89b3f6ef1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAalcsLpoO6IQ5O-PUaThCFWQAmWVT63QY</string>
+    <string name="google_storage_bucket" translatable="false">fluffy-e3786.firebasestorage.app</string>
+    <string name="project_id" translatable="false">fluffy-e3786</string>
 </resources>

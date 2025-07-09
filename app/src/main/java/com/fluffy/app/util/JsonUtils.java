@@ -25,6 +25,7 @@ public class JsonUtils {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject productJson = jsonArray.getJSONObject(i);
+                int productId = productJson.getInt("product_id"); // Giả sử JSON có trường "product_id"
                 String name = productJson.getString("product_name");
                 JSONObject pricing = productJson.getJSONObject("pricing");
                 String discountPrice = pricing.getString("discount_price");
@@ -50,7 +51,7 @@ public class JsonUtils {
                         sizes.add(sizesArray.getString(j));
                     }
                 }
-                Product product = new Product(0, 0, name, discountPrice, originalPrice, imageUrl, 0.0, null, 0, "",
+                Product product = new Product(productId, 0, name, discountPrice, originalPrice, imageUrl, 0.0, null, 0, "",
                         rating, colors, sizes, description, collection);
                 productList.add(product);
             }

@@ -1,26 +1,74 @@
 package com.fluffy.app.ui.forgotpw;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.fluffy.app.R;
+import com.fluffy.app.ui.otpconfirmation.OtpConfirmationActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.fluffy.app.databinding.ActivityForgotPasswordBinding;
+
+import java.util.Random;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
+
+    private ActivityForgotPasswordBinding binding;
+    private FirebaseAuth mAuth;
+    private String generatedOtp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_forgot_password);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        binding = ActivityForgotPasswordBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        mAuth = FirebaseAuth.getInstance();
+        addEvents();
+    }
+    private void addEvents() {
+
+        binding.btnSendLink.setOnClickListener(view -> {
+            String email = binding.edtEmail.getText().toString().trim();
+
+            if (email.isEmpty()) {
+                Toast.makeText(ForgotPasswordActivity.this, "Vui lòng nhập email", Toast.LENGTH_SHORT).show();
+            } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(ForgotPasswordActivity.this, "Vui lòng nhập đúng định dạng email", Toast.LENGTH_SHORT).show();
+            } else {
+                sendPasswordResetEmail(email);
+            }
         });
+    }
+
+    private void sendPasswordResetEmail(String email) {
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(ForgotPasswordActivity.this, "Kiểm tra email của bạn để thay đổi mật khẩu!", Toast.LENGTH_SHORT).show();
+                sendOtpToEmail(email);
+            } else {
+                Toast.makeText(ForgotPasswordActivity.this, "Có lỗi khi gửi email. Vui lòng thử lại.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void sendOtpToEmail(String email) {
+        generatedOtp = String.format("%04d", new Random().nextInt(10000));
+
+        sendEmailWithOtp(email);
+
+        Intent intent = new Intent(ForgotPasswordActivity.this, OtpConfirmationActivity.class);
+        intent.putExtra("email", email);
+        intent.putExtra("otp", generatedOtp);
+        startActivity(intent);
+    }
+
+
+    private void sendEmailWithOtp(String email) {
+        String subject = "Mã OTP xác nhận thay đổi mật khẩu";
+        String body = "Mã OTP của bạn là: " + generatedOtp;
+
     }
 }

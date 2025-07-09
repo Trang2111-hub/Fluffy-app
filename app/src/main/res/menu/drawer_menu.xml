@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Trang chủ" />
+    <item
+    android:id="@+id/nav_product"
+    android:title="Danh mục sản phẩm" />
+    <item
+        android:id="@+id/nav_ve_fluffy"
+        android:title="Về Fluffy" />
+    <item
+        android:id="@+id/nav_policy"
+        android:title="Chính sách" />
+    <!-- Thêm các mục khác nếu cần -->
+</menu>
