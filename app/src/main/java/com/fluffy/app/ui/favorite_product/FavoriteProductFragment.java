@@ -29,6 +29,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
 
     public FavoriteProductFragment() {
 
+
     }
 
     @Override
@@ -39,6 +40,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         if (getActivity() != null) {
             appContext = getActivity().getApplicationContext();
         }
+
         loadFavoriteProductIds();
     }
 
@@ -57,6 +59,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
 
         updateFavoriteProductList();
         return binding.getRoot();
+
     }
 
     // Thêm sản phẩm vào danh sách yêu thích, nhận Context từ caller
@@ -67,6 +70,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
             saveFavoriteProductIds(context);
         }
     }
+
 
 
     public void removeFavoriteProduct(int productId, Context context) {
@@ -86,6 +90,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
             return;
         }
 
+
         List<Product> allProducts = JsonUtils.getProductListFromJson(context);
 
         // Lọc các sản phẩm có ID nằm trong favoriteProductIds
@@ -95,7 +100,6 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
                 favoriteProductList.add(product);
             }
         }
-
 
         if (productAdapter != null) {
             productAdapter.notifyDataSetChanged();
@@ -111,6 +115,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
     private void saveFavoriteProductIds(Context context) {
         if (context == null) {
             return;
+
         }
         SharedPreferences prefs = context.getSharedPreferences("Favorites", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -125,6 +130,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
     private void loadFavoriteProductIds() {
         if (appContext == null) {
             return;
+
         }
         SharedPreferences prefs = appContext.getSharedPreferences("Favorites", Context.MODE_PRIVATE);
         String ids = prefs.getString("favorite_ids", "");
