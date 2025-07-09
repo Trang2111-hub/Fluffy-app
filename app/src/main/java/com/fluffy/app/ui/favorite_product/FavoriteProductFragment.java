@@ -26,7 +26,6 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
     private Context appContext;
 
     public FavoriteProductFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -37,6 +36,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         if (getActivity() != null) {
             appContext = getActivity().getApplicationContext();
         }
+
         loadFavoriteProductIds();
     }
 
@@ -47,22 +47,20 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Gọi onCreateView của BaseHeaderFragment để xử lý header
         View root = super.onCreateView(inflater, container, savedInstanceState);
 
-        // Truy cập GridView từ contentContainer
         View content = root.findViewById(R.id.contentContainer);
         gvFavorite = content.findViewById(R.id.gvFavorite);
 
-        // Khởi tạo adapter
+
         productAdapter = new ProductAdapter(getActivity(), favoriteProductList);
         productAdapter.setFavoriteFragment(this);
         gvFavorite.setAdapter(productAdapter);
 
-        // Cập nhật danh sách sản phẩm yêu thích
         updateFavoriteProductList();
 
         return root;
+
     }
 
     // Thêm sản phẩm vào danh sách yêu thích, nhận Context từ caller
@@ -74,14 +72,14 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         }
     }
 
-    // Xóa sản phẩm khỏi danh sách yêu thích, nhận Context từ caller
+
     public void removeFavoriteProduct(int productId, Context context) {
         favoriteProductIds.remove((Integer) productId);
         updateFavoriteProductList(context);
         saveFavoriteProductIds(context);
     }
 
-    // Lấy danh sách ID sản phẩm yêu thích
+
     public List<Integer> getFavoriteProductIds() {
         return favoriteProductIds;
     }
@@ -91,7 +89,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         if (context == null) {
             return;
         }
-        // Lấy toàn bộ danh sách sản phẩm từ JSON
+
         List<Product> allProducts = JsonUtils.getProductListFromJson(context);
 
         // Lọc các sản phẩm có ID nằm trong favoriteProductIds
@@ -102,21 +100,21 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
             }
         }
 
-        // Thông báo adapter cập nhật giao diện
+
         if (productAdapter != null) {
             productAdapter.notifyDataSetChanged();
         }
     }
 
-    // Cập nhật danh sách sản phẩm yêu thích (sử dụng appContext khi không có context từ caller)
     private void updateFavoriteProductList() {
         updateFavoriteProductList(appContext);
     }
 
-    // Lưu danh sách favoriteProductIds vào SharedPreferences
+
     private void saveFavoriteProductIds(Context context) {
         if (context == null) {
             return;
+
         }
         SharedPreferences prefs = context.getSharedPreferences("Favorites", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -127,10 +125,11 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         editor.apply();
     }
 
-    // Tải danh sách favoriteProductIds từ SharedPreferences
+
     private void loadFavoriteProductIds() {
         if (appContext == null) {
             return;
+
         }
         SharedPreferences prefs = appContext.getSharedPreferences("Favorites", Context.MODE_PRIVATE);
         String ids = prefs.getString("favorite_ids", "");
