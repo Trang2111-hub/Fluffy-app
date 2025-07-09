@@ -9,11 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
 import com.fluffy.app.adapter.ProductAdapter;
 import com.fluffy.app.databinding.FragmentProductBinding;
 import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.common.BaseHeaderFragment;
+import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 import com.fluffy.app.util.JsonUtils;
 
 import java.util.ArrayList;
@@ -33,7 +35,6 @@ public class ProductFragment extends BaseHeaderFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Sử dụng header mặc định
         setHeader(HeaderType.DEFAULT, null);
     }
 
@@ -45,20 +46,15 @@ public class ProductFragment extends BaseHeaderFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = super.onCreateView(inflater, container, savedInstanceState);
-        // Lấy binding từ contentContainer
         View content = root.findViewById(R.id.contentContainer);
         binding = FragmentProductBinding.bind(content);
 
         // Lấy danh sách sản phẩm
         productList = JsonUtils.getProductListFromJson(getActivity());
         productAdapter = new ProductAdapter(getActivity(), productList);
+        // Sử dụng instance từ MainActivity
+        productAdapter.setFavoriteFragment(((MainActivity) requireActivity()).getFavoriteFragment());
         binding.gvProduct.setAdapter(productAdapter);
-
-//        // Thiết lập tiêu đề trang
-//        TextView tvPageTitle = content.findViewById(R.id.tvPageTitle);
-//        if (tvPageTitle != null) {
-//            tvPageTitle.setText(R.string.app_name);
-//        }
 
         // Thiết lập Spinner sort
         Spinner spinnerSort = content.findViewById(R.id.spinnerSort);
@@ -107,7 +103,6 @@ public class ProductFragment extends BaseHeaderFragment {
 
     private double parseDiscountPrice(Product product) {
         try {
-            // Loại bỏ ký tự không phải số (nếu có, ví dụ "100.000đ")
             return Double.parseDouble(product.getDiscountPrice().replaceAll("[^\\d.]", ""));
         } catch (Exception e) {
             return 0;

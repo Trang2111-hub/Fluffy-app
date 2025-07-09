@@ -1,9 +1,6 @@
 package com.fluffy.app.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +11,22 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Product;
+import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 
-import java.io.InputStream;
 import java.util.List;
 
 public class ProductAdapter extends BaseAdapter {
     private Context context;
     private List<Product> productList;
+    private FavoriteProductFragment favoriteFragment;
 
     public ProductAdapter(Context context, List<Product> productList) {
         this.context = context;
         this.productList = productList;
+    }
+
+    public void setFavoriteFragment(FavoriteProductFragment favoriteFragment) {
+        this.favoriteFragment = favoriteFragment;
     }
 
     @Override
@@ -70,13 +72,41 @@ public class ProductAdapter extends BaseAdapter {
             imageUrl = "https:" + imageUrl;
         }
         Glide.with(context)
-            .load(imageUrl)
-            .placeholder(R.drawable.ic_launcher_background)
-            .into(ivProductImage);
+                .load(imageUrl)
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(ivProductImage);
 
         // Set product rating
         TextView tvProductRating = view.findViewById(R.id.tv_product_rating);
         tvProductRating.setText(String.format("%.1f ★", product.getRating()));
+
+        // Thêm nút tim (favorite)
+        ImageView ivFavorite = view.findViewById(R.id.iv_favorite);
+        if (ivFavorite != null) {
+            ivFavorite.setOnClickListener(v -> {
+                if (favoriteFragment != null) {
+                    int productId = product.getProductId();
+                    if (ivFavorite.getTag() != null && (boolean) ivFavorite.getTag()) {
+                        ivFavorite.setImageResource(R.drawable.ic_heart_outline); // Chưa yêu thích
+                        ivFavorite.setTag(false);
+                        favoriteFragment.removeFavoriteProduct(productId, context); // Truyền context
+                    } else {
+                        ivFavorite.setImageResource(R.drawable.ic_heart_filled); // Đã yêu thích
+                        ivFavorite.setTag(true);
+                        favoriteFragment.addFavoriteProduct(productId, context); // Truyền context
+                    }
+                }
+            });
+
+            // Kiểm tra trạng thái yêu thích ban đầu
+            if (favoriteFragment != null && favoriteFragment.getFavoriteProductIds().contains(product.getProductId())) {
+                ivFavorite.setImageResource(R.drawable.ic_heart_filled);
+                ivFavorite.setTag(true);
+            } else {
+                ivFavorite.setImageResource(R.drawable.ic_heart_outline);
+                ivFavorite.setTag(false);
+            }
+        }
 
         return view;
     }
