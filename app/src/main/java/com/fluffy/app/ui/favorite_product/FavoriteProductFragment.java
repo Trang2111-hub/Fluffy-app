@@ -10,7 +10,6 @@ import android.widget.GridView;
 
 import com.fluffy.app.R;
 import com.fluffy.app.adapter.ProductAdapter;
-import com.fluffy.app.databinding.FragmentFavoriteProductBinding;
 import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.common.BaseHeaderFragment;
 import com.fluffy.app.util.JsonUtils;
@@ -25,17 +24,14 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
     private List<Integer> favoriteProductIds = new ArrayList<>();
     private GridView gvFavorite;
     private Context appContext;
-    FragmentFavoriteProductBinding binding;
 
     public FavoriteProductFragment() {
-
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHeader(HeaderType.DEFAULT, null);
+        setHeader(HeaderType.CUSTOM, "Sản phẩm yêu thích");
 
         if (getActivity() != null) {
             appContext = getActivity().getApplicationContext();
@@ -51,14 +47,19 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentFavoriteProductBinding.inflate(inflater, container, false);
+        View root = super.onCreateView(inflater, container, savedInstanceState);
+
+        View content = root.findViewById(R.id.contentContainer);
+        gvFavorite = content.findViewById(R.id.gvFavorite);
+
 
         productAdapter = new ProductAdapter(getActivity(), favoriteProductList);
         productAdapter.setFavoriteFragment(this);
-        binding.gvFavorite.setAdapter(productAdapter);
+        gvFavorite.setAdapter(productAdapter);
 
         updateFavoriteProductList();
-        return binding.getRoot();
+
+        return root;
 
     }
 
@@ -72,7 +73,6 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
     }
 
 
-
     public void removeFavoriteProduct(int productId, Context context) {
         favoriteProductIds.remove((Integer) productId);
         updateFavoriteProductList(context);
@@ -84,12 +84,11 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         return favoriteProductIds;
     }
 
-
+    // Cập nhật danh sách sản phẩm yêu thích dựa trên favoriteProductIds
     private void updateFavoriteProductList(Context context) {
         if (context == null) {
             return;
         }
-
 
         List<Product> allProducts = JsonUtils.getProductListFromJson(context);
 
@@ -101,11 +100,11 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
             }
         }
 
+
         if (productAdapter != null) {
             productAdapter.notifyDataSetChanged();
         }
     }
-
 
     private void updateFavoriteProductList() {
         updateFavoriteProductList(appContext);
@@ -126,7 +125,7 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
         editor.apply();
     }
 
-    // Tải danh sách favoriteProductIds từ SharedPreferences
+
     private void loadFavoriteProductIds() {
         if (appContext == null) {
             return;
