@@ -1,5 +1,6 @@
 package com.fluffy.app.ui.profilesetting;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.fluffy.app.databinding.ActivityProfilesettingBinding;
 import com.fluffy.app.model.ProfileItem;
 import com.fluffy.app.ui.login.LoginActivity;
 import com.fluffy.app.ui.signup.SignUpActivity;
+import com.fluffy.app.ui.updatePassword.UpdatePasswordActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +63,8 @@ public class ProfilesettingActivity extends AppCompatActivity {
         profileItems.add(new ProfileItem(R.drawable.profile5, "Trả hàng"));
 
         ProfileAdapter profileAdapter = new ProfileAdapter(profileItems);
-        LinearLayoutManager profileLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager profileLayoutManager = new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false);
         binding.recyclerView.setLayoutManager(profileLayoutManager);
         binding.recyclerView.setAdapter(profileAdapter);
 
@@ -75,6 +78,27 @@ public class ProfilesettingActivity extends AppCompatActivity {
         accountItems.add(new ProfileItem(R.drawable.profile11, "Cập nhật mật khẩu"));
 
         AccountOrFluffyAdapter accountAdapter = new AccountOrFluffyAdapter(accountItems);
+        // Prepare data for "Về Fluffy" section
+        List<ProfileItem> fluffyItems = new ArrayList<>();
+        fluffyItems.add(new ProfileItem(R.drawable.profile12, "Giới thiệu thông tin"));
+        fluffyItems.add(new ProfileItem(R.drawable.profile13, "Chính sách bán hàng"));
+
+
+        // Set up RecyclerView for "Tài khoản" section (vertical orientation)
+        /// Khởi tạo accountAdapter với listener để xử lý sự kiện click
+        AccountOrFluffyAdapter accountAdapter = new AccountOrFluffyAdapter(accountItems,
+                new AccountOrFluffyAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(String title) {
+                        if (title.equals("Cập nhật mật khẩu")) {
+                            // Chuyển sang trang cập nhật mật khẩu khi nhấn vào "Cập nhật mật khẩu"
+                            Intent intent = new Intent(ProfilesettingActivity.this,
+                                    UpdatePasswordActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                });
+
         LinearLayoutManager accountLayoutManager = new LinearLayoutManager(this);
         binding.recyclerViewAccount.setLayoutManager(accountLayoutManager);
         binding.recyclerViewAccount.setAdapter(accountAdapter);
@@ -85,6 +109,8 @@ public class ProfilesettingActivity extends AppCompatActivity {
         fluffyItems.add(new ProfileItem(R.drawable.profile13, "Chính sách bán hàng"));
 
         AccountOrFluffyAdapter fluffyAdapter = new AccountOrFluffyAdapter(fluffyItems);
+// Khởi tạo fluffyAdapter mà không cần xử lý sự kiện click, nên truyền null cho listener
+        AccountOrFluffyAdapter fluffyAdapter = new AccountOrFluffyAdapter(fluffyItems, null);
         LinearLayoutManager fluffyLayoutManager = new LinearLayoutManager(this);
         binding.recyclerViewFluffy.setLayoutManager(fluffyLayoutManager);
         binding.recyclerViewFluffy.setAdapter(fluffyAdapter);

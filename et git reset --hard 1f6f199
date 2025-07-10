@@ -1,0 +1,54 @@
+[33m3c446e5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mfeature/product[m[33m)[m Merge pull request #19 from Trang2111-hub/feature/address
+[33m1f7b1bf[m Merge branch 'main' into feature/address
+[33mfc67150[m Thêm tính năng địa chỉ
+[33m9b20cab[m Merge pull request #18 from Trang2111-hub/feature/voucher
+[33mbf189e0[m Merge branch 'main' into feature/voucher
+[33m8b287e2[m Thêm tính năng voucher
+[33mdd7c79b[m Merge pull request #17 from Trang2111-hub/feature/updatePassword3
+[33m709e629[m solve conflict
+[33md884eda[m updatepassword
+[33m2477c3d[m Merge pull request #14 from Trang2111-hub/feature/product
+[33m286cbc4[m Merge pull request #13 from Trang2111-hub/feat/order
+[33m0d812b9[m Giải quyết xung đột và cập nhật Firebase BoM
+[33m9cf5f39[m trang cập nhật mật khẩu
+[33mfa27a0f[m Thaydoi
+[33m033c476[m thay doi
+[33mb55bd90[m thay doi
+[33mc4e3cc2[m trang cap nhat mk
+[33m331f3df[m Merge pull request #16 from Trang2111-hub/feature/login
+[33m9ae42d5[m update login
+[33maf2b7cd[m trang cập nhật thông tin cá nhân
+[33m5f4c786[m thay doi
+[33m1f6f199[m[33m ([m[1;31morigin/feature/product[m[33m)[m Update navigation cho menu, tao HomePage
+[33m48444bc[m fix: load product of order
+[33md954986[m Merge pull request #12 from Trang2111-hub/feature/product
+[33ma6dd516[m Header, fix product, sort
+[33mbf67545[m Merge pull request #10 from Trang2111-hub/feature/product
+[33m320d1e8[m fix: model/product
+[33mbe8a15f[m fix: merge mai, fix conflict
+[33meea761b[m chore: delete comment
+[33mcc1d25e[m chinh sach --> policy
+[33m6564c61[m Merge pull request #9 from Trang2111-hub/feature/login
+[33m11448de[m trang dang nhap
+[33m0379257[m fix: layout of order detail
+[33m9eda469[m fix: display tab
+[33mb76a887[m fix: display multiple products
+[33m6458e04[m feat: display order detail
+[33m64390c7[m header
+[33m3c84981[m chore: margin button section
+[33m85a7384[m[33m ([m[1;31morigin/feat/order[m[33m)[m feat: Ordermanagement FE complete
+[33mb9ec331[m Merge pull request #3 from Trang2111-hub/feature_profilesetting
+[33ma97fe11[m Merge pull request #4 from Trang2111-hub/feature/product
+[33m7968165[m[33m ([m[1;31morigin/feature_profilesetting[m[33m)[m Thêm các thay đổi đầu tiên
+[33mf2285b3[m fix product image
+[33m297d4f6[m feat: OrderManagement view tab order
+[33m2062098[m Bottom nav bar, product card, product list
+[33m47184dd[m Giải quyết xung đột trong AndroidManifest.xml
+[33mce0998c[m Merge pull request #2 from Trang2111-hub/VeFluffy
+[33ma61fd9e[m Sửa lỗi giao diện chính sách và hiệu ứng Spinner
+[33m34e04fa[m Thêm giao diện chính sách với hiệu ứng đổi màu cho Spinner
+[33m619c395[m Merge pull request #1 from Trang2111-hub/VeFluffy
+[33mc3eb774[m Cập nhật VeFluffyActivity, drawable và strings
+[33m74d8a9b[m Resolve .gitignore conflict
+[33ma8b28f0[m Update .gitignore with Android template
+[33mf26a692[m Initial commit

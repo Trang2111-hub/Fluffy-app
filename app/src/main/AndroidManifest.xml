@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Fluffy_app"
         tools:targetApi="31">
         <activity
+            android:name=".ui.address.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.voucher.VoucherActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.changepw.ChangePasswordActivity"
             android:exported="false" />
         <activity
@@ -39,6 +45,12 @@
             android:name=".ui.aboutfluffy.VeFluffyActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.account.order.OrderManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.order.OrderDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -48,5 +60,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
