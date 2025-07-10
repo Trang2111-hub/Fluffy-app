@@ -55,6 +55,4 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.android.gms:play-services-tasks:17.0.0")
     implementation ("com.google.firebase:firebase-functions:20.3.0")
-
-
 }

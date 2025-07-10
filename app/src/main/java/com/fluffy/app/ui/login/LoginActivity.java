@@ -107,13 +107,18 @@ public class LoginActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, ProfilesettingActivity.class));
+
+                        Intent intent = new Intent(LoginActivity.this, ProfilesettingActivity.class);
+                        // hardcode dữ liệu profile cho demo
+                        intent.putExtra("name", "Trịnh Tiến Đạt Khoa");
+                        intent.putExtra("phone", "0813849476");
+                        startActivity(intent);
                         finish();
                     } else {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thất bại: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
 }
