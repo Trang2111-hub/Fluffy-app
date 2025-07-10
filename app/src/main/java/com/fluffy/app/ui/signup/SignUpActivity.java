@@ -1,5 +1,7 @@
 package com.fluffy.app.ui.signup;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -9,11 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.fluffy.app.R;
 import com.fluffy.app.ui.login.LoginActivity;
@@ -23,14 +23,18 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.fluffy.app.databinding.ActivitySignUpBinding;
 
+
 import java.util.regex.Pattern;
 
+
 public class SignUpActivity extends AppCompatActivity {
+
 
     private ActivitySignUpBinding binding;
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
     private boolean isConfirmPasswordVisible = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +42,15 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         mAuth = FirebaseAuth.getInstance();
         // Lấy header custom
         ImageView imgBack = findViewById(R.id.imgBack);
         TextView txtTitle = findViewById(R.id.txtTitle);
 
+
         txtTitle.setText("Đăng ký");
+
 
         imgBack.setOnClickListener(v -> {
             String from = getIntent().getStringExtra("from");
@@ -57,15 +64,18 @@ public class SignUpActivity extends AppCompatActivity {
             finish();
         });
 
+
         addEvents();
         setupEyeToggle();
     }
+
 
     private void addEvents() {
         binding.btnSignUp.setOnClickListener(view -> {
             String email = binding.edtEmail.getText().toString();
             String password = binding.edtPassword.getText().toString();
             String confirmPassword = binding.edtConfirmPassword.getText().toString();
+
 
             if (email.isEmpty()) {
                 binding.edtEmail.setError("Email là bắt buộc *");
@@ -87,6 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
         binding.edtEmail.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
                 binding.edtEmail.setBackgroundResource(R.drawable.edittext_bg_focus);
@@ -94,6 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
                 binding.edtEmail.setBackgroundResource(R.drawable.edittext_bg);
             }
         });
+
 
         binding.edtPassword.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
@@ -103,6 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
         binding.edtConfirmPassword.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
                 binding.edtConfirmPassword.setBackgroundResource(R.drawable.edittext_bg_focus);
@@ -111,8 +124,10 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
         binding.signIn.setOnClickListener(v -> finish());
     }
+
 
     private void setupEyeToggle() {
         binding.imgEyePassword.setOnClickListener(v -> {
@@ -126,6 +141,7 @@ public class SignUpActivity extends AppCompatActivity {
             isPasswordVisible = !isPasswordVisible;
             binding.edtPassword.setSelection(binding.edtPassword.length());
         });
+
 
         binding.imgEyeConfirmPassword.setOnClickListener(v -> {
             if (isConfirmPasswordVisible) {
@@ -141,17 +157,21 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+
+
     private boolean isValidEmail(String email) {
         String regex = "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(email).matches();
     }
 
+
     private boolean isValidPassword(String password) {
         String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=<>?])[A-Za-z\\d!@#$%^&*()_+=<>?]{8,50}$";
         Pattern pattern = Pattern.compile(passwordPattern);
         return pattern.matcher(password).matches();
     }
+
 
     private void checkEmailExists(String email) {
         mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(task -> {
@@ -168,8 +188,10 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+
     private void signUpUser(String email) {
         String password = binding.edtPassword.getText().toString();
+
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(SignUpActivity.this, task -> {
@@ -183,12 +205,15 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
+
     private void showSuccessDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_success, null);
 
+
         builder.setView(dialogView);
         builder.setCancelable(false);
+
 
         dialogView.findViewById(R.id.btnLogin).setOnClickListener(v -> {
             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
@@ -196,22 +221,8 @@ public class SignUpActivity extends AppCompatActivity {
             finish();
         });
 
+
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-    }
-}
-
-public class SignUpActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_sign_up);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }
