@@ -2,12 +2,18 @@ package com.fluffy.app.ui.changepw;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fluffy.app.R;
+import com.fluffy.app.ui.forgotpw.ForgotPasswordActivity;
 import com.fluffy.app.ui.login.LoginActivity;
+import com.fluffy.app.ui.otpconfirmation.OtpConfirmationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.AuthCredential;
@@ -25,6 +31,17 @@ public class ChangePasswordActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         addEvents();
+
+        ImageView imgBack = findViewById(R.id.imgBack);
+        TextView txtTitle = findViewById(R.id.txtTitle);
+
+        txtTitle.setText("Thay đổi mật khẩu");
+
+        imgBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ChangePasswordActivity.this, OtpConfirmationActivity.class);
+            finish();
+        });
+
     }
 
     private void addEvents() {

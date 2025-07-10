@@ -3,25 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
     android:background="@android:color/white">
+
+    <include
+        layout="@layout/header_custom"/>
 
     <ImageView
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo_fluffy" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đăng ký"
-        android:textSize="28sp"
-        android:textColor="#EB5265"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp" />
+        android:src="@drawable/logo_fluffy"
+        android:layout_marginTop="30dp"/>
 
     <EditText
         android:id="@+id/edtEmail"
@@ -29,39 +21,72 @@
         android:layout_height="48dp"
         android:hint="Nhập Email"
         android:inputType="textEmailAddress"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/edittext_bg"
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"/>
 
-    <EditText
-        android:id="@+id/edtPassword"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Nhập mật khẩu"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/edittext_bg"
-        android:drawableLeft="@drawable/ic_password"
-        android:drawablePadding="10dp"/>
+        android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/edtConfirmPassword"
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_bg"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Nhập mật khẩu"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="48dp" />
+
+        <ImageView
+            android:id="@+id/imgEyePassword"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_eye_close"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="24dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Nhập lại mật khẩu"
-        android:inputType="textPassword"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/edittext_bg"
-        android:drawableLeft="@drawable/ic_password"
-        android:drawablePadding="10dp"/>
+        android:layout_marginTop="20dp">
 
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Nhập lại mật khẩu"
+            android:inputType="textPassword"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="48dp"
+            android:background="@drawable/edittext_bg"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgEyeConfirmPassword"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_eye_close"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="24dp"/>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnSignUp"
@@ -70,7 +95,9 @@
         android:text="Đăng ký"
         android:textSize="22sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#EB5265"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/primary"
         android:layout_marginTop="18dp" />
 
     <TextView
@@ -79,7 +106,7 @@
         android:layout_height="wrap_content"
         android:text="Đã có tài khoản? Đăng nhập"
         android:textSize="16sp"
-        android:textColor="#EB5265"
+        android:textColor="@color/primary"
         android:layout_gravity="center"
         android:layout_marginTop="24dp" />
 </LinearLayout>

@@ -3,48 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
     android:background="@android:color/white">
+
+    <include
+        layout="@layout/header_custom"/>
 
     <ImageView
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:src="@drawable/logo_fluffy" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Xác nhận OTP"
-        android:textSize="28sp"
-        android:textColor="#EB5265"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Vui lòng nhập mã OTP đã gửi qua email."
-        android:textSize="16sp"
-        android:layout_marginTop="18dp" />
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="20dp">
+
         <EditText
             android:id="@+id/edtOtp1"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:inputType="text"
-            android:maxLength="1"
-            android:gravity="center"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/edittext_bg" />
+            android:background="@drawable/edittext_bg"
+            android:gravity="center"
+            android:inputType="text"
+            android:maxLength="1" />
 
         <EditText
             android:id="@+id/edtOtp2"
@@ -81,9 +75,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bạn đã nhận được mã chưa? Gửi lại OTP"
-        android:textColor="#EB5265"
-        android:textSize="14sp"
-        android:layout_gravity="center"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp" />
 
     <Button
@@ -93,7 +87,9 @@
         android:text="Xác nhận"
         android:textSize="22sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#EB5265"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/primary"
         android:layout_marginTop="24dp" />
 
 </LinearLayout>
