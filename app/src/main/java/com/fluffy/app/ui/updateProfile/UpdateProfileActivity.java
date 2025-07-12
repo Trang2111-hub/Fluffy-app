@@ -1,12 +1,13 @@
 package com.fluffy.app.ui.updateProfile;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,13 +18,11 @@ import com.fluffy.app.databinding.ActivityUpdateProfileBinding;
 
 public class UpdateProfileActivity extends AppCompatActivity {
 
-    ActivityUpdateProfileBinding binding;
+    private ActivityUpdateProfileBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Enable view binding
         binding = ActivityUpdateProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -33,53 +32,73 @@ public class UpdateProfileActivity extends AppCompatActivity {
         loadUserProfile();
 
         binding.imgCalendar.setOnClickListener(v -> showDatePicker());
-
         binding.btnSave.setOnClickListener(v -> showConfirmationDialog());
-
-        binding.btnCancel.setOnClickListener(v -> finish());
+        binding.btnCancel.setOnClickListener(v -> {
+            setResult(RESULT_CANCELED);
+            finish();
+        });
     }
 
     private void loadUserProfile() {
-        // Giả sử đây là dữ liệu người dùng
-        String savedName = "Trần Thị Thùy Trang";
-        String savedDob = "21/02/2008";
-        String savedPhone = "0762855298";
-        String savedEmail = "trangtran@gmail.com";
+        SharedPreferences sharedPreferences = getSharedPreferences("user_profile", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        // Hiển thị thông tin lên các EditText
-        binding.edtName.setText(savedName);
-        binding.edtDob.setText(savedDob);
-        binding.edtPhone.setText(savedPhone);
-        binding.edtEmail.setText(savedEmail);
+        String name = sharedPreferences.getString("name", null);
+        String dob = sharedPreferences.getString("dob", null);
+        String phone = sharedPreferences.getString("phone", null);
+        String email = sharedPreferences.getString("email", null);
+
+        if (name == null && dob == null && phone == null && email == null) {
+            name = "Trịnh Tiến Đạt Khoa";
+            dob = "21/02/2008";
+            phone = "0762855298";
+            email = "Khoatrinh@gmail.com";
+
+            editor.putString("name", name);
+            editor.putString("dob", dob);
+            editor.putString("phone", phone);
+            editor.putString("email", email);
+            editor.apply();
+
+            Log.d("UpdateProfileDebug", "Initialized default - Name: " + name + ", DOB: " + dob + ", Phone: " + phone + ", Email: " + email);
+        }
+
+        binding.edtName.setText(name);
+        binding.edtDob.setText(dob);
+        binding.edtPhone.setText(phone);
+        binding.edtEmail.setText(email);
     }
 
     private void showDatePicker() {
+        // Implement nếu cần
+        Toast.makeText(this, "Date picker not implemented", Toast.LENGTH_SHORT).show();
     }
 
     private void showConfirmationDialog() {
         Dialog dialog = new Dialog(this);
-
-        // Đảm bảo layout đúng
         dialog.setContentView(R.layout.dialog_confirmation_in4);
 
-        // Lấy các button trong dialog
+        // Tìm nút Save trong dialog
         Button btnSave = dialog.findViewById(R.id.btnSave);
-        Button btnCancel = dialog.findViewById(R.id.btnCancel);
 
-        // Set hành động cho nút Lưu
+        if (btnSave == null) {
+            Log.e("UpdateProfileDebug", "btnSave not found in dialog!");
+            return;
+        }
+
         btnSave.setOnClickListener(v -> {
             validateAndSaveProfile();
             dialog.dismiss();
         });
 
-        btnCancel.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
     }
 
     private void validateAndSaveProfile() {
-        String name = binding.edtName.getText().toString();
-        String email = binding.edtEmail.getText().toString();
-        String phone = binding.edtPhone.getText().toString();
+        String name = binding.edtName.getText().toString().trim();
+        String dob = binding.edtDob.getText().toString().trim();
+        String email = binding.edtEmail.getText().toString().trim();
+        String phone = binding.edtPhone.getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
             binding.edtName.setError("Họ và tên không được để trống");
@@ -96,11 +115,24 @@ public class UpdateProfileActivity extends AppCompatActivity {
             return;
         }
 
-        saveUserProfile(name, email, phone);
+        saveUserProfile(name, dob, email, phone);
     }
 
-    private void saveUserProfile(String name, String email, String phone) {
+    private void saveUserProfile(String name, String dob, String email, String phone) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_profile", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("name", name);
+        editor.putString("dob", dob);
+        editor.putString("phone", phone);
+        editor.putString("email", email);
+        editor.apply();
+
+        Log.d("UpdateProfileDebug", "Saved - Name: " + name + ", DOB: " + dob + ", Phone: " + phone + ", Email: " + email);
+
         Toast.makeText(this, "Cập nhật thông tin thành công", Toast.LENGTH_SHORT).show();
+
+        setResult(RESULT_OK);
         finish();
     }
 }
