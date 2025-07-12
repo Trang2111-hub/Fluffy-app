@@ -1,5 +1,6 @@
 package com.fluffy.app.ui.account.order;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,12 +22,15 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+
 public class OrderDetailActivity extends AppCompatActivity {
+
 
     private static final String EXTRA_ORDER_ID = "extra_order_id";
     private static final String TAG = "OrderDetailActivity";
     private NumberFormat vietnameseFormat;
     private OrderDatabase db;
+
 
     public static void start(Context context, int orderId) {
         Intent intent = new Intent(context, OrderDetailActivity.class);
@@ -34,14 +38,17 @@ public class OrderDetailActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail);
 
+
         vietnameseFormat = NumberFormat.getNumberInstance(new Locale("vi", "VN"));
         vietnameseFormat.setMaximumFractionDigits(0);
         db = new OrderDatabase(this);
+
 
         int orderId = getIntent().getIntExtra(EXTRA_ORDER_ID, -1);
         if (orderId != -1) {
@@ -50,6 +57,7 @@ public class OrderDetailActivity extends AppCompatActivity {
             finish();
         }
     }
+
 
     private void loadOrderDetails(int orderId) {
         android.database.Cursor cursor = db.getOrderByIdWithDetails(orderId);
@@ -63,6 +71,7 @@ public class OrderDetailActivity extends AppCompatActivity {
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
                     String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image"));
+
 
                     if (!orderMap.containsKey(currentOrderId)) {
                         orderMap.put(currentOrderId, new Order(currentOrderId, status, new ArrayList<>()));
@@ -92,6 +101,7 @@ public class OrderDetailActivity extends AppCompatActivity {
             cursor.close();
         }
 
+
         Order order = orderMap.get(orderId);
         if (order != null) {
             TextView orderIdTextView = findViewById(R.id.tvOrderId);
@@ -112,12 +122,15 @@ public class OrderDetailActivity extends AppCompatActivity {
             AppCompatButton buyAgainButton = findViewById(R.id.btnReorder);
             AppCompatButton returnOrderButton = findViewById(R.id.btnReturnOrder);
 
+
             Log.d(TAG, "orderIdTextView: " + (orderIdTextView != null));
             Log.d(TAG, "cancelOrderButton: " + (cancelOrderButton != null));
+
 
             if (orderIdTextView != null) {
                 orderIdTextView.setText("Đơn hàng #" + order.getId() + " (" + order.getStatus() + ")");
             }
+
 
             if (productsContainer != null) {
                 productsContainer.removeAllViews();
@@ -128,6 +141,7 @@ public class OrderDetailActivity extends AppCompatActivity {
                     TextView productPriceTextView = productView.findViewById(R.id.tvProductPrice);
                     ImageView productImageView = productView.findViewById(R.id.imgProduct);
 
+
                     productNameTextView.setText(product.getName());
                     productCategoryTextView.setText(product.getCategoryInfo());
                     productPriceTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
@@ -135,15 +149,18 @@ public class OrderDetailActivity extends AppCompatActivity {
                         Glide.with(this).load(product.getImageUrl()).into(productImageView); // Sử dụng Glide
                     }
 
+
                     productsContainer.addView(productView);
                 }
             }
+
 
             int totalProducts = order.getProducts().stream().mapToInt(Product::getQuantity).sum();
             double totalItemPrice = order.getProducts().stream().mapToDouble(p -> p.getPrice() * p.getQuantity()).sum();
             double shippingFee = 0.0;
             double discount = 0.0;
             double totalPrice = totalItemPrice + shippingFee - discount;
+
 
             if (shippingInfoTextView != null) shippingInfoTextView.setText("Thông tin giao hàng");
             if (shippingAddressTextView != null) shippingAddressTextView.setText("Địa chỉ nhận hàng: 585 Trường Chinh phường Tân Thới Nhất Quận 12");
@@ -157,10 +174,12 @@ public class OrderDetailActivity extends AppCompatActivity {
             if (paymentDiscountTextView != null) paymentDiscountTextView.setText("Giảm giá: " + vietnameseFormat.format(discount) + " đ");
             if (paymentTotalTextView != null) paymentTotalTextView.setText("Tổng cộng: " + vietnameseFormat.format(totalPrice) + " đ");
 
+
             if (cancelOrderButton != null) cancelOrderButton.setVisibility(View.GONE);
             if (rateButton != null) rateButton.setVisibility(View.GONE);
             if (buyAgainButton != null) buyAgainButton.setVisibility(View.GONE);
             if (returnOrderButton != null) returnOrderButton.setVisibility(View.GONE);
+
 
             if (order != null && cancelOrderButton != null && rateButton != null && buyAgainButton != null && returnOrderButton != null) {
                 switch (order.getStatus()) {
@@ -183,6 +202,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         }
     }
 
+
     private String generateCategoryInfo(String productName) {
         if (productName == null || productName.trim().isEmpty()) {
             return "Không xác định";
@@ -201,3 +221,4 @@ public class OrderDetailActivity extends AppCompatActivity {
         }
     }
 }
+

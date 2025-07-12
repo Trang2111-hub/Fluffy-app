@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.account.order.OrderManagementActivity">
 
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_marginTop="?attr/actionBarSize">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/statusTabLayout"
@@ -37,4 +43,5 @@
             android:background="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

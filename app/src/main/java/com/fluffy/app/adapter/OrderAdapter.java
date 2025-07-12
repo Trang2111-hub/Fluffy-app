@@ -101,11 +101,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.rateButton.setVisibility(View.GONE);
         holder.buyAgainButton.setVisibility(View.GONE);
         holder.returnOrderButton.setVisibility(View.GONE);
+        holder.confirmReceivedButton.setVisibility(View.GONE); // Ẩn nút Đã nhận mặc định
 
         switch (order.getStatus()) {
             case "Chờ xác nhận":
                 holder.cancelOrderButton.setVisibility(View.VISIBLE);
                 holder.cancelOrderButton.setOnClickListener(v -> onOrderActionListener.onCancelOrder(order));
+                break;
+            case "Đang vận chuyển":
+                holder.confirmReceivedButton.setVisibility(View.VISIBLE); // Hiển thị nút Đã nhận
+                holder.confirmReceivedButton.setOnClickListener(v -> onOrderActionListener.onConfirmReceived(order));
                 break;
             case "Thành công":
                 holder.rateButton.setVisibility(View.VISIBLE);
@@ -126,7 +131,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public static class OrderViewHolder extends RecyclerView.ViewHolder {
         TextView orderIdTextView, productNameTextView, productQuantityTextView, totalItemsTextView, totalPriceTextView, viewMoreTextView;
         ImageView productImageView;
-        Button cancelOrderButton, rateButton, buyAgainButton, returnOrderButton;
+        Button cancelOrderButton, rateButton, buyAgainButton, returnOrderButton, confirmReceivedButton; // Thêm nút Đã nhận
 
         public OrderViewHolder(View itemView) {
             super(itemView);
@@ -141,6 +146,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             rateButton = itemView.findViewById(R.id.btnRate);
             buyAgainButton = itemView.findViewById(R.id.btnReorder);
             returnOrderButton = itemView.findViewById(R.id.btnReturnOrder);
+            confirmReceivedButton = itemView.findViewById(R.id.btnConfirmReceived); // Khởi tạo nút
         }
     }
 
@@ -149,5 +155,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         void onRateOrder(Order order);
         void onBuyAgain(Order order);
         void onReturnOrder(Order order);
+        void onConfirmReceived(Order order); 
     }
 }

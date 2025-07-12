@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_order_detail.xml -->
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Order ID and Status -->
     <TextView
         android:id="@+id/tvOrderId"
         android:layout_width="wrap_content"
@@ -15,15 +16,12 @@
         android:textStyle="bold"
         android:layout_marginBottom="8dp" />
 
-    <!-- Container for Product Details -->
     <LinearLayout
         android:id="@+id/productsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
-
-    <!-- Shipping Information -->
     <TextView
         android:id="@+id/tvShippingInfo"
         android:layout_width="match_parent"
@@ -72,7 +70,6 @@
         android:textSize="@dimen/text_caption"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Payment Information -->
     <TextView
         android:id="@+id/tvPaymentInfo"
         android:layout_width="match_parent"
@@ -171,5 +168,16 @@
             android:visibility="gone"
             style="@style/ButtonSecondaryStyle"
             android:layout_marginStart="10dp"/>
+
+        <!-- Nút Đã nhận -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirmReceived"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Đã nhận"
+            android:visibility="gone"
+            style="@style/ButtonPrimaryStyle"
+            android:layout_marginStart="10dp"/>
+
     </LinearLayout>
 </LinearLayout>

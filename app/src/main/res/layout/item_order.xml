@@ -171,6 +171,16 @@
         android:visibility="gone"
         style="@style/ButtonSecondaryStyle"
         android:layout_marginStart="10dp"/>
+
+    <!-- Nút Đã nhận -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfirmReceived"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Đã nhận"
+        android:visibility="gone"
+        style="@style/ButtonPrimaryStyle"
+        android:layout_marginStart="10dp" />
 </LinearLayout>
 </LinearLayout>
     </androidx.cardview.widget.CardView>
