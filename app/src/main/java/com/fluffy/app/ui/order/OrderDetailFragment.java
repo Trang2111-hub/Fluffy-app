@@ -1,57 +1,77 @@
-package com.fluffy.app.ui.account.order;
+package com.fluffy.app.ui.order;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
+
 import com.fluffy.app.R;
 import com.fluffy.app.data.database.OrderDatabase;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
-import com.bumptech.glide.Glide; // Thêm dependency Glide
+import com.fluffy.app.ui.common.BaseHeaderFragment;
+import com.bumptech.glide.Glide;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class OrderDetailActivity extends AppCompatActivity {
+public class OrderDetailFragment extends BaseHeaderFragment {
 
-    private static final String EXTRA_ORDER_ID = "extra_order_id";
-    private static final String TAG = "OrderDetailActivity";
+    private static final String ARG_ORDER_ID = "extra_order_id";
+    private static final String TAG = "OrderDetailFragment";
     private NumberFormat vietnameseFormat;
     private OrderDatabase db;
 
-    public static void start(Context context, int orderId) {
-        Intent intent = new Intent(context, OrderDetailActivity.class);
-        intent.putExtra(EXTRA_ORDER_ID, orderId);
-        context.startActivity(intent);
+    public static OrderDetailFragment newInstance(int orderId) {
+        OrderDetailFragment fragment = new OrderDetailFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_ORDER_ID, orderId);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_detail);
+        setHeader(HeaderType.CUSTOM, "Chi tiết đơn hàng");
+    }
+
+    @Override
+    protected int getFragmentLayout() {
+        return R.layout.fragment_order_detail;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState); // Gọi super để BaseHeaderFragment xử lý header
 
         vietnameseFormat = NumberFormat.getNumberInstance(new Locale("vi", "VN"));
         vietnameseFormat.setMaximumFractionDigits(0);
-        db = new OrderDatabase(this);
+        db = new OrderDatabase(requireContext());
 
-        int orderId = getIntent().getIntExtra(EXTRA_ORDER_ID, -1);
+        Bundle args = getArguments();
+        int orderId = args != null ? args.getInt(ARG_ORDER_ID, -1) : -1;
         if (orderId != -1) {
-            loadOrderDetails(orderId);
+            loadOrderDetails(orderId, view);
         } else {
-            finish();
+            requireActivity().getOnBackPressedDispatcher().onBackPressed();
         }
+
+        return view;
     }
 
-    private void loadOrderDetails(int orderId) {
+    private void loadOrderDetails(int orderId, View view) {
         android.database.Cursor cursor = db.getOrderByIdWithDetails(orderId);
         Map<Integer, Order> orderMap = new HashMap<>();
         if (cursor != null && cursor.moveToFirst()) {
@@ -70,21 +90,8 @@ public class OrderDetailActivity extends AppCompatActivity {
                     if (productName != null && imageUrl != null) {
                         String categoryInfo = generateCategoryInfo(productName);
                         orderMap.get(currentOrderId).getProducts().add(new Product(
-                                0, // productId
-                                currentOrderId, // orderId
-                                productName,
-                                "", // discountPrice
-                                "", // originalPrice
-                                imageUrl,
-                                price,
-                                null, // image (Bitmap)
-                                quantity,
-                                categoryInfo,
-                                0.0, // rating
-                                null, // colors
-                                null, // sizes
-                                "", // description
-                                "" // collection
+                                0, currentOrderId, productName, "", "", imageUrl, price, null, quantity,
+                                categoryInfo, 0.0, null, null, "", ""
                         ));
                     }
                 }
@@ -94,23 +101,24 @@ public class OrderDetailActivity extends AppCompatActivity {
 
         Order order = orderMap.get(orderId);
         if (order != null) {
-            TextView orderIdTextView = findViewById(R.id.tvOrderId);
-            LinearLayout productsContainer = findViewById(R.id.productsContainer);
-            TextView shippingInfoTextView = findViewById(R.id.tvShippingInfo);
-            TextView shippingAddressTextView = findViewById(R.id.shipping_address);
-            TextView shippingPhoneTextView = findViewById(R.id.shipping_phone);
-            TextView shippingEmailTextView = findViewById(R.id.shipping_email);
-            TextView shippingServiceTextView = findViewById(R.id.shipping_service);
-            TextView paymentInfoTextView = findViewById(R.id.tvPaymentInfo);
-            TextView paymentMethodTextView = findViewById(R.id.payment_method);
-            TextView paymentAmountTextView = findViewById(R.id.payment_amount);
-            TextView paymentShippingTextView = findViewById(R.id.payment_shipping);
-            TextView paymentDiscountTextView = findViewById(R.id.payment_discount);
-            TextView paymentTotalTextView = findViewById(R.id.payment_total);
-            AppCompatButton cancelOrderButton = findViewById(R.id.btnCancelOrder);
-            AppCompatButton rateButton = findViewById(R.id.btnRate);
-            AppCompatButton buyAgainButton = findViewById(R.id.btnReorder);
-            AppCompatButton returnOrderButton = findViewById(R.id.btnReturnOrder);
+            TextView orderIdTextView = view.findViewById(R.id.tvOrderId);
+            LinearLayout productsContainer = view.findViewById(R.id.productsContainer);
+            TextView shippingInfoTextView = view.findViewById(R.id.tvShippingInfo);
+            TextView shippingAddressTextView = view.findViewById(R.id.shipping_address);
+            TextView shippingPhoneTextView = view.findViewById(R.id.shipping_phone);
+            TextView shippingEmailTextView = view.findViewById(R.id.shipping_email);
+            TextView shippingServiceTextView = view.findViewById(R.id.shipping_service);
+            TextView paymentInfoTextView = view.findViewById(R.id.tvPaymentInfo);
+            TextView paymentMethodTextView = view.findViewById(R.id.payment_method);
+            TextView paymentAmountTextView = view.findViewById(R.id.payment_amount);
+            TextView paymentShippingTextView = view.findViewById(R.id.payment_shipping);
+            TextView paymentDiscountTextView = view.findViewById(R.id.payment_discount);
+            TextView paymentTotalTextView = view.findViewById(R.id.payment_total);
+            AppCompatButton cancelOrderButton = view.findViewById(R.id.btnCancelOrder);
+            AppCompatButton rateButton = view.findViewById(R.id.btnRate);
+            AppCompatButton buyAgainButton = view.findViewById(R.id.btnReorder);
+            AppCompatButton returnOrderButton = view.findViewById(R.id.btnReturnOrder);
+            AppCompatButton confirmReceivedButton = view.findViewById(R.id.btnConfirmReceived);
 
             Log.d(TAG, "orderIdTextView: " + (orderIdTextView != null));
             Log.d(TAG, "cancelOrderButton: " + (cancelOrderButton != null));
@@ -132,7 +140,7 @@ public class OrderDetailActivity extends AppCompatActivity {
                     productCategoryTextView.setText(product.getCategoryInfo());
                     productPriceTextView.setText(product.getQuantity() + " x " + vietnameseFormat.format(product.getPrice()) + " đ");
                     if (product.getImageUrl() != null) {
-                        Glide.with(this).load(product.getImageUrl()).into(productImageView); // Sử dụng Glide
+                        Glide.with(requireContext()).load(product.getImageUrl()).into(productImageView);
                     }
 
                     productsContainer.addView(productView);
@@ -161,25 +169,50 @@ public class OrderDetailActivity extends AppCompatActivity {
             if (rateButton != null) rateButton.setVisibility(View.GONE);
             if (buyAgainButton != null) buyAgainButton.setVisibility(View.GONE);
             if (returnOrderButton != null) returnOrderButton.setVisibility(View.GONE);
+            if (confirmReceivedButton != null) confirmReceivedButton.setVisibility(View.GONE);
 
-            if (order != null && cancelOrderButton != null && rateButton != null && buyAgainButton != null && returnOrderButton != null) {
+            if (order != null && cancelOrderButton != null && rateButton != null && buyAgainButton != null && returnOrderButton != null && confirmReceivedButton != null) {
                 switch (order.getStatus()) {
                     case "Chờ xác nhận":
                         cancelOrderButton.setVisibility(View.VISIBLE);
+                        cancelOrderButton.setOnClickListener(v -> {
+                            db.updateOrderStatus(order.getId(), "Đã hủy");
+                            loadOrderDetails(orderId, view);
+                        });
+                        break;
+                    case "Đang vận chuyển":
+                        confirmReceivedButton.setVisibility(View.VISIBLE);
+                        confirmReceivedButton.setOnClickListener(v -> {
+                            db.updateOrderStatus(order.getId(), "Thành công");
+                            loadOrderDetails(orderId, view);
+                        });
                         break;
                     case "Thành công":
                         rateButton.setVisibility(View.VISIBLE);
                         buyAgainButton.setVisibility(View.VISIBLE);
                         returnOrderButton.setVisibility(View.VISIBLE);
+                        rateButton.setOnClickListener(v -> {
+                            // Xử lý đánh giá (chưa triển khai)
+                        });
+                        buyAgainButton.setOnClickListener(v -> {
+                            // Xử lý mua lại (chưa triển khai)
+                        });
+                        returnOrderButton.setOnClickListener(v -> {
+                            db.updateOrderStatus(order.getId(), "Đã trả");
+                            loadOrderDetails(orderId, view);
+                        });
                         break;
                     case "Đã trả":
                     case "Đã hủy":
                         buyAgainButton.setVisibility(View.VISIBLE);
+                        buyAgainButton.setOnClickListener(v -> {
+                            // Xử lý mua lại (chưa triển khai)
+                        });
                         break;
                 }
             }
         } else {
-            finish(); // Thoát nếu không tìm thấy order
+            requireActivity().getOnBackPressedDispatcher().onBackPressed();
         }
     }
 

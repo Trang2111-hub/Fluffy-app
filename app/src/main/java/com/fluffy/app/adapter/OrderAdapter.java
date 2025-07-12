@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.fluffy.app.R;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
-import com.fluffy.app.ui.account.order.OrderDetailActivity;
+import com.fluffy.app.ui.order.OrderDetailFragment; // Import đúng package
 
 import java.text.NumberFormat;
 import java.util.HashSet;
@@ -88,7 +89,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
         updateButtons(holder, order);
 
-        holder.itemView.setOnClickListener(v -> OrderDetailActivity.start(context, order.getId()));
+        // Điều hướng đến OrderDetailFragment
+        holder.itemView.setOnClickListener(v -> {
+            if (context instanceof FragmentActivity) {
+                FragmentActivity activity = (FragmentActivity) context;
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, OrderDetailFragment.newInstance(order.getId()))
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override
@@ -101,11 +112,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.rateButton.setVisibility(View.GONE);
         holder.buyAgainButton.setVisibility(View.GONE);
         holder.returnOrderButton.setVisibility(View.GONE);
+        holder.confirmReceivedButton.setVisibility(View.GONE);
 
         switch (order.getStatus()) {
             case "Chờ xác nhận":
                 holder.cancelOrderButton.setVisibility(View.VISIBLE);
                 holder.cancelOrderButton.setOnClickListener(v -> onOrderActionListener.onCancelOrder(order));
+                break;
+            case "Đang vận chuyển":
+                holder.confirmReceivedButton.setVisibility(View.VISIBLE);
+                holder.confirmReceivedButton.setOnClickListener(v -> onOrderActionListener.onConfirmReceived(order));
                 break;
             case "Thành công":
                 holder.rateButton.setVisibility(View.VISIBLE);
@@ -126,7 +142,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public static class OrderViewHolder extends RecyclerView.ViewHolder {
         TextView orderIdTextView, productNameTextView, productQuantityTextView, totalItemsTextView, totalPriceTextView, viewMoreTextView;
         ImageView productImageView;
-        Button cancelOrderButton, rateButton, buyAgainButton, returnOrderButton;
+        Button cancelOrderButton, rateButton, buyAgainButton, returnOrderButton, confirmReceivedButton;
 
         public OrderViewHolder(View itemView) {
             super(itemView);
@@ -141,6 +157,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             rateButton = itemView.findViewById(R.id.btnRate);
             buyAgainButton = itemView.findViewById(R.id.btnReorder);
             returnOrderButton = itemView.findViewById(R.id.btnReturnOrder);
+            confirmReceivedButton = itemView.findViewById(R.id.btnConfirmReceived);
         }
     }
 
@@ -149,5 +166,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         void onRateOrder(Order order);
         void onBuyAgain(Order order);
         void onReturnOrder(Order order);
+        void onConfirmReceived(Order order);
     }
 }

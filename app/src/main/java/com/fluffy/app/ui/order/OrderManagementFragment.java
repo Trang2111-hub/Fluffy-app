@@ -1,22 +1,29 @@
-package com.fluffy.app.ui.account.order;
+package com.fluffy.app.ui.order;
 
 import android.os.Bundle;
 import android.util.Log;
-import androidx.appcompat.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.fluffy.app.R;
 import com.fluffy.app.adapter.OrderAdapter;
 import com.fluffy.app.data.database.OrderDatabase;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
+import com.fluffy.app.ui.common.BaseHeaderFragment;
 import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class OrderManagementActivity extends AppCompatActivity implements OrderAdapter.OnOrderActionListener {
+public class OrderManagementFragment extends BaseHeaderFragment implements OrderAdapter.OnOrderActionListener {
 
     private RecyclerView recyclerView;
     private OrderAdapter orderAdapter;
@@ -24,28 +31,49 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
     private OrderDatabase db;
     private TabLayout tabLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_management);
+    public static OrderManagementFragment newInstance(String status) {
+        OrderManagementFragment fragment = new OrderManagementFragment();
+        Bundle args = new Bundle();
+        args.putString("order_status", status);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
-        recyclerView = findViewById(R.id.recyclerOrders);
-        tabLayout = findViewById(R.id.statusTabLayout);
-        db = new OrderDatabase(this);
-        db.createSampleData(this);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHeader(HeaderType.CUSTOM, "Quản lý đơn hàng");
+    }
+
+    @Override
+    protected int getFragmentLayout() {
+        return R.layout.fragment_order_management;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState); // Gọi super để BaseHeaderFragment xử lý header
+
+        recyclerView = view.findViewById(R.id.recyclerOrders);
+        tabLayout = view.findViewById(R.id.statusTabLayout);
+        db = new OrderDatabase(requireContext());
+        db.createSampleData(requireContext());
         orders = new Order[0];
-        orderAdapter = new OrderAdapter(this, orders, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        orderAdapter = new OrderAdapter(requireContext(), orders, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(orderAdapter);
 
         setupTabs();
         loadOrders();
 
-        // Xử lý trạng thái từ Intent
-        String status = getIntent().getStringExtra("order_status");
+        Bundle args = getArguments();
+        String status = args != null ? args.getString("order_status") : null;
         if (status != null) {
             selectTabByStatus(status);
         }
+
+        return view;
     }
 
     private void setupTabs() {
@@ -95,7 +123,7 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                     String productName = cursor.getString(cursor.getColumnIndexOrThrow("productName"));
                     double price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"));
                     int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
-                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image")); // Lấy imageUrl
+                    String imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image"));
 
                     Log.d("OrderManagement", "OrderId: " + orderId + ", Status: " + orderStatus + ", Product: " + productName);
 
@@ -104,21 +132,8 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
                     }
                     if (productName != null && imageUrl != null) {
                         orderMap.get(orderId).getProducts().add(new Product(
-                                0, // productId
-                                orderId, // orderId
-                                productName,
-                                "", // discountPrice
-                                "", // originalPrice
-                                imageUrl, // Sử dụng imageUrl
-                                price,
-                                null, // image (Bitmap) không cần thiết nữa
-                                quantity,
-                                "", // categoryInfo
-                                0.0, // rating
-                                null, // colors
-                                null, // sizes
-                                "", // description
-                                "" // collection
+                                0, orderId, productName, "", "", imageUrl, price, null, quantity,
+                                "", 0.0, null, null, "", ""
                         ));
                     } else {
                         Log.w("OrderManagement", "Skipping product due to null name or imageUrl for orderId: " + orderId);
@@ -149,21 +164,29 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
 
     @Override
     public void onCancelOrder(Order order) {
-        // Xử lý hủy đơn hàng
+        db.updateOrderStatus(order.getId(), "Đã hủy");
+        loadOrdersByStatus(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
     }
 
     @Override
     public void onRateOrder(Order order) {
-        // Xử lý đánh giá đơn hàng
+        // Xử lý đánh giá (chưa triển khai)
     }
 
     @Override
     public void onBuyAgain(Order order) {
-        // Xử lý mua lại
+        // Xử lý mua lại (chưa triển khai)
     }
 
     @Override
     public void onReturnOrder(Order order) {
-        // Xử lý trả hàng
+        db.updateOrderStatus(order.getId(), "Đã trả");
+        loadOrdersByStatus(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
+    }
+
+    @Override
+    public void onConfirmReceived(Order order) {
+        db.updateOrderStatus(order.getId(), "Thành công");
+        loadOrdersByStatus(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
     }
 }
