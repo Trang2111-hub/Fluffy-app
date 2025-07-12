@@ -1,27 +1,29 @@
-package com.fluffy.app.ui.account.order;
+package com.fluffy.app.ui.order;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.fluffy.app.R;
 import com.fluffy.app.adapter.OrderAdapter;
 import com.fluffy.app.data.database.OrderDatabase;
 import com.fluffy.app.model.Order;
 import com.fluffy.app.model.Product;
+import com.fluffy.app.ui.common.BaseHeaderFragment;
 import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class OrderManagementActivity extends AppCompatActivity implements OrderAdapter.OnOrderActionListener {
+public class OrderManagementFragment extends BaseHeaderFragment implements OrderAdapter.OnOrderActionListener {
 
     private RecyclerView recyclerView;
     private OrderAdapter orderAdapter;
@@ -29,37 +31,49 @@ public class OrderManagementActivity extends AppCompatActivity implements OrderA
     private OrderDatabase db;
     private TabLayout tabLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_management);
-        View headerView = LayoutInflater.from(this).inflate(R.layout.header_custom, findViewById(R.id.headerContainer), false);
-        TextView txtTitle = headerView.findViewById(R.id.txtTitle);
-        if (txtTitle != null) {
-            txtTitle.setText("Quản lý đơn hàng");
-        }
-        View imgBack = headerView.findViewById(R.id.imgBack);
-        if (imgBack != null) {
-            imgBack.setOnClickListener(v -> onBackPressed());
-        }
-        ((FrameLayout) findViewById(R.id.headerContainer)).addView(headerView);
+    public static OrderManagementFragment newInstance(String status) {
+        OrderManagementFragment fragment = new OrderManagementFragment();
+        Bundle args = new Bundle();
+        args.putString("order_status", status);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
-        recyclerView = findViewById(R.id.recyclerOrders);
-        tabLayout = findViewById(R.id.statusTabLayout);
-        db = new OrderDatabase(this);
-        db.createSampleData(this);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHeader(HeaderType.CUSTOM, "Quản lý đơn hàng");
+    }
+
+    @Override
+    protected int getFragmentLayout() {
+        return R.layout.fragment_order_management;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState); // Gọi super để BaseHeaderFragment xử lý header
+
+        recyclerView = view.findViewById(R.id.recyclerOrders);
+        tabLayout = view.findViewById(R.id.statusTabLayout);
+        db = new OrderDatabase(requireContext());
+        db.createSampleData(requireContext());
         orders = new Order[0];
-        orderAdapter = new OrderAdapter(this, orders, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        orderAdapter = new OrderAdapter(requireContext(), orders, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(orderAdapter);
 
         setupTabs();
         loadOrders();
 
-        String status = getIntent().getStringExtra("order_status");
+        Bundle args = getArguments();
+        String status = args != null ? args.getString("order_status") : null;
         if (status != null) {
             selectTabByStatus(status);
         }
+
+        return view;
     }
 
     private void setupTabs() {

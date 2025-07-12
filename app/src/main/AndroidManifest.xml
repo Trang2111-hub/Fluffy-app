@@ -46,13 +46,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.account.order.OrderDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.account.order.OrderManagementActivity"
-
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,15 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import com.fluffy.app.ui.order.OrderManagementFragment; // Import đúng package
 import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
+import com.fluffy.app.ui.homepage.HomePageFragment;
+import com.fluffy.app.ui.policy.ChinhSachFragment;
+import com.fluffy.app.ui.product.ProductFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private FavoriteProductFragment favoriteFragment;
+    private OrderManagementFragment orderManagementFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        favoriteFragment = new FavoriteProductFragment(); // Instance chung
+        favoriteFragment = new FavoriteProductFragment();
+        orderManagementFragment = new OrderManagementFragment(); // Khởi tạo instance
 
         // Gán listener cho imgMenu
-        getSupportFragmentManager().registerFragmentLifecycleCallbacks(new androidx.fragment.app.FragmentManager.FragmentLifecycleCallbacks() {
+        getSupportFragmentManager().registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
             @Override
-            public void onFragmentViewCreated(androidx.fragment.app.FragmentManager fm, Fragment f, View v, Bundle savedInstanceState) {
+            public void onFragmentViewCreated(FragmentManager fm, Fragment f, View v, Bundle savedInstanceState) {
                 View menuIcon = v.findViewById(R.id.imgMenu);
                 if (menuIcon != null) {
                     menuIcon.setOnClickListener(view -> drawerLayout.openDrawer(navigationView));
@@ -58,17 +61,17 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new com.fluffy.app.ui.homepage.HomePageFragment())
+                        .replace(R.id.fragment_container, new HomePageFragment())
                         .addToBackStack(null)
                         .commit();
             } else if (id == R.id.nav_policy) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new com.fluffy.app.ui.policy.ChinhSachFragment())
+                        .replace(R.id.fragment_container, new ChinhSachFragment())
                         .addToBackStack(null)
                         .commit();
             } else if (id == R.id.nav_product) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new com.fluffy.app.ui.product.ProductFragment())
+                        .replace(R.id.fragment_container, new ProductFragment())
                         .addToBackStack(null)
                         .commit();
             } else if (id == R.id.nav_ve_fluffy) {
@@ -85,15 +88,18 @@ public class MainActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.home) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new com.fluffy.app.ui.homepage.HomePageFragment())
+                        .replace(R.id.fragment_container, new HomePageFragment())
                         .commit();
                 return true;
             } else if (id == R.id.favorites) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, favoriteFragment) // Sử dụng instance chung
+                        .replace(R.id.fragment_container, favoriteFragment)
                         .commit();
                 return true;
             } else if (id == R.id.notifications) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, orderManagementFragment)
+                        .commit();
                 return true;
             } else if (id == R.id.account) {
                 Intent intent = new Intent(this, com.fluffy.app.ui.profilesetting.ProfilesettingActivity.class);
@@ -105,13 +111,16 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new com.fluffy.app.ui.homepage.HomePageFragment())
+                    .replace(R.id.fragment_container, new HomePageFragment())
                     .commit();
         }
     }
 
-    // Phương thức để truy cập FavoriteProductFragment từ các Fragment khác
     public FavoriteProductFragment getFavoriteFragment() {
         return favoriteFragment;
+    }
+
+    public OrderManagementFragment getOrderManagementFragment() {
+        return orderManagementFragment;
     }
 }
