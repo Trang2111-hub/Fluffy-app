@@ -1,5 +1,6 @@
 package com.fluffy.app.ui.product;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
@@ -16,6 +18,7 @@ import com.fluffy.app.databinding.FragmentProductBinding;
 import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.common.BaseHeaderFragment;
 import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
+import com.fluffy.app.ui.productInformation.ProductInformationActivity;
 import com.fluffy.app.util.JsonUtils;
 
 import java.util.ArrayList;
@@ -113,5 +116,18 @@ public class ProductFragment extends BaseHeaderFragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public void onProductClick(Product product) {
+        Toast.makeText(getContext(), product.getProductId() + "", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), ProductInformationActivity.class);
+        intent.putExtra("product_id", product.getProductId());
+        intent.putExtra("product_img", product.getImageUrl());
+        intent.putExtra("product_name", product.getName());
+        intent.putExtra("product_price", product.getDiscountPrice());
+        intent.putExtra("product_discount",  product.getOriginalPrice());
+        intent.putExtra("product_description", product.getDescription());
+        intent.putExtra("product_rating", product.getRating());
+        startActivity(intent);
     }
 }
