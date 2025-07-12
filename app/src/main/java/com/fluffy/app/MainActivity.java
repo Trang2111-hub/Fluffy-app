@@ -9,7 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.fluffy.app.ui.order.OrderManagementFragment; // Import đúng package
+import com.fluffy.app.ui.order.OrderManagementFragment;
 import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 import com.fluffy.app.ui.homepage.HomePageFragment;
 import com.fluffy.app.ui.policy.ChinhSachFragment;
