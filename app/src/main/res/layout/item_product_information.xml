@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="8dp"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/imgProductOtherInformation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/product_test"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/txtNameOtherInformation"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Gấu bông Kuromi đuôi cá"
+            android:textColor="#E91E63"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/btnFavorite"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_heart"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtPriceOtherInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="230,000đ"
+            android:textStyle="bold"
+            android:textColor="#E91E63"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtOldPriceOtherInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="290,000đ"
+            android:textColor="#99000000"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+         />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_cart_ol"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/btnAddToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm vào giỏ hàng"
+            android:textSize="12sp"
+            android:textColor="#EC4B63"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_buy_now_OtherInformation"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:paddingHorizontal="24dp"
+        android:gravity="center"
+        android:text="Mua ngay"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@drawable/bg_add_to_cart_button"
+        android:textSize="15sp" />
+
+</LinearLayout>

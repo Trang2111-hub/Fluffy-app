@@ -23,7 +23,7 @@ public class OtpUpdatePasswordActivity extends AppCompatActivity {
 
         TextView txtTitle = findViewById(R.id.txtTitle);
         txtTitle.setText("Đổi mật khẩu");
-        
+
         generatedOtp = generateOtp();
         setupOtpInput();
         setupButtonListeners();

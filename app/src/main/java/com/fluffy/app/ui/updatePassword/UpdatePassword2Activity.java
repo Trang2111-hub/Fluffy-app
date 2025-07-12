@@ -1,13 +1,18 @@
 package com.fluffy.app.ui.updatePassword;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.text.method.SingleLineTransformationMethod;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
 import com.fluffy.app.databinding.ActivityUpdatePassword2Binding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class UpdatePassword2Activity extends AppCompatActivity {
     private ActivityUpdatePassword2Binding binding;
@@ -66,8 +71,23 @@ public class UpdatePassword2Activity extends AppCompatActivity {
                 return;
             }
 
-            Toast.makeText(this, "Cập nhật mật khẩu thành công", Toast.LENGTH_SHORT).show();
-            finish();
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                user.updatePassword(newPassword)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(this, "Cập nhật mật khẩu thành công", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(this , MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(this, "Lỗi: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+            } else {
+                Toast.makeText(this, "Chưa đủ điều kiện !", Toast.LENGTH_SHORT).show();
+            }
         });
     }
+
 }
