@@ -98,9 +98,6 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 return true;
             } else if (id == R.id.notifications) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, orderManagementFragment)
-                        .commit();
                 return true;
             } else if (id == R.id.account) {
                 getSupportFragmentManager().beginTransaction()
