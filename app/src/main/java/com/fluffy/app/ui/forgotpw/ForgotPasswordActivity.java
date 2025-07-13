@@ -9,10 +9,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
 import com.fluffy.app.ui.login.LoginActivity;
 import com.fluffy.app.ui.otpconfirmation.OtpConfirmationActivity;
-import com.fluffy.app.ui.profilesetting.ProfilesettingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.fluffy.app.databinding.ActivityForgotPasswordBinding;
 
@@ -39,7 +39,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         txtTitle.setText("Quên mật khẩu");
 
         imgBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
+            // Sửa lại: mở MainActivity với flag mở account
+            Intent intent = new Intent(ForgotPasswordActivity.this, MainActivity.class);
+            intent.putExtra("openAccount", true);
+            startActivity(intent);
             finish();
         });
     }

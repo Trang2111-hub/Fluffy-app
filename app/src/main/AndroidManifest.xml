@@ -45,9 +45,6 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profilesetting.ProfilesettingActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.policy.ChinhSachActivity"
             android:exported="false" />
         <activity
