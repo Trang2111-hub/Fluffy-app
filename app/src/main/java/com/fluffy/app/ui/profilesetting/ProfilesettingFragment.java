@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ import com.fluffy.app.ui.signup.SignUpActivity;
 import com.fluffy.app.ui.updatePassword.UpdatePasswordActivity;
 import com.fluffy.app.ui.updateProfile.ProfileActivity;
 import com.fluffy.app.ui.voucher.VoucherActivity;
+import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 
 import java.util.ArrayList;
 import java.util.List;
