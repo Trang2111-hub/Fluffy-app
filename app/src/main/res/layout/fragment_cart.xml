@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cart.CartFragment">
+
+    <!-- Scroll content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="150dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
+                android:padding="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/xoatatca"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="230dp"
+                    android:gravity="end"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:text="Xóa tất cả"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed bottom section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white">
+
+        <!-- Promo code -->
+        <LinearLayout
+            android:id="@+id/promoSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:padding="10dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/cart1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã khuyến mãi"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/selectCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="chọn mã"
+                android:textColor="#FAD4D8"
+                android:textSize="14sp"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/cart2"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!-- Total + check all -->
+        <LinearLayout
+            android:id="@+id/totalSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkAll"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:buttonTint="@color/primary"
+                android:checked="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn tất cả"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền:"
+                android:textSize="16sp"
+                android:layout_marginStart="100dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:text="460,000đ"
+                android:textColor="#E74C5A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Checkout Button -->
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Thanh toán"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:backgroundTint="#E74C5A"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</FrameLayout>

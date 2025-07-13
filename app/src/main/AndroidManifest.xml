@@ -54,6 +54,12 @@
             android:name=".ui.aboutfluffy.VeFluffyActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.address.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.voucher.VoucherActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

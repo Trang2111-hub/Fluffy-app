@@ -11,16 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
 import com.fluffy.app.adapter.AccountOrFluffyAdapter;
 import com.fluffy.app.adapter.ProfileAdapter;
 import com.fluffy.app.databinding.ActivityProfilesettingBinding;
 import com.fluffy.app.model.ProfileItem;
+import com.fluffy.app.ui.address.AddressActivity;
+import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 import com.fluffy.app.ui.login.LoginActivity;
 import com.fluffy.app.ui.order.OrderManagementFragment;
 import com.fluffy.app.ui.signup.SignUpActivity;
 import com.fluffy.app.ui.updatePassword.UpdatePasswordActivity;
 import com.fluffy.app.ui.updateProfile.ProfileActivity;
+import com.fluffy.app.ui.voucher.VoucherActivity;
 import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 
 import java.util.ArrayList;
@@ -114,28 +118,23 @@ public class ProfilesettingFragment extends Fragment {
         AccountOrFluffyAdapter accountAdapter = new AccountOrFluffyAdapter(accountItems,
                 title -> {
                     if ("Cập nhật mật khẩu".equals(title)) {
-                        Intent intent = new Intent(requireContext(), UpdatePasswordActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(requireContext(), UpdatePasswordActivity.class));
                     } else if ("Quản lí thông tin cá nhân".equals(title)) {
                         startActivity(new Intent(requireContext(), ProfileActivity.class));
-                    } else if ("Quản lí đơn hàng".equals(title)) {
-                        if (requireContext() instanceof FragmentActivity) {
-                            FragmentActivity activity = (FragmentActivity) requireContext();
-                            activity.getSupportFragmentManager()
-                                    .beginTransaction()
-                                    .replace(R.id.fragment_container, OrderManagementFragment.newInstance("Tất cả"))
-                                    .addToBackStack(null)
-                                    .commit();
-                        }
+                    } else if ("Quản lí địa chỉ".equals(title)) {
+                        startActivity(new Intent(requireContext(), AddressActivity.class));
+                    } else if ("Quản lí voucher".equals(title)) {
+                        startActivity(new Intent(requireContext(), VoucherActivity.class));
                     } else if ("Quản lí sản phẩm yêu thích".equals(title)) {
-                        if (requireContext() instanceof FragmentActivity) {
-                            FragmentActivity activity = (FragmentActivity) requireContext();
-                            activity.getSupportFragmentManager()
-                                    .beginTransaction()
-                                    .replace(R.id.fragment_container, FavoriteProductFragment.newInstance())
-                                    .addToBackStack(null)
-                                    .commit();
-                        }
+                        ((MainActivity) requireActivity()).getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new FavoriteProductFragment())
+                                .addToBackStack(null)
+                                .commit();
+                    } else if ("Quản lí đơn hàng".equals(title)) {
+                        ((MainActivity) requireActivity()).getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new OrderManagementFragment())
+                                .addToBackStack(null)
+                                .commit();
                     }
                 });
 
