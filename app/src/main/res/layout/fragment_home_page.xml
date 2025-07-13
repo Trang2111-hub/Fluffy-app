@@ -5,11 +5,312 @@
     android:layout_height="match_parent"
     tools:context=".ui.homepage.HomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="35sp"
-        android:text="HomePage" />
+        android:layout_height="wrap_content"
+        android:padding="10dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="16dp"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <!-- DANH MỤC -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/secondary"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh mục sản phẩm"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#E76479"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/gaubonghottrend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage4"
+                        android:paddingBottom="5dp"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:id="@+id/gauteddy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage5"
+                        android:paddingBottom="5dp"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:id="@+id/gaubongquatang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage6"
+                        android:paddingBottom="5dp"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:id="@+id/goibong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage7"
+                        android:paddingBottom="5dp"
+                        android:contentDescription=""/>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage8"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage9"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage4"
+                        android:contentDescription=""/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/homepage4"
+                        android:contentDescription=""/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <!-- SP KHUYẾN MÃI -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/secondary"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:paddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Sản phẩm khuyến mãi"
+                        android:textColor="#E76479"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/xemtatca2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="60dp"
+                        android:text="Xem tất cả"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/gvHotProducts2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="8dp"
+                    android:numColumns="2"
+                    android:overScrollMode="never"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="8dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <!-- SP BÁN CHẠY -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/secondary"
+                android:paddingTop="16dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sản phẩm bán chạy"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#E76479"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Xem tất cả"
+                        android:id="@+id/xemtatca"
+                        android:textStyle="italic"
+                        android:paddingStart="85dp"/>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/gvHotProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="2"
+                    android:verticalSpacing="8dp"
+                    android:horizontalSpacing="8dp"
+                    android:stretchMode="columnWidth"
+                    android:overScrollMode="never"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+            <!-- BST 1 -->
+            <TextView
+                android:text="Bộ sưu tập mới"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#EB5265"
+                android:padding="10dp"/>
+
+            <ImageView
+                android:src="@drawable/homepage12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription=""/>
+
+            <TextView
+                android:text="BST FASHION IS IN THE AIR"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#EB5265"/>
+
+            <TextView
+                android:text="Fluffy xin tự hào mang đến BST FASHION IS IN THE AIR..."
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:clipToOutline="true"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/primary"
+                android:text="Xem chi tiết"/>
+
+            <!-- BST 2 -->
+            <ImageView
+                android:src="@drawable/homepage13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="15dp"
+                android:contentDescription=""/>
+
+            <TextView
+                android:text="BST THẦN SỐ HỌC"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#EB5265"/>
+
+            <TextView
+                android:text="Fluffy xin tự hào mang đến BST THẦN SỐ HỌC..."
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:clipToOutline="true"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/primary"
+                android:text="Xem chi tiết"/>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
