@@ -1,5 +1,6 @@
 package com.fluffy.app.ui.cart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,11 +10,11 @@ import android.widget.ListView;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.fluffy.app.R;
 import com.fluffy.app.model.CartItem;
 import com.fluffy.app.adapter.CartAdapter;
+import com.fluffy.app.ui.payment.PaymentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,9 +103,11 @@ public class CartFragment extends Fragment {
             updateTotalPrice();
         });
 
-        btnCheckout.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Đang thanh toán...", Toast.LENGTH_SHORT).show()
-        );
+        btnCheckout.setOnClickListener(v -> {
+            // mở PaymentActivity thay vì Toast
+            Intent intent = new Intent(getActivity(), PaymentActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void updateTotalPrice() {

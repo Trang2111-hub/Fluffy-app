@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.fluffy.app.ui.cart.CartFragment;
 import com.fluffy.app.ui.order.OrderManagementFragment;
 import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 import com.fluffy.app.ui.homepage.HomePageFragment;
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private FavoriteProductFragment favoriteFragment;
@@ -35,18 +37,30 @@ public class MainActivity extends AppCompatActivity {
         favoriteFragment = new FavoriteProductFragment();
         orderManagementFragment = new OrderManagementFragment();
 
-        // Gán listener cho imgMenu
+        // Xử lý imgMenu + imgCart trong tất cả fragment header
         getSupportFragmentManager().registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
             @Override
             public void onFragmentViewCreated(FragmentManager fm, Fragment f, View v, Bundle savedInstanceState) {
+                // Xử lý menu mở drawer
                 View menuIcon = v.findViewById(R.id.imgMenu);
                 if (menuIcon != null) {
                     menuIcon.setOnClickListener(view -> drawerLayout.openDrawer(navigationView));
                 }
+
+                // Xử lý icon mở giỏ hàng
+                View cartIcon = v.findViewById(R.id.imgCart);
+                if (cartIcon != null) {
+                    cartIcon.setOnClickListener(view -> {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new CartFragment())
+                                .addToBackStack(null)
+                                .commit();
+                    });
+                }
             }
         }, true);
 
-        // Xử lý click menu icon trong header khi backstack thay đổi
+        // Khi thay đổi fragment (backstack thay đổi), set lại listener cho menu & cart
         getSupportFragmentManager().addOnBackStackChangedListener(() -> {
             Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
             if (currentFragment != null && currentFragment.getView() != null) {
@@ -54,10 +68,20 @@ public class MainActivity extends AppCompatActivity {
                 if (menuIcon != null) {
                     menuIcon.setOnClickListener(v -> drawerLayout.openDrawer(navigationView));
                 }
+
+                View cartIcon = currentFragment.getView().findViewById(R.id.imgCart);
+                if (cartIcon != null) {
+                    cartIcon.setOnClickListener(v -> {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new CartFragment())
+                                .addToBackStack(null)
+                                .commit();
+                    });
+                }
             }
         });
 
-        // Xử lý drawer_menu
+        // Xử lý drawer menu
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_home) {
@@ -84,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
 
-        // Xử lý Bottom Navigation
+        // Xử lý bottom nav
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.home) {
@@ -111,13 +135,14 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
+        // Mở HomePage mặc định
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new HomePageFragment())
                     .commit();
         }
 
-        // Xử lý intent từ Login/SignUp mở tab account
+        // Xử lý intent mở account
         if (getIntent().hasExtra("openAccount")) {
             bottomNavigationView.setSelectedItemId(R.id.account);
         }
