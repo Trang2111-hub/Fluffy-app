@@ -1,45 +1,43 @@
 package com.fluffy.app.ui.homepage;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.fluffy.app.R;
+import com.fluffy.app.adapter.BannerAdapter;
+import com.fluffy.app.adapter.ProductAdapter;
+import com.fluffy.app.model.Product;
 import com.fluffy.app.ui.common.BaseHeaderFragment;
+import com.fluffy.app.util.JsonUtils;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomePageFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import me.relex.circleindicator.CircleIndicator3;
+
 public class HomePageFragment extends BaseHeaderFragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
+    private Handler sliderHandler;
+    private Runnable sliderRunnable;
+    private ViewPager2 viewPager;
+
     public HomePageFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomePageFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static HomePageFragment newInstance(String param1, String param2) {
         HomePageFragment fragment = new HomePageFragment();
         Bundle args = new Bundle();
@@ -52,7 +50,7 @@ public class HomePageFragment extends BaseHeaderFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHeader(HeaderType.DEFAULT, null); // Thêm dòng này để hiện header mặc định
+        setHeader(HeaderType.DEFAULT, null);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -67,7 +65,76 @@ public class HomePageFragment extends BaseHeaderFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Sử dụng layout cha của BaseHeaderFragment
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // === BANNER ===
+        viewPager = view.findViewById(R.id.viewPager);
+        CircleIndicator3 indicator = view.findViewById(R.id.indicator);
+
+        List<Integer> banners = Arrays.asList(
+                R.drawable.homepage1,
+                R.drawable.homepage2,
+                R.drawable.homepage3
+        );
+
+        BannerAdapter adapter = new BannerAdapter(banners);
+        viewPager.setAdapter(adapter);
+        indicator.setViewPager(viewPager);
+
+        sliderHandler = new Handler(Looper.getMainLooper());
+        sliderRunnable = new Runnable() {
+            @Override
+            public void run() {
+                int nextItem = (viewPager.getCurrentItem() + 1) % banners.size();
+                viewPager.setCurrentItem(nextItem, true);
+                sliderHandler.postDelayed(this, 5000);
+            }
+        };
+        sliderHandler.postDelayed(sliderRunnable, 5000);
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 5000);
+            }
+        });
+
+        // === HOT PRODUCTS GRIDVIEW ===
+        GridView gvHotProducts = view.findViewById(R.id.gvHotProducts);
+
+        List<Product> allProducts = JsonUtils.getProductListFromJson(getContext());
+        List<Product> hotProducts = new ArrayList<>();
+
+        for (int i = 0; i < allProducts.size() && i < 2; i++) {
+            hotProducts.add(allProducts.get(i));
+        }
+
+        ProductAdapter hotAdapter = new ProductAdapter(getActivity(), hotProducts);
+        gvHotProducts.setAdapter(hotAdapter);
+
+        // === HOT PRODUCTS GRIDVIEW 2 (MỚI) ===
+        GridView gvHotProducts2 = view.findViewById(R.id.gvHotProducts2);
+
+        List<Product> hotProducts2 = new ArrayList<>();
+        for (int i = 2; i < allProducts.size() && i < 6; i++) {
+            hotProducts2.add(allProducts.get(i));
+        }
+
+        ProductAdapter hotAdapter2 = new ProductAdapter(getActivity(), hotProducts2);
+        gvHotProducts2.setAdapter(hotAdapter2);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (sliderHandler != null) {
+            sliderHandler.removeCallbacksAndMessages(null);
+        }
     }
 }
