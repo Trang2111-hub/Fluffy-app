@@ -4,22 +4,16 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
-import android.text.TextWatcher;
-import android.text.Editable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.fluffy.app.MainActivity;
 import com.fluffy.app.R;
 import com.fluffy.app.ui.login.LoginActivity;
-import com.fluffy.app.ui.profilesetting.ProfilesettingActivity; // nếu có activity account
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
@@ -41,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
-        // Lấy header custom
+
         ImageView imgBack = findViewById(R.id.imgBack);
         TextView txtTitle = findViewById(R.id.txtTitle);
 
@@ -50,7 +44,8 @@ public class SignUpActivity extends AppCompatActivity {
         imgBack.setOnClickListener(v -> {
             String from = getIntent().getStringExtra("from");
             if ("account".equals(from)) {
-                Intent intent = new Intent(SignUpActivity.this, ProfilesettingActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                intent.putExtra("openAccount", true);
                 startActivity(intent);
             } else {
                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
@@ -142,7 +137,6 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-
     private boolean isValidEmail(String email) {
         String regex = "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(regex);
@@ -172,7 +166,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void signUpUser(String email) {
         String password = binding.edtPassword.getText().toString();
-
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(SignUpActivity.this, task -> {
                     if (task.isSuccessful()) {
@@ -188,12 +181,12 @@ public class SignUpActivity extends AppCompatActivity {
     private void showSuccessDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_success, null);
-
         builder.setView(dialogView);
         builder.setCancelable(false);
 
         dialogView.findViewById(R.id.btnLogin).setOnClickListener(v -> {
-            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            intent.putExtra("openAccount", true);
             startActivity(intent);
             finish();
         });
@@ -202,5 +195,3 @@ public class SignUpActivity extends AppCompatActivity {
         alertDialog.show();
     }
 }
-
-

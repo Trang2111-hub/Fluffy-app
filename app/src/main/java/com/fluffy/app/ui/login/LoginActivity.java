@@ -11,12 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fluffy.app.R;
-import com.fluffy.app.ui.common.BaseHeaderFragment;
 import com.fluffy.app.ui.forgotpw.ForgotPasswordActivity;
-import com.fluffy.app.ui.profilesetting.ProfilesettingActivity;
 import com.fluffy.app.ui.signup.SignUpActivity;
+import com.fluffy.app.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.fluffy.app.databinding.ActivityLoginBinding;
 
 import android.util.Patterns;
@@ -26,8 +24,6 @@ public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     private FirebaseAuth mAuth;
     private boolean isPasswordVisible = false;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +39,14 @@ public class LoginActivity extends AppCompatActivity {
         txtTitle.setText("Đăng nhập");
 
         imgBack.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, ProfilesettingActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("openAccount", true);
+            startActivity(intent);
             finish();
         });
 
         addEvents();
     }
-
-
 
     private void addEvents() {
         binding.btnLogin.setOnClickListener(view -> {
@@ -72,22 +68,6 @@ public class LoginActivity extends AppCompatActivity {
         binding.forgotPassword.setOnClickListener(v ->
                 startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class)));
 
-        binding.edtEmail.setOnFocusChangeListener((v, hasFocus) -> {
-            if (hasFocus) {
-                binding.edtEmail.setBackgroundResource(R.drawable.edittext_bg_focus);
-            } else {
-                binding.edtEmail.setBackgroundResource(R.drawable.edittext_bg);
-            }
-        });
-
-        binding.edtPassword.setOnFocusChangeListener((v, hasFocus) -> {
-            if (hasFocus) {
-                binding.edtPassword.setBackgroundResource(R.drawable.edittext_bg_focus);
-            } else {
-                binding.edtPassword.setBackgroundResource(R.drawable.edittext_bg);
-            }
-        });
-
         binding.imgEyePassword.setOnClickListener(v -> {
             if (isPasswordVisible) {
                 binding.edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -98,9 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 binding.imgEyePassword.setImageResource(R.drawable.ic_eye_open);
                 isPasswordVisible = true;
             }
-            binding.edtPassword.setSelection(binding.edtPassword.getText().length()); // giữ nguyên vị trí con trỏ
+            binding.edtPassword.setSelection(binding.edtPassword.getText().length());
         });
-
     }
 
     private void loginWithEmailPassword(String email, String password) {
@@ -108,11 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-
-                        Intent intent = new Intent(LoginActivity.this, ProfilesettingActivity.class);
-                        // hardcode dữ liệu profile cho demo
-                        intent.putExtra("name", "Trịnh Tiến Đạt Khoa");
-                        intent.putExtra("phone", "0813849476");
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("openAccount", true);
                         startActivity(intent);
                         finish();
                     } else {
@@ -120,5 +96,4 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

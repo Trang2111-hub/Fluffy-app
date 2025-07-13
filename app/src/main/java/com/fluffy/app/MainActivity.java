@@ -14,6 +14,7 @@ import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 import com.fluffy.app.ui.homepage.HomePageFragment;
 import com.fluffy.app.ui.policy.ChinhSachFragment;
 import com.fluffy.app.ui.product.ProductFragment;
+import com.fluffy.app.ui.profilesetting.ProfilesettingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
         favoriteFragment = new FavoriteProductFragment();
-        orderManagementFragment = new OrderManagementFragment(); // Khởi tạo instance
+        orderManagementFragment = new OrderManagementFragment();
 
         // Gán listener cho imgMenu
         getSupportFragmentManager().registerFragmentLifecycleCallbacks(new FragmentManager.FragmentLifecycleCallbacks() {
@@ -102,8 +103,9 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 return true;
             } else if (id == R.id.account) {
-                Intent intent = new Intent(this, com.fluffy.app.ui.profilesetting.ProfilesettingActivity.class);
-                startActivity(intent);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ProfilesettingFragment())
+                        .commit();
                 return true;
             }
             return false;
@@ -113,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new HomePageFragment())
                     .commit();
+        }
+
+        // Xử lý intent từ Login/SignUp mở tab account
+        if (getIntent().hasExtra("openAccount")) {
+            bottomNavigationView.setSelectedItemId(R.id.account);
         }
     }
 
