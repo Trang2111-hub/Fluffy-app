@@ -27,6 +27,9 @@ public class FavoriteProductFragment extends BaseHeaderFragment {
 
     public FavoriteProductFragment() {
     }
+    public static FavoriteProductFragment newInstance() {
+        return new FavoriteProductFragment();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

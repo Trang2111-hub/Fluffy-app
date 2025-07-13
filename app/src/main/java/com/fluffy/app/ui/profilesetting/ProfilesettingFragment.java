@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -16,9 +17,11 @@ import com.fluffy.app.adapter.ProfileAdapter;
 import com.fluffy.app.databinding.ActivityProfilesettingBinding;
 import com.fluffy.app.model.ProfileItem;
 import com.fluffy.app.ui.login.LoginActivity;
+import com.fluffy.app.ui.order.OrderManagementFragment;
 import com.fluffy.app.ui.signup.SignUpActivity;
 import com.fluffy.app.ui.updatePassword.UpdatePasswordActivity;
 import com.fluffy.app.ui.updateProfile.ProfileActivity;
+import com.fluffy.app.ui.favorite_product.FavoriteProductFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +118,24 @@ public class ProfilesettingFragment extends Fragment {
                         startActivity(intent);
                     } else if ("Quản lí thông tin cá nhân".equals(title)) {
                         startActivity(new Intent(requireContext(), ProfileActivity.class));
+                    } else if ("Quản lí đơn hàng".equals(title)) {
+                        if (requireContext() instanceof FragmentActivity) {
+                            FragmentActivity activity = (FragmentActivity) requireContext();
+                            activity.getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.fragment_container, OrderManagementFragment.newInstance("Tất cả"))
+                                    .addToBackStack(null)
+                                    .commit();
+                        }
+                    } else if ("Quản lí sản phẩm yêu thích".equals(title)) {
+                        if (requireContext() instanceof FragmentActivity) {
+                            FragmentActivity activity = (FragmentActivity) requireContext();
+                            activity.getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.fragment_container, FavoriteProductFragment.newInstance())
+                                    .addToBackStack(null)
+                                    .commit();
+                        }
                     }
                 });
 
